@@ -52,8 +52,8 @@ func defaultKeyboard() -> Keyboard {
     
     var returnKey = Key(.Return)
     returnKey.uppercaseKeyCap = "return"
-    returnKey.uppercaseOutput = "\n"
-    returnKey.lowercaseOutput = "\n"
+    returnKey.uppercaseOutput = "\u{200B}\n"
+    returnKey.lowercaseOutput = "\u{200B}\n"
     defaultKeyboard.addKey(returnKey, row: 3, page: 0)
     
     for key in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] {
