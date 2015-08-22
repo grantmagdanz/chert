@@ -14,7 +14,7 @@ with something (or leave it blank if you like.)
 */
 
 class Banner: ExtraView {
-    var icon: UIImage = UIImage(named: "banner-icon.png")!
+    var icon: UIImage = UIImage(named: "banner")!
     var iconView: UIImageView
     
     required init(globalColors: GlobalColors.Type?, darkMode: Bool, solidColorMode: Bool) {
