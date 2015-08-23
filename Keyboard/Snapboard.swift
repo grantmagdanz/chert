@@ -1,5 +1,5 @@
 //
-//  Catboard.swift
+//  Snapboard.swift
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 9/24/14.
@@ -13,14 +13,12 @@ This is the demo keyboard. If you're implementing your own keyboard, simply foll
 set the name of your KeyboardViewController subclass in the Info.plist file.
 */
 
-let kCatTypeEnabled = "kCatTypeEnabled"
-
-class Catboard: KeyboardViewController {
+class Snapboard: KeyboardViewController {
     
     let takeDebugScreenshot: Bool = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        NSUserDefaults.standardUserDefaults().registerDefaults([kCatTypeEnabled: true])
+        NSUserDefaults.standardUserDefaults()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -31,11 +29,6 @@ class Catboard: KeyboardViewController {
     override func keyPressed(key: Key) {
         if let textDocumentProxy = self.textDocumentProxy as? UITextDocumentProxy {
             let keyOutput = key.outputForCase(self.shiftState.uppercase())
-            
-            if !NSUserDefaults.standardUserDefaults().boolForKey(kCatTypeEnabled) {
-                textDocumentProxy.insertText(keyOutput)
-                return
-            }
             
             if key.type == .Character || key.type == .SpecialCharacter {
                 let context = textDocumentProxy.documentContextBeforeInput
@@ -59,7 +52,6 @@ class Catboard: KeyboardViewController {
                         return
                     }
 
-                    textDocumentProxy.insertText("\(randomCat())")
                     textDocumentProxy.insertText(" ")
                     textDocumentProxy.insertText(keyOutput)
                     return
@@ -124,16 +116,4 @@ class Catboard: KeyboardViewController {
             self.view.backgroundColor = oldViewColor
         }
     }
-}
-
-func randomCat() -> String {
-    let cats = "🐱😺😸😹😽😻😿😾😼🙀"
-    
-    let numCats = count(cats)
-    let randomCat = arc4random() % UInt32(numCats)
-    
-    let index = advance(cats.startIndex, Int(randomCat))
-    let character = cats[index]
-    
-    return String(character)
 }

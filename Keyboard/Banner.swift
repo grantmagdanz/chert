@@ -1,5 +1,5 @@
 //
-//  CatboardBanner.swift
+//  Banner.swift
 //  TastyImitationKeyboard
 //
 //  Created by Alexei Baboulevitch on 10/5/14.

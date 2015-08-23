@@ -532,9 +532,19 @@ class KeyboardViewController: UIInputViewController {
     func backspaceDown(sender: KeyboardKey) {
         self.cancelBackspaceTimers()
         
-        if let textDocumentProxy = self.textDocumentProxy as? UIKeyInput {
+        if let textDocumentProxy = self.textDocumentProxy as? UITextDocumentProxy {
+            let context = textDocumentProxy.documentContextBeforeInput
+            if context != nil && count(context) > 1 {
+                // if the character to delete is a new line character, we need
+                // to delete the empty space character as well.
+                let index = context!.endIndex.predecessor()
+                if context[index] == "\n" {
+                    textDocumentProxy.deleteBackward()
+                }
+            }
             textDocumentProxy.deleteBackward()
         }
+        
         self.setCapsIfNeeded()
         
         // trigger for subsequent deletes
@@ -553,7 +563,16 @@ class KeyboardViewController: UIInputViewController {
     func backspaceRepeatCallback() {
         self.playKeySound()
         
-        if let textDocumentProxy = self.textDocumentProxy as? UIKeyInput {
+        if let textDocumentProxy = self.textDocumentProxy as? UITextDocumentProxy {
+            let context = textDocumentProxy.documentContextBeforeInput
+            if context != nil && count(context) > 1 {
+                // if the character to delete is a new line character, we need
+                // to delete the empty space character as well.
+                let index = context!.endIndex.predecessor()
+                if context[index] == "\n" {
+                    textDocumentProxy.deleteBackward()
+                }
+            }
             textDocumentProxy.deleteBackward()
         }
         self.setCapsIfNeeded()
