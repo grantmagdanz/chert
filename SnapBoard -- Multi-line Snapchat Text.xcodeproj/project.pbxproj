@@ -108,7 +108,7 @@
 		4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
 		4E6AEE4B19D246D700931E8F /* Snapboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapboard.swift; sourceTree = "<group>"; };
 		4E7CDF921A079E3E0015BB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Keyboard/Info.plist; sourceTree = "<group>"; };
-		4E807D9319461D9000D875D1 /* HostingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E807D9319461D9000D875D1 /* SnapBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E807DB919461DC700D875D1 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E807DBC19461DC700D875D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E807DC81946209600D875D1 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 		4E807D9419461D9000D875D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E807D9319461D9000D875D1 /* HostingApp.app */,
+				4E807D9319461D9000D875D1 /* SnapBoard.app */,
 				4E807DB919461DC700D875D1 /* Keyboard.appex */,
 				4E8EF38119F95D74009CBF5D /* KeyboardFramework.framework */,
 			);
@@ -320,9 +320,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4E807D9219461D9000D875D1 /* HostingApp */ = {
+		4E807D9219461D9000D875D1 /* SnapBoard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E807DAF19461D9000D875D1 /* Build configuration list for PBXNativeTarget "HostingApp" */;
+			buildConfigurationList = 4E807DAF19461D9000D875D1 /* Build configuration list for PBXNativeTarget "SnapBoard" */;
 			buildPhases = (
 				4E807D8F19461D9000D875D1 /* Sources */,
 				4E807D9019461D9000D875D1 /* Frameworks */,
@@ -337,9 +337,9 @@
 				4E807DC319461DC700D875D1 /* PBXTargetDependency */,
 				4E8EF39719F95D75009CBF5D /* PBXTargetDependency */,
 			);
-			name = HostingApp;
+			name = SnapBoard;
 			productName = TastyImitationKeyboard;
-			productReference = 4E807D9319461D9000D875D1 /* HostingApp.app */;
+			productReference = 4E807D9319461D9000D875D1 /* SnapBoard.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4E807DB819461DC700D875D1 /* Keyboard */ = {
@@ -389,6 +389,7 @@
 				TargetAttributes = {
 					4E807D9219461D9000D875D1 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = BJCRSVSMSG;
 					};
 					4E807DB819461DC700D875D1 = {
 						CreatedOnToolsVersion = 6.0;
@@ -411,7 +412,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E807D9219461D9000D875D1 /* HostingApp */,
+				4E807D9219461D9000D875D1 /* SnapBoard */,
 				4E807DB819461DC700D875D1 /* Keyboard */,
 				4E8EF38019F95D74009CBF5D /* KeyboardFramework */,
 			);
@@ -610,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -622,6 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -712,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E807DAF19461D9000D875D1 /* Build configuration list for PBXNativeTarget "HostingApp" */ = {
+		4E807DAF19461D9000D875D1 /* Build configuration list for PBXNativeTarget "SnapBoard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E807DB019461D9000D875D1 /* Debug */,
