@@ -52,7 +52,6 @@ class Snapboard: KeyboardViewController {
                         return
                     }
 
-                    textDocumentProxy.insertText(" ")
                     textDocumentProxy.insertText(keyOutput)
                     return
                 }
