@@ -21,7 +21,7 @@ class Banner: ExtraView {
         iconView = UIImageView(image: icon)
         // TODO: hard coded values
         iconView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        iconView.layer.cornerRadius = 5
+        iconView.layer.cornerRadius = 6
         iconView.clipsToBounds = true
         
         // add shadow to make button look pressed
