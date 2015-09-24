@@ -89,29 +89,4 @@ class Snapboard: KeyboardViewController {
     override func createBanner() -> ExtraView? {
         return Banner(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
     }
-    
-    func takeScreenshotDelay() {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("takeScreenshot"), userInfo: nil, repeats: false)
-    }
-    
-    func takeScreenshot() {
-        if !CGRectIsEmpty(self.view.bounds) {
-            UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-            
-            let oldViewColor = self.view.backgroundColor
-            self.view.backgroundColor = UIColor(hue: (216/360.0), saturation: 0.05, brightness: 0.86, alpha: 1)
-            
-            let rect = self.view.bounds
-            UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
-            let context = UIGraphicsGetCurrentContext()
-            self.view.drawViewHierarchyInRect(self.view.bounds, afterScreenUpdates: true)
-            let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            let name = (self.interfaceOrientation.isPortrait ? "Screenshot-Portrait" : "Screenshot-Landscape")
-            let imagePath = "/Users/archagon/Documents/Programming/OSX/RussianPhoneticKeyboard/External/tasty-imitation-keyboard/\(name).png"
-            UIImagePNGRepresentation(capturedImage)!.writeToFile(imagePath, atomically: true)
-            
-            self.view.backgroundColor = oldViewColor
-        }
-    }
 }

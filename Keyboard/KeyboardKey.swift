@@ -8,7 +8,6 @@
 
 import UIKit
 
-// TODO: correct corner radius
 // TODO: refactor
 
 // popup constraints have to be setup with the topmost view in mind; hence these callbacks
