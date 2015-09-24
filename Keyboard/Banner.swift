@@ -1,17 +1,12 @@
 //
 //  Banner.swift
-//  TastyImitationKeyboard
+//  SnapBoard
 //
-//  Created by Alexei Baboulevitch on 10/5/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Created by Grant Magdanz on 9/24/15.
+//  Copyright (c) 2015 Apple. All rights reserved.
 //
 
 import UIKit
-
-/*
-This is the demo banner. The banner is needed so that the top row popups have somewhere to go. Might as well fill it
-with something (or leave it blank if you like.)
-*/
 
 class Banner: ExtraView {
     var icon: UIImage = UIImage(named: "banner")!

@@ -3,7 +3,8 @@
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 6/9/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Updated by Grant Magdanz on 9/24/15.
+//  Copyright (c) 2015 Apple. All rights reserved.
 //
 
 import UIKit
