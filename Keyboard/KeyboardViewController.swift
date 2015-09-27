@@ -452,9 +452,6 @@ class KeyboardViewController: UIInputViewController {
             // auto period on double space
             // TODO: timeout
             
-//            var lastCharCountInBeforeContext: Int = 0
-//            var readyForDoubleSpacePeriod: Bool = true
-            
             self.handleAutoPeriod(model)
             // TODO: reset context
         }
