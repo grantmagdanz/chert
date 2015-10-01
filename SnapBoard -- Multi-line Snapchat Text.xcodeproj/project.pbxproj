@@ -393,6 +393,7 @@
 					};
 					4E807DB819461DC700D875D1 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = BJCRSVSMSG;
 					};
 					4E8EF38019F95D74009CBF5D = {
 						CreatedOnToolsVersion = 6.1;
@@ -641,10 +642,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GrantMagdanz.SnapBoard.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Keyboard;
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -653,10 +657,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GrantMagdanz.SnapBoard.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Keyboard;
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
