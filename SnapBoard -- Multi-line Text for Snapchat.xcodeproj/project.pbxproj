@@ -400,7 +400,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "SnapBoard -- Multi-line Snapchat Text" */;
+			buildConfigurationList = 4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "SnapBoard -- Multi-line Text for Snapchat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -722,7 +722,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "SnapBoard -- Multi-line Snapchat Text" */ = {
+		4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "SnapBoard -- Multi-line Text for Snapchat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E807DAD19461D9000D875D1 /* Debug */,
