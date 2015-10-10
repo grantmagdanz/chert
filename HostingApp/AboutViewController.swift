@@ -1,15 +1,21 @@
 //
-//  ViewController.swift
-//  TransliteratingKeyboard
+//  AboutViewController.swift
+//  SnapBoard
 //
-//  Created by Alexei Baboulevitch on 6/9/14.
-//  Updated by Grant Magdanz on 9/24/15.
+//  Created by Grant Magdanz on 10/10/15.
 //  Copyright (c) 2015 Apple. All rights reserved.
 //
 
 import UIKit
 
-class HostingAppViewController: UIViewController {
+class AboutViewController: UIViewController {
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,29 +26,21 @@ class HostingAppViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidChangeFrame:"), name: UIKeyboardDidChangeFrameNotification, object: nil)
         */
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func dismiss() {
-        for view in self.view.subviews {
-            if let inputView = view as? UITextField {
-                inputView.resignFirstResponder()
-            }
-        }
-    }
-    
     /* func keyboardWillShow() {
-        // intentionally empty
+    // intentionally empty
     }
     
     func keyboardDidHide() {
-        // intentionally empty
+    // intentionally empty
     }
     
     func keyboardDidChangeFrame(notification: NSNotification) {
-        // intentionally empty
+    // intentionally empty
     }*/
 }
 
