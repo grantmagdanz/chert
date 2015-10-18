@@ -1,5 +1,5 @@
 //
-//  Snapboard.swift
+//  InupiaqKeyboard.swift
 //
 //  Created by Grant Magdanz on 9/24/15.
 //  Copyright (c) 2015 Apple. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Snapboard: KeyboardViewController {
+class InupiaqKeyboard: KeyboardViewController {
     
     let takeDebugScreenshot: Bool = false
     

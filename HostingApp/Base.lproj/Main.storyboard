@@ -117,10 +117,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost" translatesAutoresizingMaskIntoConstraints="NO" id="g65-23-QtN">
-                                <rect key="frame" x="19" y="86" width="282" height="324"/>
-                                <animations/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install SnapBoard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-tr-Upj">
                                 <rect key="frame" x="101" y="119" width="119" height="17.5"/>
                                 <animations/>
@@ -128,10 +124,10 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-Ww-diQ" userLabel="Top Helper View">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-Ww-diQ" userLabel="Top Helper View">
                                 <rect key="frame" x="16" y="20" width="288" height="63.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for using SnapBoard!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWn-SV-MH0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thanks for using SnapBoard!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWn-SV-MH0">
                                         <rect key="frame" x="34" y="21" width="220.5" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -146,17 +142,17 @@
                                     <constraint firstItem="AWn-SV-MH0" firstAttribute="centerY" secondItem="qvW-Ww-diQ" secondAttribute="centerY" id="SfM-pK-ySA"/>
                                 </constraints>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-BL-7pF" userLabel="Bottom Helper View">
+                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-BL-7pF" userLabel="Bottom Helper View">
                                 <rect key="frame" x="16" y="392" width="288" height="98"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⬇︎" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-DB-VQI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="⬇︎" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-DB-VQI">
                                         <rect key="frame" x="136" y="53" width="16" height="19"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SnapBoard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-fA-U1C">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SnapBoard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-fA-U1C">
                                         <rect key="frame" x="107" y="35" width="75.5" height="18"/>
                                         <animations/>
                                         <constraints>
@@ -166,14 +162,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Full Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXT-bm-83g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Allow Full Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXT-bm-83g">
                                         <rect key="frame" x="85" y="73" width="118" height="18"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be able to enable keyboard clicks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edV-pt-Xjj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Be able to enable keyboard clicks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edV-pt-Xjj">
                                         <rect key="frame" x="29" y="6" width="228.5" height="19.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -200,7 +196,6 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="g65-23-QtN" secondAttribute="centerY" constant="36" id="0J6-2V-sAW"/>
                             <constraint firstAttribute="centerY" secondItem="wE4-tB-lx8" secondAttribute="centerY" constant="16" id="770-BI-Yyf"/>
                             <constraint firstAttribute="centerX" secondItem="Mqd-At-z2X" secondAttribute="centerX" constant="-1.5" id="ANy-mE-jgO"/>
                             <constraint firstAttribute="centerY" secondItem="Pw7-Vd-1iE" secondAttribute="centerY" constant="-25" id="Bl1-BJ-e0n"/>
@@ -212,7 +207,6 @@
                             <constraint firstAttribute="centerX" secondItem="Xhy-1N-CPq" secondAttribute="centerX" constant="-1.5" id="Icj-FC-Edq"/>
                             <constraint firstAttribute="centerY" secondItem="Xhy-1N-CPq" secondAttribute="centerY" constant="114.25" id="KGE-AL-P93"/>
                             <constraint firstItem="qvW-Ww-diQ" firstAttribute="top" secondItem="Bpu-v8-xYb" secondAttribute="bottom" id="Si6-Bu-lNm"/>
-                            <constraint firstItem="wYh-BL-7pF" firstAttribute="top" secondItem="g65-23-QtN" secondAttribute="bottom" constant="-18" id="SwN-YG-PdH"/>
                             <constraint firstItem="wYh-BL-7pF" firstAttribute="leading" secondItem="qvW-Ww-diQ" secondAttribute="leading" id="Udy-V9-854"/>
                             <constraint firstAttribute="centerX" secondItem="qUi-Ic-nPl" secondAttribute="centerX" constant="-0.25" id="W4p-cc-X8F"/>
                             <constraint firstAttribute="centerY" secondItem="Mqd-At-z2X" secondAttribute="centerY" constant="33.25" id="XVf-0t-Uig"/>
@@ -228,8 +222,6 @@
                             <constraint firstItem="P06-La-EKF" firstAttribute="top" secondItem="wYh-BL-7pF" secondAttribute="bottom" constant="29" id="k8A-Em-kea"/>
                             <constraint firstAttribute="centerY" secondItem="90d-ij-0mV" secondAttribute="centerY" constant="136" id="kKe-K2-5Vv"/>
                             <constraint firstAttribute="centerX" secondItem="FIt-tr-Upj" secondAttribute="centerX" constant="-0.5" id="lIc-c9-QBM"/>
-                            <constraint firstItem="g65-23-QtN" firstAttribute="top" secondItem="qvW-Ww-diQ" secondAttribute="bottom" constant="2.5" id="mOL-rC-QX5"/>
-                            <constraint firstAttribute="centerX" secondItem="g65-23-QtN" secondAttribute="centerX" constant="-0.5" id="qTa-t3-aL8"/>
                             <constraint firstAttribute="centerX" secondItem="90d-ij-0mV" secondAttribute="centerX" constant="-1.25" id="qch-kn-wko"/>
                             <constraint firstAttribute="centerY" secondItem="qUi-Ic-nPl" secondAttribute="centerY" constant="97" id="roW-Lb-OlU"/>
                             <constraint firstAttribute="centerY" secondItem="EZ4-IV-3p7" secondAttribute="centerY" constant="-47.75" id="uc8-b4-T7i"/>
@@ -488,7 +480,6 @@ Cg
         <image name="AboutIcon" width="50" height="50"/>
         <image name="HowToIcon" width="50" height="50"/>
         <image name="InstallIcon" width="50" height="50"/>
-        <image name="ghost" width="282" height="324"/>
         <image name="iphone6s" width="857" height="1500"/>
     </resources>
 </document>

@@ -10,16 +10,22 @@
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
     
-    for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
+    for key in ["\u{0142}", "\u{0142}\u{0323}", "C", "V", "B", "N", "M"] {
         let keyModel = Key(.Character)
         keyModel.setLetter(key)
         defaultKeyboard.addKey(keyModel, row: 0, page: 0)
     }
     
-    for key in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
+    for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
         let keyModel = Key(.Character)
         keyModel.setLetter(key)
         defaultKeyboard.addKey(keyModel, row: 1, page: 0)
+    }
+    
+    for key in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
+        let keyModel = Key(.Character)
+        keyModel.setLetter(key)
+        defaultKeyboard.addKey(keyModel, row: 2, page: 0)
     }
     
     let keyModel = Key(.Shift)
@@ -28,34 +34,34 @@ func defaultKeyboard() -> Keyboard {
     for key in ["Z", "X", "C", "V", "B", "N", "M"] {
         let keyModel = Key(.Character)
         keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 2, page: 0)
+        defaultKeyboard.addKey(keyModel, row: 3, page: 0)
     }
     
     let backspace = Key(.Backspace)
-    defaultKeyboard.addKey(backspace, row: 2, page: 0)
+    defaultKeyboard.addKey(backspace, row: 3, page: 0)
     
     let keyModeChangeNumbers = Key(.ModeChange)
     keyModeChangeNumbers.uppercaseKeyCap = "123"
     keyModeChangeNumbers.toMode = 1
-    defaultKeyboard.addKey(keyModeChangeNumbers, row: 3, page: 0)
+    defaultKeyboard.addKey(keyModeChangeNumbers, row: 4, page: 0)
     
     let keyboardChange = Key(.KeyboardChange)
-    defaultKeyboard.addKey(keyboardChange, row: 3, page: 0)
+    defaultKeyboard.addKey(keyboardChange, row: 4, page: 0)
     
     let settings = Key(.Settings)
-    defaultKeyboard.addKey(settings, row: 3, page: 0)
+    defaultKeyboard.addKey(settings, row: 4, page: 0)
     
     let space = Key(.Space)
     space.uppercaseKeyCap = "space"
     space.uppercaseOutput = " "
     space.lowercaseOutput = " "
-    defaultKeyboard.addKey(space, row: 3, page: 0)
+    defaultKeyboard.addKey(space, row: 4, page: 0)
     
     let returnKey = Key(.Return)
     returnKey.uppercaseKeyCap = "return"
-    returnKey.uppercaseOutput = "\u{200B}\n"
-    returnKey.lowercaseOutput = "\u{200B}\n"
-    defaultKeyboard.addKey(returnKey, row: 3, page: 0)
+    returnKey.uppercaseOutput = "\n"
+    returnKey.lowercaseOutput = "\n"
+    defaultKeyboard.addKey(returnKey, row: 4, page: 0)
     
     for key in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] {
         let keyModel = Key(.SpecialCharacter)
