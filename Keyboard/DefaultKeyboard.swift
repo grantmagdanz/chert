@@ -10,7 +10,7 @@
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
     
-    for key in ["\u{0142}", "\u{0142}\u{0323}", "C", "V", "B", "N", "M"] {
+    for key in ["G\u{0307}", "L\u{0323}", "\u{0142}", "\u{0142}\u{0323}", "Ñ", "\u{014B}"] {
         let keyModel = Key(.Character)
         keyModel.setLetter(key)
         defaultKeyboard.addKey(keyModel, row: 0, page: 0)
