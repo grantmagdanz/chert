@@ -9,12 +9,28 @@
 
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
+
+    // This had to be pulled out of the loop to set the uppercase key cap and output
+    let ch = Key(.Character)
+    ch.setLetter("Ch")
+    ch.uppercaseKeyCap = "Ch"
+    ch.uppercaseOutput = "Ch"
+    ch.lowercaseOutput = "ch"
+    defaultKeyboard.addKey(ch, row: 0, page: 0)
     
-    for key in ["G\u{0307}", "L\u{0323}", "\u{0142}", "\u{0142}\u{0323}", "Ñ", "\u{014B}"] {
+    for key in ["G\u{0307}", "\u{0142}", "L\u{0323}", "\u{0142}\u{0323}", "Ñ", "\u{014B}"] {
         let keyModel = Key(.Character)
         keyModel.setLetter(key)
         defaultKeyboard.addKey(keyModel, row: 0, page: 0)
     }
+    
+    // This had to be pulled out of the loop to set the uppercase key cap and output
+    let sr = Key(.Character)
+    sr.setLetter("Sr")
+    sr.uppercaseKeyCap = "Sr"
+    sr.uppercaseOutput = "Sr"
+    sr.lowercaseOutput = "sr"
+    defaultKeyboard.addKey(sr, row: 0, page: 0)
     
     for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
         let keyModel = Key(.Character)
@@ -29,7 +45,7 @@ func defaultKeyboard() -> Keyboard {
     }
     
     let keyModel = Key(.Shift)
-    defaultKeyboard.addKey(keyModel, row: 2, page: 0)
+    defaultKeyboard.addKey(keyModel, row: 3, page: 0)
     
     for key in ["Z", "X", "C", "V", "B", "N", "M"] {
         let keyModel = Key(.Character)
