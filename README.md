@@ -32,4 +32,4 @@ Huge thanks to Archagon who created the Tasty Imitation Keyboard. This wouldn't 
 
 ## License
 
-This project is licensed under the 3-clause ("New") BSD license. Go Bears!
+This project is licensed under the 3-clause ("New") BSD license.
