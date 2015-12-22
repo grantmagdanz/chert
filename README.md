@@ -1,6 +1,6 @@
 # SnapBoard
 
-This is a iOS keyboard built off of the [Tasty Imitation Keyboard](https://github.com/archagon/tasty-imitation-keyboard). It is a fully functional keyboard that allows a user to add extra lines of text on a Snapchat.
+This is a iOS keyboard built off of the [Tasty Imitation Keyboard](https://github.com/archagon/tasty-imitation-keyboard). SnapBoard is a fully functional keyboard that allows a user to add extra lines of text on a Snapchat.
 
 This keyboard is currently optimized for iPhone. iPad should work, but it'll look like a giant iPhone keyboard.
 
@@ -28,7 +28,7 @@ Only the Snapchat funcitonality is working. However, it is on the App Store and 
 
 ## Credits
 
-Huge thanks to Archagon who created teh Tasty Imitation Keyboard. This wouldn't be possible without that work.
+Huge thanks to Archagon who created the Tasty Imitation Keyboard. This wouldn't be possible without that work.
 
 ## License
 
