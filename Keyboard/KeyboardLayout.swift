@@ -423,7 +423,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             // font size
             switch model.type {
             case
-            Key.KeyType.ModeChange,
+            Key.KeyType.LetterChange,
+            Key.KeyType.NumberChange,
+            Key.KeyType.SpecialCharacterChange,
             Key.KeyType.Space,
             Key.KeyType.Return:
                 key.label.adjustsFontSizeToFitWidth = true
@@ -435,7 +437,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             // label inset
             switch model.type {
             case
-            Key.KeyType.ModeChange:
+            Key.KeyType.LetterChange,
+            Key.KeyType.NumberChange,
+            Key.KeyType.SpecialCharacterChange:
                 key.labelInset = 3
             default:
                 key.labelInset = 0
@@ -547,7 +551,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             key.textColor = self.globalColors.darkModeTextColor
             key.downTextColor = (darkMode ? nil : self.globalColors.lightModeTextColor)
         case
-        Key.KeyType.ModeChange:
+        Key.KeyType.LetterChange,
+        Key.KeyType.NumberChange,
+        Key.KeyType.SpecialCharacterChange:
             key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
             key.downColor = nil
             key.textColor = (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)

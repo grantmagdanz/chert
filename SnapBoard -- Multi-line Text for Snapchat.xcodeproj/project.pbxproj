@@ -13,6 +13,8 @@
 		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
 		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
 		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
+		00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCBD1C29E651000BC823 /* Main.storyboard */; };
+		00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCC51C29EC73000BC823 /* Localizable.strings */; };
 		4E00A6E5197183EE009414F2 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E807DC81946209600D875D1 /* KeyboardKey.swift */; };
 		4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */; };
 		4E52A6D21A06A61F006A08CE /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52A6D11A06A61F006A08CE /* ImageKey.swift */; };
@@ -40,7 +42,6 @@
 		4EF16F9619D255030076AFCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF16F9319D255030076AFCB /* Images.xcassets */; };
 		4EF16F9819D255030076AFCB /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF16F9519D255030076AFCB /* InstallViewController.swift */; };
 		4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */; };
-		4EF16F9F19D2552E0076AFCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF16F9D19D2552E0076AFCB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,10 @@
 		00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButtonView.m; path = CYRKeyboardButton/CYRKeyboardButtonView.m; sourceTree = "<group>"; };
 		00D05C691C2C8246005D5444 /* TurtleBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleBezierPath.h; path = CYRKeyboardButton/TurtleBezierPath.h; sourceTree = "<group>"; };
 		00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = CYRKeyboardButton/TurtleBezierPath.m; sourceTree = "<group>"; };
+		00EFFCBE1C29E651000BC823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HostingApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00EFFCC01C29E662000BC823 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = HostingApp/ar.lproj/Main.strings; sourceTree = "<group>"; };
+		00EFFCC41C29EC73000BC823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00EFFCC61C29EC8F000BC823 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		4E52A6D11A06A61F006A08CE /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		4E52A6D31A06A626006A08CE /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
@@ -140,7 +145,6 @@
 		4EF16F9319D255030076AFCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4EF16F9519D255030076AFCB /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
 		4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EF16F9E19D2552E0076AFCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 				4E5B67A1196E03B700114361 /* KeyboardModel.swift */,
 				4ECBD90119F16DC7004FA2A3 /* DefaultKeyboard.swift */,
 				4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */,
+				00EFFCC51C29EC73000BC823 /* Localizable.strings */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,11 +273,11 @@
 		4E807D9519461D9000D875D1 /* HostingApp */ = {
 			isa = PBXGroup;
 			children = (
+				00EFFCBD1C29E651000BC823 /* Main.storyboard */,
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
 				4EF16F9519D255030076AFCB /* InstallViewController.swift */,
 				0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */,
 				0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */,
-				4EF16F9D19D2552E0076AFCB /* Main.storyboard */,
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
 				4E807D9619461D9000D875D1 /* Supporting Files */,
 			);
@@ -439,6 +444,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 4E807D8A19461D9000D875D1;
 			productRefGroup = 4E807D9419461D9000D875D1 /* Products */;
@@ -457,8 +463,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */,
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
-				4EF16F9F19D2552E0076AFCB /* Main.storyboard in Resources */,
 				00548B1C1BCC6C020049FB81 /* tutorial.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E52A6DA1A06C198006A08CE /* DefaultSettings.xib in Resources */,
+				00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */,
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,13 +560,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4EF16F9D19D2552E0076AFCB /* Main.storyboard */ = {
+		00EFFCBD1C29E651000BC823 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4EF16F9E19D2552E0076AFCB /* Base */,
+				00EFFCBE1C29E651000BC823 /* Base */,
+				00EFFCC01C29E662000BC823 /* ar */,
 			);
 			name = Main.storyboard;
-			path = ../HostingApp/Base.lproj;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		00EFFCC51C29EC73000BC823 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00EFFCC41C29EC73000BC823 /* en */,
+				00EFFCC61C29EC8F000BC823 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

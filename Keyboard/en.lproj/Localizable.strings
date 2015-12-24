@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  SnapBoard -- Multi-line Text for Snapchat
+
+  Created by Grant Magdanz on 12/22/15.
+  Copyright © 2015 Apple. All rights reserved.
+*/
+
+/*
+ Rows are ordered top to bottom (0 being the top most row)
+ Page 0 is the main page with letters
+ Page 1 is the page with special characters and numbers
+ Page 2 is the page with more special characters and no numbers
+*/
+page0_row0 = "Q W E R T Y U I O P";
+page0_row1 = "A S D F G H J K L";
+page0_row2 = "Shift Z X C V B N M Backspace";
+page0_row3 = "123 KeyboardChange Settings Space Return";
+
+page1_row0 = "1 2 3 4 5 6 7 8 9 0";
+page1_row1 = "- / : ; ( ) $ & @ \"";
+page1_row2 = "#+= . , ? ! ' Backspace";
+page1_row3 = "ABC KeyboardChange Settings Space Return";
+
+page2_row0 = "[ ] { } # % ^ * + =";
+page2_row1 = "_ \\ | ~ < > € £ ¥ •";
+page2_row2 = "123 . , ? ! ' Backspace";
+page2_row3 = "ABC KeyboardChange Settings Space Return";
+
+space = "space";
+return = "return";
+
+// the label of the button to switch to numbers and symbols
+number_change = "123";
+
+// the label of the button to switch to letters
+alphabet_change = "ABC";
+
+// the label of the button to switch to extra symbols
+symbol_change = "#+=";

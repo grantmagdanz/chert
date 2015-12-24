@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "SnapBoard"; ObjectID = "4BW-fA-U1C"; */
+"4BW-fA-U1C.text" = "SnapBoard";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "90d-ij-0mV"; */
+"90d-ij-0mV.text" = "Settings";
+
+/* Class = "UILabel"; text = "Thanks for using SnapBoard!"; ObjectID = "AWn-SV-MH0"; */
+"AWn-SV-MH0.text" = "hanks for using SnapBoard!";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "EZ4-IV-3p7"; */
+"EZ4-IV-3p7.text" = "⬇︎";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "FDE-DB-VQI"; */
+"FDE-DB-VQI.text" = "⬇︎";
+
+/* Class = "UILabel"; text = "Install SnapBoard"; ObjectID = "FIt-tr-Upj"; */
+"FIt-tr-Upj.text" = "Install SnapBoard";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "G2Q-Xf-6Yb"; */
+"G2Q-Xf-6Yb.text" = "⬇︎";
+
+/* Class = "UITabBarItem"; title = "How To"; ObjectID = "KrF-XI-YtY"; */
+"KrF-XI-YtY.title" = "How To";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "Mqd-At-z2X"; */
+"Mqd-At-z2X.text" = "⬇︎";
+
+/* Class = "UILabel"; text = "Add New Keyboard"; ObjectID = "Pw7-Vd-1iE"; */
+"Pw7-Vd-1iE.text" = "Add New Keyboard";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "Qz7-yg-1iZ"; */
+"Qz7-yg-1iZ.text" = "⬇︎";
+
+/* Class = "UILabel"; text = "⬇︎"; ObjectID = "Xhy-1N-CPq"; */
+"Xhy-1N-CPq.text" = "⬇︎";
+
+/* Class = "UILabel"; text = "Be able to enable keyboard clicks"; ObjectID = "edV-pt-Xjj"; */
+"edV-pt-Xjj.text" = "Be able to enable keyboard clicks";
+
+/* Class = "UILabel"; text = "Allow Full Access"; ObjectID = "kXT-bm-83g"; */
+"kXT-bm-83g.text" = "Allow Full Access";
+
+/* Class = "UILabel"; text = "Keyboard"; ObjectID = "nl7-vC-EIP"; */
+"nl7-vC-EIP.text" = "Keyboard";
+
+/* Class = "UITabBarItem"; title = "Install"; ObjectID = "pZR-wA-RLy"; */
+"pZR-wA-RLy.title" = "Install";
+
+/* Class = "UILabel"; text = "General"; ObjectID = "qUi-Ic-nPl"; */
+"qUi-Ic-nPl.text" = "General";
+
+/* Class = "UILabel"; text = "SnapBoard"; ObjectID = "sRp-fX-iJB"; */
+"sRp-fX-iJB.text" = "SnapBoard";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "tz6-dI-8hS"; */
+"tz6-dI-8hS.title" = "About";
+
+/* Class = "UILabel"; text = "Keyboards"; ObjectID = "wE4-tB-lx8"; */
+"wE4-tB-lx8.text" = "Keyboards";
