@@ -83,6 +83,8 @@ class Key: Hashable {
     var lowercaseKeyCap: String?
     var uppercaseOutput: String?
     var lowercaseOutput: String?
+    var extraCharacters: [String] = []
+    var uppercaseExtraCharacters: [String] = []
     var toMode: Int? //if the key is a mode button, this indicates which page it links to
     
     var isCharacter: Bool {
@@ -143,6 +145,13 @@ class Key: Hashable {
         self.uppercaseOutput = key.uppercaseOutput
         self.lowercaseOutput = key.lowercaseOutput
         self.toMode = key.toMode
+    }
+    
+    func setExtraLetters(letters: [String]) {
+        for letter in letters {
+            self.extraCharacters.append((letter as NSString).lowercaseString)
+            self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+        }
     }
     
     func setLetter(letter: String) {

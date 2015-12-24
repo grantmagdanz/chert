@@ -10,6 +10,16 @@
 import UIKit
 import AudioToolbox
 
+enum TTDeviceType{
+    case TTDeviceTypeIPhone4
+    case TTDeviceTypeIPhone5
+    case TTDeviceTypeIPhone6
+    case TTDeviceTypeIPhone6p
+    
+}
+
+var deviceType = TTDeviceType.TTDeviceTypeIPhone5
+
 let metrics: [String:Double] = [
     "topBanner": 30
 ]
@@ -34,11 +44,16 @@ class KeyboardViewController: UIInputViewController {
     var bannerView: ExtraView?
     var settingsView: ExtraView?
     
+    var viewLongPopUp:CYRKeyboardButtonView = CYRKeyboardButtonView()
+    var button = CYRKeyboardButton()
+    
     var currentMode: Int {
         didSet {
             if oldValue != currentMode {
                 setMode(currentMode)
             }
+            
+            forwardingView.currentMode = currentMode
         }
     }
     
@@ -112,7 +127,11 @@ class KeyboardViewController: UIInputViewController {
         self.forwardingView = ForwardingView(frame: CGRectZero)
         self.view.addSubview(self.forwardingView)
         
+        initializePopUp()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("defaultsChanged:"), name: NSUserDefaultsDidChangeNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("hideExpandView:"), name: "hideExpandViewNotification", object: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -281,6 +300,41 @@ class KeyboardViewController: UIInputViewController {
         return CGFloat(orientation.isPortrait ? canonicalPortraitHeight + topBannerHeight : canonicalLandscapeHeight + topBannerHeight)
     }
     
+    func hideExpandView(notification: NSNotification)
+    {
+        
+        if notification.userInfo != nil
+        {
+            let title = notification.userInfo!["text"] as! String
+            if let proxy = (self.textDocumentProxy as? UIKeyInput)
+            {
+                if self.shiftState == .Enabled
+                {
+                    proxy.insertText(title.capitalizedString)
+                }
+                else if self.shiftState == .Locked
+                {
+                    proxy.insertText(title.uppercaseString)
+                }
+                else
+                {
+                    proxy.insertText(title)
+                }
+                
+            }
+            
+            self.setCapsIfNeeded()
+            
+        }
+        
+        if self.forwardingView.isLongPressEnable == false
+        {
+            self.view.bringSubviewToFront(self.bannerView!)
+        }
+        viewLongPopUp.hidden = true
+        
+    }
+    
     /*
     BUG NOTE
 
@@ -328,6 +382,8 @@ class KeyboardViewController: UIInputViewController {
                                 keyView.addTarget(keyView, action: Selector("hidePopup"), forControlEvents: [.TouchDragExit, .TouchCancel])
                                 keyView.addTarget(self, action: Selector("hidePopupDelay:"), forControlEvents: [.TouchUpInside, .TouchUpOutside, .TouchDragOutside])
                             }
+                            
+                            keyView.addTarget(self, action: Selector("keyCharDoubleTapped:"), forControlEvents: .TouchDownRepeat)
                         }
                         
                         if key.hasOutput {
@@ -817,6 +873,136 @@ class KeyboardViewController: UIInputViewController {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             AudioServicesPlaySystemSound(1104)
         })
+    }
+    
+    // setups long pressed popup keys
+    func initializePopUp() {
+        button.hidden = true
+        button.forwordingView = forwardingView
+        button.frame = CGRectMake(0, 0, 20, 20)
+        button.tag = 111
+        self.view.insertSubview(self.button, aboveSubview: self.forwardingView)
+        button.setupInputOptionsConfigurationWithView(forwardingView)
+        button.hidden = true
+        viewLongPopUp.hidden = true
+    }
+    
+    // called when a key that is allowed to have multiple characters is pressed and held
+    // shows multiple options
+    func keyCharDoubleTapped(sender: KeyboardKey) {
+        if sender.tag == 888 {
+            sender.hidePopup()
+            if let key = self.layout?.keyForView(sender) {
+                var arrOptions: [String] = []
+                if (key.type == Key.KeyType.Character) {
+                    if self.shiftState == .Enabled || self.shiftState == .Locked {
+                        // convert to uppercase
+                        arrOptions = key.extraCharacters.map(
+                            { (letter: String) -> String in
+                                    return (letter as NSString).uppercaseString})
+                    } else {
+                        // convert to lowercase
+                        arrOptions = key.extraCharacters.map(
+                            { (letter: String) -> String in
+                                return (letter as NSString).lowercaseString})
+                    }
+                }
+                
+                
+                if arrOptions.count > 0 {
+                    if arrOptions[0].characters.count > 0 {
+                        var offsetY : CGFloat = 9
+                        
+                        if KeyboardViewController.getDeviceType() == TTDeviceType.TTDeviceTypeIPhone4 {
+                            offsetY = 9
+                            if self.interfaceOrientation == UIInterfaceOrientation.LandscapeLeft || self.interfaceOrientation == UIInterfaceOrientation.LandscapeRight {
+                                offsetY = 3
+                            }
+                        } else if KeyboardViewController.getDeviceType() == TTDeviceType.TTDeviceTypeIPhone5 {
+                            offsetY = 9
+                            if self.interfaceOrientation == UIInterfaceOrientation.LandscapeLeft || self.interfaceOrientation == UIInterfaceOrientation.LandscapeRight {
+                                offsetY = 3
+                            }
+                            
+                        } else if KeyboardViewController.getDeviceType() == TTDeviceType.TTDeviceTypeIPhone6 {
+                            offsetY = 13
+                            if self.interfaceOrientation == UIInterfaceOrientation.LandscapeLeft || self.interfaceOrientation == UIInterfaceOrientation.LandscapeRight {
+                                offsetY = 3
+                            }
+                            
+                        } else if KeyboardViewController.getDeviceType() == TTDeviceType.TTDeviceTypeIPhone6p {
+                            offsetY = 16
+                            if self.interfaceOrientation == UIInterfaceOrientation.LandscapeLeft || self.interfaceOrientation == UIInterfaceOrientation.LandscapeRight {
+                                offsetY = 3
+                            }
+                        }
+                        
+                        self.button.removeFromSuperview()
+                        
+                        self.button.frame = CGRectMake(sender.frame.origin.x, sender.frame.origin.y + sender.frame.size.height - offsetY, sender.frame.size.width, sender.frame.size.height)
+                        
+                        //					self.button.frame = CGRectMake(sender.frame.origin.x, sender.frame.origin.y , sender.frame.size.width, sender.frame.size.height)
+                        
+                        self.view.insertSubview(self.button, aboveSubview: self.forwardingView)
+                        
+                        self.viewLongPopUp = self.button.showLongPopUpOptions()
+                        self.button.input = sender.text
+                        self.button.hidden = true
+                        self.button.inputOptions = arrOptions
+                        self.viewLongPopUp.hidden = false
+                        
+                        for anyView in self.view.subviews {
+                            if anyView is CYRKeyboardButtonView {
+                                anyView.removeFromSuperview()
+                            }
+                        }
+                        
+                        self.viewLongPopUp.userInteractionEnabled = false;
+                        
+                        button.setupInputOptionsConfigurationWithView(forwardingView)
+                        self.view.insertSubview(self.viewLongPopUp, aboveSubview: self.forwardingView)
+                        self.forwardingView.isLongPressEnable = true
+                        self.view.bringSubviewToFront(self.viewLongPopUp)
+                        //self.forwardingView.resetTrackedViews()
+                        //sender.hidePopup()
+                        //self.view.addSubview(self.viewLongPopUp)
+                        
+                        sender.tag = 0
+                    }
+                }
+            }
+        }
+    }
+    
+    // returns the device type
+    class func getDeviceType()->TTDeviceType {
+        var height = UIScreen.mainScreen().bounds.size.height
+        
+        if UIScreen.mainScreen().bounds.size.height < UIScreen.mainScreen().bounds.size.width {
+            height = UIScreen.mainScreen().bounds.size.width
+        }
+        
+        switch (height) {
+        case 480:
+            deviceType = TTDeviceType.TTDeviceTypeIPhone4 ;
+            break;
+            
+        case 568:
+            deviceType = TTDeviceType.TTDeviceTypeIPhone5 ;
+            break;
+        case 667:
+            deviceType = TTDeviceType.TTDeviceTypeIPhone6 ;
+            break;
+        case 736:
+            deviceType = TTDeviceType.TTDeviceTypeIPhone6p ;
+            break;
+            
+        default:
+            break;
+        }
+        
+        return deviceType
+        
     }
     
     //////////////////////////////////////

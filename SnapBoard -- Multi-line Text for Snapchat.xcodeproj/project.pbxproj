@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		0000C4931BC9D9AC0097A1F9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		00548B1C1BCC6C020049FB81 /* tutorial.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 00548B1B1BCC6C020049FB81 /* tutorial.mp4 */; settings = {ASSET_TAGS = (); }; };
+		0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */; };
+		0000C4931BC9D9AC0097A1F9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */; };
+		00548B1C1BCC6C020049FB81 /* tutorial.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 00548B1B1BCC6C020049FB81 /* tutorial.mp4 */; };
+		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
+		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
+		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
 		4E00A6E5197183EE009414F2 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E807DC81946209600D875D1 /* KeyboardKey.swift */; };
 		4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */; };
 		4E52A6D21A06A61F006A08CE /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52A6D11A06A61F006A08CE /* ImageKey.swift */; };
@@ -100,6 +103,13 @@
 		0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 		00548B1B1BCC6C020049FB81 /* tutorial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tutorial.mp4; sourceTree = "<group>"; };
+		00D05C641C2C8245005D5444 /* Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		00D05C651C2C8246005D5444 /* CYRKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButton.h; path = CYRKeyboardButton/CYRKeyboardButton.h; sourceTree = "<group>"; };
+		00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButton.m; path = CYRKeyboardButton/CYRKeyboardButton.m; sourceTree = "<group>"; };
+		00D05C671C2C8246005D5444 /* CYRKeyboardButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButtonView.h; path = CYRKeyboardButton/CYRKeyboardButtonView.h; sourceTree = "<group>"; };
+		00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButtonView.m; path = CYRKeyboardButton/CYRKeyboardButtonView.m; sourceTree = "<group>"; };
+		00D05C691C2C8246005D5444 /* TurtleBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleBezierPath.h; path = CYRKeyboardButton/TurtleBezierPath.h; sourceTree = "<group>"; };
+		00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = CYRKeyboardButton/TurtleBezierPath.m; sourceTree = "<group>"; };
 		4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		4E52A6D11A06A61F006A08CE /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		4E52A6D31A06A626006A08CE /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
@@ -160,6 +170,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00D05C6E1C2C826B005D5444 /* CYRKeyboardButton */ = {
+			isa = PBXGroup;
+			children = (
+				00D05C651C2C8246005D5444 /* CYRKeyboardButton.h */,
+				00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */,
+				00D05C671C2C8246005D5444 /* CYRKeyboardButtonView.h */,
+				00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */,
+				00D05C691C2C8246005D5444 /* TurtleBezierPath.h */,
+				00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */,
+			);
+			name = CYRKeyboardButton;
+			sourceTree = "<group>";
+		};
 		4E6AEE4F19D2484B00931E8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +291,8 @@
 		4E807DBA19461DC700D875D1 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				00D05C641C2C8245005D5444 /* Keyboard-Bridging-Header.h */,
+				00D05C6E1C2C826B005D5444 /* CYRKeyboardButton */,
 				4E6AEE5219D2488B00931E8F /* Controller */,
 				4E6AEE5019D2486900931E8F /* Model */,
 				4E6AEE4F19D2484B00931E8F /* Views */,
@@ -390,6 +415,7 @@
 		4E807D8B19461D9000D875D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
@@ -486,8 +512,11 @@
 				4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */,
 				4E52A6D81A06C16C006A08CE /* DefaultSettings.swift in Sources */,
 				4E72C96819E04A7A00DFDDB0 /* SnapBoard.swift in Sources */,
+				00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */,
 				4E60A13E1979FB2E00854CC8 /* DirectionEnum.swift in Sources */,
 				4EC2A46D19DF811E00F789E1 /* KeyboardViewController.swift in Sources */,
+				00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */,
+				00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +687,7 @@
 				PRODUCT_NAME = Keyboard;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Keyboard/Keyboard-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -673,6 +703,7 @@
 				PRODUCT_NAME = Keyboard;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Keyboard/Keyboard-Bridging-Header.h";
 			};
 			name = Release;
 		};
