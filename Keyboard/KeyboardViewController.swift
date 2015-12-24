@@ -314,7 +314,10 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self, action: Selector("shiftDown:"), forControlEvents: .TouchDown)
                             keyView.addTarget(self, action: Selector("shiftUp:"), forControlEvents: .TouchUpInside)
                             keyView.addTarget(self, action: Selector("shiftDoubleTapped:"), forControlEvents: .TouchDownRepeat)
-                        case Key.KeyType.ModeChange:
+                        case
+                        Key.KeyType.LetterChange,
+                        Key.KeyType.NumberChange,
+                        Key.KeyType.SpecialCharacterChange:
                             keyView.addTarget(self, action: Selector("modeChangeTapped:"), forControlEvents: .TouchDown)
                         case Key.KeyType.Settings:
                             keyView.addTarget(self, action: Selector("toggleSettings"), forControlEvents: .TouchUpInside)
@@ -334,7 +337,8 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self, action: "keyPressedHelper:", forControlEvents: .TouchUpInside)
                         }
                         
-                        if key.type != Key.KeyType.Shift && key.type != Key.KeyType.ModeChange {
+                        if key.type != Key.KeyType.Shift && key.type != Key.KeyType.LetterChange &&
+                                       key.type != Key.KeyType.NumberChange && key.type != Key.KeyType.SpecialCharacterChange {
                             keyView.addTarget(self, action: Selector("highlightKey:"), forControlEvents: [.TouchDown, .TouchDragInside, .TouchDragEnter])
                             keyView.addTarget(self, action: Selector("unHighlightKey:"), forControlEvents: [.TouchUpInside, .TouchUpOutside, .TouchDragOutside, .TouchDragExit, .TouchCancel])
                         }
