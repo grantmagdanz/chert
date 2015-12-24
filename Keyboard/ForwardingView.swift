@@ -12,7 +12,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
     
     // Hacky: Change to be more flexible and determine if character is a longpress characters by the number of characters in its char array
     // Add a character to this string in order to allow it to have a longhold popup
-    let LONGHOlD_POPUP_CHARACTERS = "AEUIOSDCNaeuiosdcn."
+    let LONGHOlD_POPUP_CHARACTERS = NSLocalizedString("press_and_hold_keys", comment: "These are the keys that have extra options when pressed and held.")
     
     var touchToView: [UITouch:UIView]
 	
