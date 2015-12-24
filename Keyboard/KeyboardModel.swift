@@ -64,18 +64,20 @@ class Page {
 }
 
 class Key: Hashable {
-    enum KeyType {
-        case Character
-        case SpecialCharacter
-        case Shift
-        case Backspace
-        case ModeChange
-        case KeyboardChange
-        case Period
-        case Space
-        case Return
-        case Settings
-        case Other
+    enum KeyType: String {
+        case Character = "Character"
+        case SpecialCharacter = "SpecialCharacter"
+        case Shift = "Shift"
+        case Backspace = "Backspace"
+        case LetterChange = "ABC"
+        case NumberChange = "123"
+        case SpecialCharacterChange = "#+="
+        case KeyboardChange = "KeyboardChange"
+        case Period = "Period"
+        case Space = "Space"
+        case Return = "Return"
+        case Settings = "Settings"
+        case Other = "Other"
     }
     
     var type: KeyType
@@ -83,6 +85,8 @@ class Key: Hashable {
     var lowercaseKeyCap: String?
     var uppercaseOutput: String?
     var lowercaseOutput: String?
+    var extraCharacters: [String] = []
+    var uppercaseExtraCharacters: [String] = []
     var toMode: Int? //if the key is a mode button, this indicates which page it links to
     
     var isCharacter: Bool {
@@ -106,7 +110,11 @@ class Key: Hashable {
                 return true
             case .Backspace:
                 return true
-            case .ModeChange:
+            case .LetterChange:
+                return true
+            case .NumberChange:
+                return true
+            case .SpecialCharacterChange:
                 return true
             case .KeyboardChange:
                 return true
@@ -143,6 +151,13 @@ class Key: Hashable {
         self.uppercaseOutput = key.uppercaseOutput
         self.lowercaseOutput = key.lowercaseOutput
         self.toMode = key.toMode
+    }
+    
+    func setExtraLetters(letters: [String]) {
+        for letter in letters {
+            self.extraCharacters.append((letter as NSString).lowercaseString)
+            self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+        }
     }
     
     func setLetter(letter: String) {

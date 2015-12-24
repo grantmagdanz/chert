@@ -7,147 +7,82 @@
 //  Copyright (c) 2015 Apple. All rights reserved.
 //
 
+import Foundation
+
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
-
-    // This had to be pulled out of the loop to set the uppercase key cap and output
-    let ch = Key(.Character)
-    ch.setLetter("Ch")
-    ch.uppercaseKeyCap = "Ch"
-    ch.uppercaseOutput = "Ch"
-    ch.lowercaseOutput = "ch"
-    defaultKeyboard.addKey(ch, row: 0, page: 0)
     
-    for key in ["G\u{0307}", "\u{0142}", "L\u{0323}", "\u{0142}\u{0323}", "Ñ", "\u{014B}"] {
-        let keyModel = Key(.Character)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 0, page: 0)
+    for pageNum in 0...2 {
+        for rowNum in 0...3 {
+            let row = NSLocalizedString("page\(pageNum)_row\(rowNum)", comment: "Row number\(rowNum) in page \(pageNum)").characters.split{$0 == " "}.map(String.init)
+            for key in row {
+                // split on commas to get extra characters for that key
+                var charactersForKey = [key];
+                if key.characters.count > 1 {
+                    charactersForKey = key.characters.split{$0 == ","}.map(String.init)
+                }
+                let keyModel: Key
+                if pageNum == 0 {
+                    // the first page contains all the letters which are .Character Keys
+                    keyModel = makeKey(charactersForKey[0], special: false)
+                } else {
+                    // all other characters on other pages are .SpecialCharacter Keys
+                    keyModel = makeKey(charactersForKey[0], special: true)
+                }
+                
+                keyModel.extraCharacters = Array(charactersForKey[1..<charactersForKey.count])
+                defaultKeyboard.addKey(keyModel, row: rowNum, page: pageNum)
+            }
+        }
     }
-    
-    // This had to be pulled out of the loop to set the uppercase key cap and output
-    let sr = Key(.Character)
-    sr.setLetter("Sr")
-    sr.uppercaseKeyCap = "Sr"
-    sr.uppercaseOutput = "Sr"
-    sr.lowercaseOutput = "sr"
-    defaultKeyboard.addKey(sr, row: 0, page: 0)
-    
-    for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
-        let keyModel = Key(.Character)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 1, page: 0)
-    }
-    
-    for key in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
-        let keyModel = Key(.Character)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 2, page: 0)
-    }
-    
-    let keyModel = Key(.Shift)
-    defaultKeyboard.addKey(keyModel, row: 3, page: 0)
-    
-    for key in ["Z", "X", "C", "V", "B", "N", "M"] {
-        let keyModel = Key(.Character)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 3, page: 0)
-    }
-    
-    let backspace = Key(.Backspace)
-    defaultKeyboard.addKey(backspace, row: 3, page: 0)
-    
-    let keyModeChangeNumbers = Key(.ModeChange)
-    keyModeChangeNumbers.uppercaseKeyCap = "123"
-    keyModeChangeNumbers.toMode = 1
-    defaultKeyboard.addKey(keyModeChangeNumbers, row: 4, page: 0)
-    
-    let keyboardChange = Key(.KeyboardChange)
-    defaultKeyboard.addKey(keyboardChange, row: 4, page: 0)
-    
-    let settings = Key(.Settings)
-    defaultKeyboard.addKey(settings, row: 4, page: 0)
-    
-    let space = Key(.Space)
-    space.uppercaseKeyCap = "space"
-    space.uppercaseOutput = " "
-    space.lowercaseOutput = " "
-    defaultKeyboard.addKey(space, row: 4, page: 0)
-    
-    let returnKey = Key(.Return)
-    returnKey.uppercaseKeyCap = "return"
-    returnKey.uppercaseOutput = "\n"
-    returnKey.lowercaseOutput = "\n"
-    defaultKeyboard.addKey(returnKey, row: 4, page: 0)
-    
-    for key in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 0, page: 1)
-    }
-    
-    for key in ["-", "/", ":", ";", "(", ")", "$", "&", "@", "\""] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 1, page: 1)
-    }
-    
-    let keyModeChangeSpecialCharacters = Key(.ModeChange)
-    keyModeChangeSpecialCharacters.uppercaseKeyCap = "#+="
-    keyModeChangeSpecialCharacters.toMode = 2
-    defaultKeyboard.addKey(keyModeChangeSpecialCharacters, row: 2, page: 1)
-    
-    for key in [".", ",", "?", "!", "'"] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 2, page: 1)
-    }
-    
-    defaultKeyboard.addKey(Key(backspace), row: 2, page: 1)
-    
-    let keyModeChangeLetters = Key(.ModeChange)
-    keyModeChangeLetters.uppercaseKeyCap = "ABC"
-    keyModeChangeLetters.toMode = 0
-    defaultKeyboard.addKey(keyModeChangeLetters, row: 3, page: 1)
-    
-    defaultKeyboard.addKey(Key(keyboardChange), row: 3, page: 1)
-    
-    defaultKeyboard.addKey(Key(settings), row: 3, page: 1)
-    
-    defaultKeyboard.addKey(Key(space), row: 3, page: 1)
-    
-    defaultKeyboard.addKey(Key(returnKey), row: 3, page: 1)
-    
-    for key in ["[", "]", "{", "}", "#", "%", "^", "*", "+", "="] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 0, page: 2)
-    }
-    
-    for key in ["_", "\\", "|", "~", "<", ">", "€", "£", "¥", "•"] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 1, page: 2)
-    }
-    
-    defaultKeyboard.addKey(Key(keyModeChangeNumbers), row: 2, page: 2)
-    
-    for key in [".", ",", "?", "!", "'"] {
-        let keyModel = Key(.SpecialCharacter)
-        keyModel.setLetter(key)
-        defaultKeyboard.addKey(keyModel, row: 2, page: 2)
-    }
-    
-    defaultKeyboard.addKey(Key(backspace), row: 2, page: 2)
-    
-    defaultKeyboard.addKey(Key(keyModeChangeLetters), row: 3, page: 2)
-    
-    defaultKeyboard.addKey(Key(keyboardChange), row: 3, page: 2)
-    
-    defaultKeyboard.addKey(Key(settings), row: 3, page: 2)
-    
-    defaultKeyboard.addKey(Key(space), row: 3, page: 2)
-    
-    defaultKeyboard.addKey(Key(returnKey), row: 3, page: 2)
     
     return defaultKeyboard
+}
+
+/* Given a value of a key, returns a Key object of the correct type.
+ */
+private func makeKey(let value: String, let special: Bool) -> Key {
+    let keyType = Key.KeyType(rawValue: value)
+    if keyType == nil {
+        // This is not a special key (i.e. it types a character)
+        let key: Key
+        if !special {
+            key = Key(.Character)
+        } else {
+            key = Key(.SpecialCharacter)
+        }
+        key.setLetter(value)
+        return key
+    }
+    switch keyType! {
+    case .LetterChange:
+        let key = Key(.LetterChange)
+        key.uppercaseKeyCap = NSLocalizedString("alphabet_change", comment: "The label of the button to switch to letters.")
+        key.toMode = 0
+        return key
+    case .NumberChange:
+       let key = Key(.NumberChange)
+       key.uppercaseKeyCap = NSLocalizedString("number_change", comment: "The label of the button to switch to numbers and symbols.")
+       key.toMode = 1
+       return key;
+    case .SpecialCharacterChange:
+        let key = Key(.SpecialCharacterChange)
+        key.uppercaseKeyCap = NSLocalizedString("symbol_change", comment: "The label of the button to switch to extra symbols.")
+        key.toMode = 2
+        return key
+    case .Space:
+        let key = Key(.Space)
+        key.uppercaseKeyCap = NSLocalizedString("space", comment: "The label of the space button.")
+        key.uppercaseOutput = " "
+        key.lowercaseOutput = " "
+        return key
+    case .Return:
+        let key = Key(.Return)
+        key.uppercaseKeyCap = NSLocalizedString("return", comment: "The label of the return button")
+        key.uppercaseOutput = "\n"
+        key.lowercaseOutput = "\n"
+        return key
+    default:
+        return Key(keyType!)
+    }
 }

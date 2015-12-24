@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  SnapBoard -- Multi-line Text for Snapchat
+
+  Created by Grant Magdanz on 12/22/15.
+  Copyright © 2015 Apple. All rights reserved.
+*/
+
+page0_row0 = "ض ص ث ق ف غ ع ه خ ح ج";
+page0_row1 = "ش س ي ب ل ا ت ن م ك ة";
+page0_row2 = "ء ظ ط ذ د ز ر و ى Backspace";
+page0_row3 = "123 KeyboardChange Settings Space Return";
+
+page1_row0 = "١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ٠";
+page1_row1 = "@ & $ ( ) ؛ : / - \"";
+page1_row2 = "#+= . ، ؟ ! ' Backspace";
+page1_row3 = "ABC KeyboardChange Settings Space Return";
+
+page2_row0 = "[ ] { } # ٪‏ ^ * + =";
+page2_row1 = "_ \\ | ~ < > € £ ¥ •";
+page2_row2 = "#+= ' ! ? , . Backspace";
+page2_row3 = "ABC KeyboardChange Settings Space Return";
+
+number_change = "١٢٣";
+symbol_change = "#+=";
+alphabet_change = "ابج";
+return = "↳";
