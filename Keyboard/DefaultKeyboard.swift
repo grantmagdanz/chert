@@ -30,7 +30,7 @@ func defaultKeyboard() -> Keyboard {
                     keyModel = makeKey(charactersForKey[0], special: true)
                 }
                 
-                keyModel.extraCharacters = Array(charactersForKey[1..<charactersForKey.count])
+                keyModel.extraCharacters = charactersForKey
                 defaultKeyboard.addKey(keyModel, row: rowNum, page: pageNum)
             }
         }

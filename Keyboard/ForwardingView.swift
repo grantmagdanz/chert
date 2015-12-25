@@ -447,9 +447,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 			return false
 		}
 		
-		let alphaBets = NSCharacterSet(charactersInString: LONGHOlD_POPUP_CHARACTERS)
-		
-		if text.rangeOfCharacterFromSet(alphaBets).location != NSNotFound
+		if LONGHOlD_POPUP_CHARACTERS.lowercaseString.rangeOfString(text.lowercaseString) != nil
 		{
 			if self.currentMode == 0
 			{

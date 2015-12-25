@@ -111,10 +111,8 @@
 		00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButtonView.m; path = CYRKeyboardButton/CYRKeyboardButtonView.m; sourceTree = "<group>"; };
 		00D05C691C2C8246005D5444 /* TurtleBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleBezierPath.h; path = CYRKeyboardButton/TurtleBezierPath.h; sourceTree = "<group>"; };
 		00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = CYRKeyboardButton/TurtleBezierPath.m; sourceTree = "<group>"; };
+		00D05C6F1C2CDFD9005D5444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00EFFCBE1C29E651000BC823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HostingApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		00EFFCC01C29E662000BC823 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = HostingApp/ar.lproj/Main.strings; sourceTree = "<group>"; };
-		00EFFCC41C29EC73000BC823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		00EFFCC61C29EC8F000BC823 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		4E52A6D11A06A61F006A08CE /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		4E52A6D31A06A626006A08CE /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
@@ -444,7 +442,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ar,
 			);
 			mainGroup = 4E807D8A19461D9000D875D1;
 			productRefGroup = 4E807D9419461D9000D875D1 /* Products */;
@@ -564,7 +561,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				00EFFCBE1C29E651000BC823 /* Base */,
-				00EFFCC01C29E662000BC823 /* ar */,
 			);
 			name = Main.storyboard;
 			path = ..;
@@ -573,8 +569,7 @@
 		00EFFCC51C29EC73000BC823 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				00EFFCC41C29EC73000BC823 /* en */,
-				00EFFCC61C29EC8F000BC823 /* ar */,
+				00D05C6F1C2CDFD9005D5444 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

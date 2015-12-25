@@ -110,11 +110,12 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        // set setting defaults
         NSUserDefaults.standardUserDefaults().registerDefaults([
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
-            kSmallLowercase: false
+            kSmallLowercase: true
         ])
         
         self.keyboard = defaultKeyboard()
@@ -318,7 +319,7 @@ class KeyboardViewController: UIInputViewController {
                 }
                 else
                 {
-                    proxy.insertText(title)
+                    proxy.insertText(title.lowercaseString)
                 }
                 
             }
@@ -899,11 +900,16 @@ class KeyboardViewController: UIInputViewController {
             if let key = self.layout?.keyForView(sender) {
                 var arrOptions: [String] = []
                 if (key.type == Key.KeyType.Character) {
-                    if self.shiftState == .Enabled || self.shiftState == .Locked {
-                        // convert to uppercase
+                    if self.shiftState == .Locked {
+                        // convert all letters to uppercase
                         arrOptions = key.extraCharacters.map(
                             { (letter: String) -> String in
-                                    return (letter as NSString).uppercaseString})
+                                return (letter as NSString).uppercaseString})
+                    } else if self.shiftState == .Enabled || !NSUserDefaults.standardUserDefaults().boolForKey(kSmallLowercase) {
+                        // capitalize the String
+                        arrOptions = key.extraCharacters.map(
+                            { (letter: String) -> String in
+                                return (letter as NSString).capitalizedString})
                     } else {
                         // convert to lowercase
                         arrOptions = key.extraCharacters.map(

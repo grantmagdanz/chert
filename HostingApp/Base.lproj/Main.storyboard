@@ -30,7 +30,7 @@
         <!--Install-->
         <scene sceneID="fbE-cB-Iyw">
             <objects>
-                <viewController storyboardIdentifier="install" id="nAo-DR-8Pl" customClass="InstallViewController" customModule="SnapBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="install" id="nAo-DR-8Pl" customClass="InstallViewController" customModule="InupiaqKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bpu-v8-xYb"/>
                         <viewControllerLayoutGuide type="bottom" id="P06-La-EKF"/>
@@ -105,7 +105,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost" translatesAutoresizingMaskIntoConstraints="NO" id="g65-23-QtN">
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ghost" translatesAutoresizingMaskIntoConstraints="NO" id="g65-23-QtN">
                                 <rect key="frame" x="19" y="86" width="282" height="324"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install SnapBoard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-tr-Upj">
@@ -119,7 +119,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thanks for using SnapBoard!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWn-SV-MH0">
                                         <rect key="frame" x="34" y="21" width="220.5" height="20.5"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -221,7 +220,7 @@
         <!--About-->
         <scene sceneID="zbW-4T-LyN">
             <objects>
-                <viewController id="P2V-3o-u2x" userLabel="About" customClass="AboutViewController" customModule="SnapBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P2V-3o-u2x" userLabel="About" customClass="AboutViewController" customModule="InupiaqKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FO-Gp-Gvb"/>
                         <viewControllerLayoutGuide type="bottom" id="lyu-lG-Zbb"/>
@@ -412,7 +411,7 @@ Cg
         <!--How To-->
         <scene sceneID="oxt-Yw-9NP">
             <objects>
-                <viewController id="zqU-zp-bVd" userLabel="How To" customClass="HowToViewController" customModule="SnapBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zqU-zp-bVd" userLabel="How To" customClass="HowToViewController" customModule="InupiaqKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aVw-9W-0w2"/>
                         <viewControllerLayoutGuide type="bottom" id="b4Q-E6-79e"/>
@@ -457,6 +456,7 @@ Cg
         <image name="AboutIcon" width="50" height="50"/>
         <image name="HowToIcon" width="50" height="50"/>
         <image name="InstallIcon" width="50" height="50"/>
+        <image name="ghost" width="16" height="16"/>
         <image name="iphone6s" width="857" height="1500"/>
     </resources>
 </document>

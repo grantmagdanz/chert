@@ -294,7 +294,6 @@
 
 - (void)drawExpandedInputViewOptions
 {
-	
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetShadowWithColor(context, CGSizeZero, 0, [[UIColor clearColor] CGColor]);
     CGContextSaveGState(context);
@@ -306,7 +305,16 @@
 		
 		UIFont *fontt ;
 		
-		if (optionString.length > 1)
+        /*
+          I (Grant) commented this code out and replaced it with the line 'fontt = self.button.inputOptionsFont;' because it was causing longer characters, such as the ones used in Inupiaq, where a single character is made up of multiple unicode characters to be off centered and a different font.
+         
+         My guess is that this code is here because of pressing and holding the period key to get .com, .org, .edu etc. I am not positive about that though.
+         
+         If there is a bug in the display of additional character options, this is probably a good place to look!
+         
+         
+         
+		if (false)
 		{
 			if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 			{
@@ -347,7 +355,9 @@
 		else
 		{
 			fontt = self.button.inputOptionsFont;
-		}
+		}*/
+        
+        fontt = self.button.inputOptionsFont;
 		
 		
         BOOL selected = (idx == self.selectedInputIndex);
