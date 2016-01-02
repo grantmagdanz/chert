@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */; };
-		0000C4931BC9D9AC0097A1F9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */; };
-		00548B1C1BCC6C020049FB81 /* tutorial.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 00548B1B1BCC6C020049FB81 /* tutorial.mp4 */; };
+		0000C4931BC9D9AC0097A1F9 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */; };
+		0022CE5A1C3638A800CD7541 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0022CE591C3638A800CD7541 /* background.png */; };
 		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
 		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
 		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
@@ -102,8 +102,8 @@
 
 /* Begin PBXFileReference section */
 		0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
-		00548B1B1BCC6C020049FB81 /* tutorial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tutorial.mp4; sourceTree = "<group>"; };
+		0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		0022CE591C3638A800CD7541 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		00D05C641C2C8245005D5444 /* Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		00D05C651C2C8246005D5444 /* CYRKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButton.h; path = CYRKeyboardButton/CYRKeyboardButton.h; sourceTree = "<group>"; };
 		00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButton.m; path = CYRKeyboardButton/CYRKeyboardButton.m; sourceTree = "<group>"; };
@@ -206,7 +206,6 @@
 				4E5B67A1196E03B700114361 /* KeyboardModel.swift */,
 				4ECBD90119F16DC7004FA2A3 /* DefaultKeyboard.swift */,
 				4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */,
-				00EFFCC51C29EC73000BC823 /* Localizable.strings */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -275,7 +274,7 @@
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
 				4EF16F9519D255030076AFCB /* InstallViewController.swift */,
 				0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */,
-				0000C4921BC9D9AC0097A1F9 /* HowToViewController.swift */,
+				0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */,
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
 				4E807D9619461D9000D875D1 /* Supporting Files */,
 			);
@@ -285,7 +284,7 @@
 		4E807D9619461D9000D875D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				00548B1B1BCC6C020049FB81 /* tutorial.mp4 */,
+				0022CE591C3638A800CD7541 /* background.png */,
 				4EF16F9219D254EA0076AFCB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -310,6 +309,7 @@
 		4E807DBB19461DC700D875D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00EFFCC51C29EC73000BC823 /* Localizable.strings */,
 				4E807DBC19461DC700D875D1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -461,8 +461,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */,
+				0022CE5A1C3638A800CD7541 /* background.png in Resources */,
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
-				00548B1C1BCC6C020049FB81 /* tutorial.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0000C4931BC9D9AC0097A1F9 /* HowToViewController.swift in Sources */,
+				0000C4931BC9D9AC0097A1F9 /* InstructionsViewController.swift in Sources */,
 				0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */,
 				4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */,
 				4EF16F9819D255030076AFCB /* InstallViewController.swift in Sources */,
@@ -662,6 +662,7 @@
 		4E807DB019461D9000D875D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -675,6 +676,7 @@
 		4E807DB119461D9000D875D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;

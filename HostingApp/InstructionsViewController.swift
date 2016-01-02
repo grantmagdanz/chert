@@ -1,15 +1,14 @@
 //
-//  AboutViewController.swift
+//  HowToViewController.swift
 //  InupiaqKeyboard
 //
 //  Created by Grant Magdanz on 10/10/15.
-//  Copyright (c) 2015 Apple. All rights reserved.
+//  Copyright © 2015 Apple. All rights reserved.
 //
 
 import UIKit
 
-class AboutViewController: UIViewController {
-    
+class InstructionsViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidAppear(animated: Bool) {
@@ -43,4 +42,3 @@ class AboutViewController: UIViewController {
     // intentionally empty
     }*/
 }
-

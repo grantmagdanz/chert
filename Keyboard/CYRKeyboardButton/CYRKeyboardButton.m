@@ -301,6 +301,7 @@ NSString *const CYRKeyboardButtonKeyPressedKey = @"CYRKeyboardButtonKeyPressedKe
 
 - (void)insertText:(NSString *)text
 {
+    return;
     BOOL shouldInsertText = YES;
     
     if ([self.textInput isKindOfClass:[UITextView class]]) {

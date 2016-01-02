@@ -1,6 +1,6 @@
 //
 //  InstallViewController.swift
-//  SnapBoard
+//  InupiaqKeyboard
 //
 //  Created by Alexei Baboulevitch on 6/9/14.
 //  Updated by Grant Magdanz on 9/24/15.
@@ -32,6 +32,7 @@ class InstallViewController: UIViewController {
             }
         }
     }
+    
     
     /* func keyboardWillShow() {
         // intentionally empty

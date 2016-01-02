@@ -328,10 +328,6 @@ class KeyboardViewController: UIInputViewController {
             
         }
         
-        if self.forwardingView.isLongPressEnable == false
-        {
-            self.view.bringSubviewToFront(self.bannerView!)
-        }
         viewLongPopUp.hidden = true
         
     }

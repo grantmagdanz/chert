@@ -1,6 +1,6 @@
 //
 //  Banner.swift
-//  SnapBoard
+//  InupiaqKeyboard
 //
 //  Created by Grant Magdanz on 9/24/15.
 //  Copyright (c) 2015 Apple. All rights reserved.
@@ -11,6 +11,7 @@ import UIKit
 class Banner: ExtraView {
     var icon: UIImage = UIImage(named: "banner")!
     var iconView: UIImageView
+    var textView = UILabel(frame: CGRectMake(0, 0, 120, 40))
     
     required init(globalColors: GlobalColors.Type?, darkMode: Bool, solidColorMode: Bool) {
         iconView = UIImageView(image: icon)
@@ -19,13 +20,13 @@ class Banner: ExtraView {
         iconView.layer.cornerRadius = 6
         iconView.clipsToBounds = true
         
-        // add shadow to make button look pressed
-        iconView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        iconView.layer.shadowOpacity = 1
-        iconView.layer.shadowRadius = 5
+        textView.text = "  Iñupiaraaġiñ!"
+        textView.alpha = 0.3
+        textView.font = UIFont.italicSystemFontOfSize(16.0)
         
         super.init(globalColors: globalColors, darkMode: darkMode, solidColorMode: solidColorMode)
         self.addSubview(iconView)
+        self.addSubview(textView)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -38,7 +39,6 @@ class Banner: ExtraView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(self.frame.height)
         self.iconView.center = self.center
         // TODO: hardcoded
         self.iconView.frame.origin = CGPointMake(self.iconView.frame.origin.x, 5)

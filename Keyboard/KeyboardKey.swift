@@ -105,6 +105,9 @@ class KeyboardKey: UIControl {
     var popup: KeyboardKeyBackground?
     var connector: KeyboardConnector?
     
+    // the little circle that appears in the upper right of a key that can be pressed and held to get extra characters
+    var longPressCircle: CAShapeLayer?
+    
     var displayView: ShapeView
     var borderView: ShapeView?
     var underView: ShapeView?
@@ -140,7 +143,6 @@ class KeyboardKey: UIControl {
         self.popupDirection = nil
         
         super.init(frame: CGRectZero)
-        
         self.addSubview(self.shadowView)
         self.shadowView.layer.addSublayer(self.shadowLayer)
         
@@ -271,7 +273,7 @@ class KeyboardKey: UIControl {
         
         CATransaction.begin()
         CATransaction.setDisableActions(true)
-        
+
         if self.popup != nil {
             self.shadowLayer.shadowPath = shadowPath.CGPath
         }
@@ -279,11 +281,11 @@ class KeyboardKey: UIControl {
         self.underView?.curve = underPath
         self.displayView.curve = testPath
         self.borderView?.curve = edgePath
-        
+
         if let borderLayer = self.borderView?.layer as? CAShapeLayer {
             borderLayer.strokeColor = UIColor.greenColor().CGColor
         }
-        
+
         CATransaction.commit()
     }
     
