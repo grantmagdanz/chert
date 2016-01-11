@@ -13,7 +13,7 @@
  Page 2 is the page with more special characters and no numbers
 */
 page0_row0 = "Q W E R T Y U I O P";
-page0_row1 = "A S,Sr,Ṣ D F G,Ġ H J K,Ḳ L,Ł̣,Ḷ,Ł";
+page0_row1 = "A S,Sr,Ṣ D F G,Ġ H J K,Ḳ L,Ł̣,Ł,Ḷ";
 page0_row2 = "Shift Z X C,Ch V B N,Ŋ,Ñ M Backspace";
 page0_row3 = "123 KeyboardChange Settings Space Return";
 
