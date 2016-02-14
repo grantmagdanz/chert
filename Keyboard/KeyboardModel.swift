@@ -29,9 +29,11 @@ enum ShiftState {
 
 class Keyboard {
     var pages: [Page]
+    private var longHoldKeys: Set<String>
     
     init() {
         self.pages = []
+        self.longHoldKeys = Set<String>()
     }
     
     func addKey(key: Key, row: Int, page: Int) {
@@ -41,7 +43,14 @@ class Keyboard {
             }
         }
         
+        if key.isLongHold {
+            self.longHoldKeys.insert(key.outputForCase(false))
+        }
         self.pages[page].addKey(key, row: row)
+    }
+    
+    func getLongHoldKeys() -> Set<String> {
+        return self.longHoldKeys
     }
 }
 
@@ -126,6 +135,10 @@ class Key: Hashable {
                 return false
             }
         }
+    }
+    
+    var isLongHold: Bool {
+        return self.extraCharacters.count > 1
     }
     
     var hasOutput: Bool {

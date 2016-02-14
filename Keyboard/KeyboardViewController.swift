@@ -25,12 +25,6 @@ let metrics: [String:Double] = [
 ]
 func metric(name: String) -> CGFloat { return CGFloat(metrics[name]!) }
 
-// TODO: move this somewhere else and localize
-let kAutoCapitalization = "kAutoCapitalization"
-let kPeriodShortcut = "kPeriodShortcut"
-let kKeyboardClicks = "kKeyboardClicks"
-let kSmallLowercase = "kSmallLowercase"
-
 class KeyboardViewController: UIInputViewController {
     
     let backspaceDelay: NSTimeInterval = 0.5
@@ -148,6 +142,7 @@ class KeyboardViewController: UIInputViewController {
     
     func defaultsChanged(notification: NSNotification) {
         self.updateKeyCaps(self.shiftState.uppercase())
+        // self.keyboard = buildKeyboard()
     }
     
     // without this here kludge, the height constraint for the keyboard does not work for some reason
@@ -886,6 +881,8 @@ class KeyboardViewController: UIInputViewController {
         button.setupInputOptionsConfigurationWithView(forwardingView)
         button.hidden = true
         viewLongPopUp.hidden = true
+        
+        forwardingView.setLongHoldKeys(keyboard.getLongHoldKeys())
     }
     
     // called when a key that is allowed to have multiple characters is pressed and held

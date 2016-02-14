@@ -38,6 +38,3 @@ alphabet_change = "ABC";
 
 // the label of the button to switch to extra symbols
 symbol_change = "#+=";
-
-// hese are the keys that have extra options when pressed and held
-press_and_hold_keys = "LSCGNK";
