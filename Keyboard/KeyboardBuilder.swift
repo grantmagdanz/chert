@@ -9,6 +9,19 @@
 
 import Foundation
 
+func buildKeyboard() -> Keyboard {
+    let keyboard = defaultKeyboard()
+    
+    var myDict: NSDictionary?
+    if let path = NSBundle.mainBundle().pathForResource("Test", ofType: "plist") {
+        myDict = NSDictionary(contentsOfFile: path)
+    }
+    if let dict = myDict {
+        print(dict["C"])
+    }
+    return keyboard
+}
+
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
     
