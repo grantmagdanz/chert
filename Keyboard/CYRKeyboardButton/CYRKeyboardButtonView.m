@@ -502,15 +502,21 @@
 				[path rightArc:majorRadius turn:90]; // #1
 				[path forward:upperWidth - 2 * majorRadius]; // #2 top
 				[path rightArc:majorRadius turn:90]; // #3
+                
 				[path forward:CGRectGetHeight(keyRect) - 2 * majorRadius + insets.top + insets.bottom]; // #4 right big
+                
 				[path rightArc:majorRadius turn:48]; // #5
 				[path forward:8.5f];
 				[path leftArc:majorRadius turn:48]; // #6
+                
 				[path forward:CGRectGetHeight(keyRect) - 8.5f + 1];
+                
 				[path rightArc:minorRadius turn:90];
 				[path forward:lowerWidth - 2 * minorRadius]; //  lowerWidth - 2 * minorRadius + 0.5f
 				[path rightArc:minorRadius turn:90];
+                
 				[path forward:CGRectGetHeight(keyRect) - 2 * minorRadius];
+                
 				[path leftArc:majorRadius turn:48];
 				[path forward:8.5f];
 				[path rightArc:majorRadius turn:48];
@@ -677,6 +683,9 @@
     CGFloat majorRadius = 10.f;
     CGFloat minorRadius = 4.f;
     
+    // This is the offset for buttons in the top row. It changes dynamically with how many letters there are.
+    CGFloat widthOffset = 2.5 * [self.button.inputOptions count];
+    
     TurtleBezierPath *path = [TurtleBezierPath new];
     [path home];
     path.lineWidth = 0;
@@ -694,7 +703,7 @@
 					if ([self.button.input rangeOfCharacterFromSet:firstRowChar].location == NSNotFound)
 					{
 						[path rightArc:majorRadius turn:90]; // #1
-						[path forward:(upperWidth - 2 * majorRadius) - 28]; // #2 top
+						[path forward:(upperWidth - 2 * majorRadius) - widthOffset]; // #2 top
 						[path rightArc:majorRadius turn:90]; // #3
 						
 						[path forward:(CGRectGetHeight(keyRect) - 2 * majorRadius + insets.top + insets.bottom - 3) - 5]; // #4 right big
@@ -784,7 +793,7 @@
 					if ([self.button.input rangeOfCharacterFromSet:firstRowChar].location == NSNotFound)
 					{
 						[path rightArc:majorRadius turn:90]; // #1
-						[path forward:(upperWidth - 2 * majorRadius) - 20]; // #2 top
+						[path forward:(upperWidth - 2 * majorRadius) - widthOffset]; // #2 top
 						[path rightArc:majorRadius turn:90]; // #3
 						
 						[path forward:(CGRectGetHeight(keyRect) - 2 * majorRadius + insets.top + insets.bottom - 3) - 5]; // #4 right big
