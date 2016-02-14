@@ -112,7 +112,7 @@ class KeyboardViewController: UIInputViewController {
             kSmallLowercase: true
         ])
         
-        self.keyboard = defaultKeyboard()
+        self.keyboard = buildKeyboard()
         
         self.shiftState = .Disabled
         self.currentMode = 0
@@ -141,8 +141,8 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func defaultsChanged(notification: NSNotification) {
+        self.updateKeyboard()
         self.updateKeyCaps(self.shiftState.uppercase())
-        // self.keyboard = buildKeyboard()
     }
     
     // without this here kludge, the height constraint for the keyboard does not work for some reason
@@ -690,6 +690,17 @@ class KeyboardViewController: UIInputViewController {
         self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
     }
     
+    func updateKeyboard() {
+        self.keyboard = buildKeyboard()
+        self.layout!.model = self.keyboard
+        self.forwardingView.setLongHoldKeys(self.keyboard.getLongHoldKeys())
+        
+        let uppercase = self.shiftState.uppercase()
+        let characterUppercase = (NSUserDefaults.standardUserDefaults().boolForKey(kSmallLowercase) ? uppercase : true)
+        self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+        self.setupKeys()
+    }
+    
     func modeChangeTapped(sender: KeyboardKey) {
         if let toMode = self.layout?.viewToModel[sender]?.toMode {
             self.currentMode = toMode
@@ -911,8 +922,7 @@ class KeyboardViewController: UIInputViewController {
                     }
                 }
                 
-                
-                if arrOptions.count > 0 {
+                if arrOptions.count > 1 { // this test isn't really necessary as the fowarding view is filtering letters
                     if arrOptions[0].characters.count > 0 {
                         var offsetY : CGFloat = 9
                         

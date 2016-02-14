@@ -29,11 +29,9 @@ enum ShiftState {
 
 class Keyboard {
     var pages: [Page]
-    private var longHoldKeys: Set<String>
     
     init() {
         self.pages = []
-        self.longHoldKeys = Set<String>()
     }
     
     func addKey(key: Key, row: Int, page: Int) {
@@ -43,14 +41,34 @@ class Keyboard {
             }
         }
         
-        if key.isLongHold {
-            self.longHoldKeys.insert(key.outputForCase(false))
-        }
         self.pages[page].addKey(key, row: row)
     }
     
+    func getKey(outputForKey: String) -> Key? {
+        for page in self.pages {
+            for row in page.rows {
+                for key in row {
+                    if key.outputForCase(false) == outputForKey.lowercaseString {
+                        return key
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
     func getLongHoldKeys() -> Set<String> {
-        return self.longHoldKeys
+        var keys = Set<String>()
+        for page in self.pages {
+            for row in page.rows {
+                for key in row {
+                    if key.isLongHold() {
+                        keys.insert(key.outputForCase(false))
+                    }
+                }
+            }
+        }
+        return keys
     }
 }
 
@@ -137,10 +155,6 @@ class Key: Hashable {
         }
     }
     
-    var isLongHold: Bool {
-        return self.extraCharacters.count > 1
-    }
-    
     var hasOutput: Bool {
         get {
             return (self.uppercaseOutput != nil) || (self.lowercaseOutput != nil)
@@ -167,9 +181,21 @@ class Key: Hashable {
     }
     
     func setExtraLetters(letters: [String]) {
+        self.extraCharacters = []
+        self.uppercaseExtraCharacters = []
         for letter in letters {
             self.extraCharacters.append((letter as NSString).lowercaseString)
             self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+        }
+    }
+    
+    // appends extra letters to key, doesn't include duplicates
+    func appendExtraLetters(letters: [String]) {
+        for letter in letters {
+            if (!self.extraCharacters.contains(letter.lowercaseString)) {
+                self.extraCharacters.append((letter as NSString).lowercaseString)
+                self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+            }
         }
     }
     
@@ -178,6 +204,10 @@ class Key: Hashable {
         self.uppercaseOutput = (letter as NSString).uppercaseString
         self.lowercaseKeyCap = self.lowercaseOutput
         self.uppercaseKeyCap = self.uppercaseOutput
+    }
+    
+    func isLongHold() -> Bool {
+        return self.extraCharacters.count > 1
     }
     
     func outputForCase(uppercase: Bool) -> String {

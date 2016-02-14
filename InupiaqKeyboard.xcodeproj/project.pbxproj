@@ -10,11 +10,15 @@
 		0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */; };
 		0000C4931BC9D9AC0097A1F9 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */; };
 		0022CE5A1C3638A800CD7541 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0022CE591C3638A800CD7541 /* background.png */; };
+		00B860AF1C71043900C8A47A /* Haida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860AE1C71043900C8A47A /* Haida.plist */; };
+		00B860B11C71424600C8A47A /* Tlingit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B01C71424600C8A47A /* Tlingit.plist */; };
+		00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B21C71437200C8A47A /* Dena'ina.plist */; };
 		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
 		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
 		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
 		00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCBD1C29E651000BC823 /* Main.storyboard */; };
 		00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCC51C29EC73000BC823 /* Localizable.strings */; };
+		00FC83D11C70712900FB2883 /* Inupiaq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00FC83D01C70712900FB2883 /* Inupiaq.plist */; };
 		4E00A6E5197183EE009414F2 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E807DC81946209600D875D1 /* KeyboardKey.swift */; };
 		4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */; };
 		4E52A6D21A06A61F006A08CE /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52A6D11A06A61F006A08CE /* ImageKey.swift */; };
@@ -35,7 +39,7 @@
 		4EC2A46D19DF811E00F789E1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A46919DF811E00F789E1 /* KeyboardViewController.swift */; };
 		4EC2A46E19DF811E00F789E1 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A46A19DF811E00F789E1 /* KeyboardLayout.swift */; };
 		4EC2A47019DF811E00F789E1 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A46C19DF811E00F789E1 /* ForwardingView.swift */; };
-		4ECBD90219F16DC7004FA2A3 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBD90119F16DC7004FA2A3 /* DefaultKeyboard.swift */; };
+		4ECBD90219F16DC7004FA2A3 /* KeyboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBD90119F16DC7004FA2A3 /* KeyboardBuilder.swift */; };
 		4EE7599B19F75A0D00B4E6ED /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7599A19F75A0D00B4E6ED /* Utilities.swift */; };
 		4EEFD78919E0DC6B004D4974 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFD78819E0DC6B004D4974 /* Banner.swift */; };
 		4EEFD78B19E0DF15004D4974 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFD78A19E0DF15004D4974 /* Shapes.swift */; };
@@ -104,6 +108,9 @@
 		0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		0022CE591C3638A800CD7541 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		00B860AE1C71043900C8A47A /* Haida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Haida.plist; sourceTree = "<group>"; };
+		00B860B01C71424600C8A47A /* Tlingit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tlingit.plist; sourceTree = "<group>"; };
+		00B860B21C71437200C8A47A /* Dena'ina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Dena'ina.plist"; sourceTree = "<group>"; };
 		00D05C641C2C8245005D5444 /* Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		00D05C651C2C8246005D5444 /* CYRKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButton.h; path = CYRKeyboardButton/CYRKeyboardButton.h; sourceTree = "<group>"; };
 		00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButton.m; path = CYRKeyboardButton/CYRKeyboardButton.m; sourceTree = "<group>"; };
@@ -113,6 +120,7 @@
 		00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = CYRKeyboardButton/TurtleBezierPath.m; sourceTree = "<group>"; };
 		00D05C6F1C2CDFD9005D5444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00EFFCBE1C29E651000BC823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HostingApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00FC83D01C70712900FB2883 /* Inupiaq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Inupiaq.plist; sourceTree = "<group>"; };
 		4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		4E52A6D11A06A61F006A08CE /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		4E52A6D31A06A626006A08CE /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
@@ -135,7 +143,7 @@
 		4EC2A46919DF811E00F789E1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		4EC2A46A19DF811E00F789E1 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		4EC2A46C19DF811E00F789E1 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
-		4ECBD90119F16DC7004FA2A3 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
+		4ECBD90119F16DC7004FA2A3 /* KeyboardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBuilder.swift; sourceTree = "<group>"; };
 		4EE7599A19F75A0D00B4E6ED /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4EEFD78819E0DC6B004D4974 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		4EEFD78A19E0DF15004D4974 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
@@ -204,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5B67A1196E03B700114361 /* KeyboardModel.swift */,
-				4ECBD90119F16DC7004FA2A3 /* DefaultKeyboard.swift */,
+				4ECBD90119F16DC7004FA2A3 /* KeyboardBuilder.swift */,
 				4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */,
 			);
 			name = Model;
@@ -311,6 +319,10 @@
 			children = (
 				00EFFCC51C29EC73000BC823 /* Localizable.strings */,
 				4E807DBC19461DC700D875D1 /* Info.plist */,
+				00FC83D01C70712900FB2883 /* Inupiaq.plist */,
+				00B860AE1C71043900C8A47A /* Haida.plist */,
+				00B860B01C71424600C8A47A /* Tlingit.plist */,
+				00B860B21C71437200C8A47A /* Dena'ina.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -472,7 +484,11 @@
 			files = (
 				4E52A6DA1A06C198006A08CE /* DefaultSettings.xib in Resources */,
 				00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */,
+				00FC83D11C70712900FB2883 /* Inupiaq.plist in Resources */,
+				00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */,
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
+				00B860B11C71424600C8A47A /* Tlingit.plist in Resources */,
+				00B860AF1C71043900C8A47A /* Haida.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +528,7 @@
 				4EEFD78919E0DC6B004D4974 /* Banner.swift in Sources */,
 				4EE7599B19F75A0D00B4E6ED /* Utilities.swift in Sources */,
 				4EEFD78B19E0DF15004D4974 /* Shapes.swift in Sources */,
-				4ECBD90219F16DC7004FA2A3 /* DefaultKeyboard.swift in Sources */,
+				4ECBD90219F16DC7004FA2A3 /* KeyboardBuilder.swift in Sources */,
 				4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */,
 				4E52A6D81A06C16C006A08CE /* DefaultSettings.swift in Sources */,
 				4E72C96819E04A7A00DFDDB0 /* InupiaqKeyboard.swift in Sources */,

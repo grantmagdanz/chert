@@ -11,14 +11,25 @@ import Foundation
 
 func buildKeyboard() -> Keyboard {
     let keyboard = defaultKeyboard()
+
+    let defaults = NSUserDefaults.standardUserDefaults()
+    for language in LANGUAGES {
+        if defaults.boolForKey(language) {
+            // the user has selected this language, let's add it in!
+            var keys: NSDictionary?
+            if let path = NSBundle.mainBundle().pathForResource(language, ofType: "plist") {
+                keys = NSDictionary(contentsOfFile: path)
+            }
+            if let keyBindings = keys {
+                for (char, extras) in keyBindings {
+                    if let key = keyboard.getKey(char as! String) {
+                        key.appendExtraLetters(extras as! [String])
+                    }
+                }
+            }
+        }
+    }
     
-    var myDict: NSDictionary?
-    if let path = NSBundle.mainBundle().pathForResource("Test", ofType: "plist") {
-        myDict = NSDictionary(contentsOfFile: path)
-    }
-    if let dict = myDict {
-        print(dict["C"])
-    }
     return keyboard
 }
 

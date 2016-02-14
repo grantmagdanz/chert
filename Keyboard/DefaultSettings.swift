@@ -8,6 +8,23 @@
 
 import UIKit
 
+// TODO: move this somewhere else and localize
+let kAutoCapitalization = "kAutoCapitalization"
+let kPeriodShortcut = "kPeriodShortcut"
+let kKeyboardClicks = "kKeyboardClicks"
+let kSmallLowercase = "kSmallLowercase"
+
+// TODO: move these somewhere better?
+// IMPORTANT: This is where the file names for each language get pulled from!
+
+// supported languages
+let kInupiaq = "Inupiaq"
+let kDenaina = "Dena'ina"
+let kHaida = "Haida"
+let kTlingit = "Tlingit"
+
+let LANGUAGES = [kInupiaq, kTlingit, kHaida, kDenaina]
+
 class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView?
@@ -28,7 +45,8 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
         get {
             return [
                 ("General Settings", [kAutoCapitalization, kPeriodShortcut, kKeyboardClicks]),
-                ("Extra Settings", [kSmallLowercase])
+                ("Extra Settings", [kSmallLowercase]),
+                ("Language Selection", LANGUAGES)
             ]
         }
     }
@@ -38,7 +56,11 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
                 kAutoCapitalization: "Auto-Capitalization",
                 kPeriodShortcut:  "“.” Shortcut",
                 kKeyboardClicks: "Keyboard Clicks",
-                kSmallLowercase: "Allow Lowercase Key Caps"
+                kSmallLowercase: "Allow Lowercase Key Caps",
+                kInupiaq: "Iñupiaq",
+                kTlingit: "Tlingit",
+                kHaida: "Haida",
+                kDenaina: "Dena'ina"
             ]
         }
     }
