@@ -109,7 +109,8 @@ class KeyboardViewController: UIInputViewController {
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
-            kSmallLowercase: true
+            kSmallLowercase: true,
+            kInupiaq: true
         ])
         
         self.keyboard = buildKeyboard()
@@ -691,6 +692,10 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func updateKeyboard() {
+        // this function is sometimes called at the very beginning of loading the keyboard when the layout is null. We don't want to crash, so we'll just get out.
+        if self.layout == nil {
+            return
+        }
         self.keyboard = buildKeyboard()
         self.layout!.model = self.keyboard
         self.forwardingView.setLongHoldKeys(self.keyboard.getLongHoldKeys())
