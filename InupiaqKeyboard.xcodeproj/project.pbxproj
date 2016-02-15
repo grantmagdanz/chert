@@ -13,6 +13,8 @@
 		00B860AF1C71043900C8A47A /* Haida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860AE1C71043900C8A47A /* Haida.plist */; };
 		00B860B11C71424600C8A47A /* Tlingit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B01C71424600C8A47A /* Tlingit.plist */; };
 		00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B21C71437200C8A47A /* Dena'ina.plist */; };
+		00B860B51C71572600C8A47A /* Unangan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B41C71572600C8A47A /* Unangan.plist */; };
+		00B860B71C71576B00C8A47A /* DegXinag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B61C71576B00C8A47A /* DegXinag.plist */; };
 		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
 		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
 		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
@@ -111,6 +113,8 @@
 		00B860AE1C71043900C8A47A /* Haida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Haida.plist; sourceTree = "<group>"; };
 		00B860B01C71424600C8A47A /* Tlingit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tlingit.plist; sourceTree = "<group>"; };
 		00B860B21C71437200C8A47A /* Dena'ina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Dena'ina.plist"; sourceTree = "<group>"; };
+		00B860B41C71572600C8A47A /* Unangan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Unangan.plist; sourceTree = "<group>"; };
+		00B860B61C71576B00C8A47A /* DegXinag.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DegXinag.plist; sourceTree = "<group>"; };
 		00D05C641C2C8245005D5444 /* Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		00D05C651C2C8246005D5444 /* CYRKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButton.h; path = CYRKeyboardButton/CYRKeyboardButton.h; sourceTree = "<group>"; };
 		00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButton.m; path = CYRKeyboardButton/CYRKeyboardButton.m; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				00B860AE1C71043900C8A47A /* Haida.plist */,
 				00B860B01C71424600C8A47A /* Tlingit.plist */,
 				00B860B21C71437200C8A47A /* Dena'ina.plist */,
+				00B860B41C71572600C8A47A /* Unangan.plist */,
+				00B860B61C71576B00C8A47A /* DegXinag.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -483,12 +489,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E52A6DA1A06C198006A08CE /* DefaultSettings.xib in Resources */,
+				00B860B71C71576B00C8A47A /* DegXinag.plist in Resources */,
 				00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */,
 				00FC83D11C70712900FB2883 /* Inupiaq.plist in Resources */,
 				00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */,
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
 				00B860B11C71424600C8A47A /* Tlingit.plist in Resources */,
 				00B860AF1C71043900C8A47A /* Haida.plist in Resources */,
+				00B860B51C71572600C8A47A /* Unangan.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +747,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -767,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
