@@ -15,15 +15,17 @@ let kKeyboardClicks = "kKeyboardClicks"
 let kSmallLowercase = "kSmallLowercase"
 
 // TODO: move these somewhere better?
-// IMPORTANT: This is where the file names for each language get pulled from!
 
+// IMPORTANT: This is where the file names for each language get pulled from!
 // supported languages
 let kInupiaq = "Inupiaq"
-let kDenaina = "Dena'ina"
-let kHaida = "Haida"
 let kTlingit = "Tlingit"
+let kHaida = "Haida"
+let kDenaina = "Dena'ina"
+let kUnangan = "Unangan"
+let kDegXinag = "DegXinag"
 
-let LANGUAGES = [kInupiaq, kTlingit, kHaida, kDenaina]
+let LANGUAGES = [kInupiaq, kTlingit, kHaida, kDenaina, kUnangan, kDegXinag]
 
 class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
@@ -60,7 +62,9 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
                 kInupiaq: "Iñupiaq",
                 kTlingit: "Tlingit",
                 kHaida: "Haida",
-                kDenaina: "Dena'ina"
+                kDenaina: "Dena'ina",
+                kUnangan: "Unangan",
+                kDegXinag: "Deg Xinag"
             ]
         }
     }
