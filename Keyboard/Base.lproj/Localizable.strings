@@ -11,11 +11,13 @@
  Page 0 is the main page with letters
  Page 1 is the page with special characters and numbers
  Page 2 is the page with more special characters and no numbers
+ 
+ NOTE: In some languages we want to have a key next to space and in some we don't. ___ (3 underscores) designates this spot. There is logic that replaces this key or removes it. Language plist files should use ___ as the parent key.
 */
 page0_row0 = "Q W E R T Y U I O P";
 page0_row1 = "A S D F G H J K L";
 page0_row2 = "Shift Z X C V B N M Backspace";
-page0_row3 = "123 KeyboardChange Settings Space Return";
+page0_row3 = "123 KeyboardChange Settings Space ___ Return";
 
 page1_row0 = "1 2 3 4 5 6 7 8 9 0";
 page1_row1 = "- / : ; ( ) $ & @ \"";

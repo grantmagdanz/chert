@@ -33,5 +33,10 @@
 	<array>
 		<string>x̂</string>
 	</array>
+	<key>___</key>
+	<array>
+		<string>&apos;</string>
+		<string>ʻ</string>
+	</array>
 </dict>
 </plist>

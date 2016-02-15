@@ -28,6 +28,7 @@ enum ShiftState {
 }
 
 class Keyboard {
+    let PLACEHOLDER = "___"
     var pages: [Page]
     
     init() {
@@ -42,6 +43,19 @@ class Keyboard {
         }
         
         self.pages[page].addKey(key, row: row)
+    }
+    
+    // removes all instances PLACEHOLDER in the keyboard
+    func removePlaceHolder() {
+        for page in self.pages {
+            for (i, row) in page.rows.enumerate() {
+                for key in row {
+                    if key.outputForCase(false) == PLACEHOLDER {
+                        page.rows[i] = row.filter({$0.outputForCase(false) != PLACEHOLDER})
+                    }
+                }
+            }
+        }
     }
     
     func getKey(outputForKey: String) -> Key? {
@@ -180,7 +194,7 @@ class Key: Hashable {
         self.toMode = key.toMode
     }
     
-    func setExtraLetters(letters: [String]) {
+    func setExtraCharacters(letters: [String]) {
         self.extraCharacters = []
         self.uppercaseExtraCharacters = []
         for letter in letters {
@@ -190,13 +204,17 @@ class Key: Hashable {
     }
     
     // appends extra letters to key, doesn't include duplicates
-    func appendExtraLetters(letters: [String]) {
+    func appendExtraCharacters(letters: [String]) {
         for letter in letters {
             if (!self.extraCharacters.contains(letter.lowercaseString)) {
                 self.extraCharacters.append((letter as NSString).lowercaseString)
                 self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
             }
         }
+    }
+    
+    func getExtraCharacters() -> [String] {
+        return self.extraCharacters;
     }
     
     func setLetter(letter: String) {

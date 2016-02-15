@@ -23,10 +23,23 @@ func buildKeyboard() -> Keyboard {
             if let keyBindings = keys {
                 for (char, extras) in keyBindings {
                     if let key = keyboard.getKey(char as! String) {
-                        key.appendExtraLetters(extras as! [String])
+                        key.appendExtraCharacters(extras as! [String])
                     }
                 }
             }
+        }
+    }
+    
+    // If the placeholder isn't storing something, we want to get rid of it.
+    if let placeholder = keyboard.getKey(keyboard.PLACEHOLDER) {
+        var extraChars = placeholder.getExtraCharacters()
+        if extraChars.count > 1 {
+            // it has something! Let's get rid of the PLACEHOLDER though, then set the key up.
+            extraChars = extraChars.filter({$0 != keyboard.PLACEHOLDER})
+            placeholder.setLetter(extraChars[0])
+            placeholder.setExtraCharacters(extraChars)
+        } else {
+            keyboard.removePlaceHolder()
         }
     }
     
