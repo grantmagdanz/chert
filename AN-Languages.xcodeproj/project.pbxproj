@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		0000C48F1BC9D0740097A1F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */; };
 		0000C4931BC9D9AC0097A1F9 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */; };
+		0002D5A21D0A0BCC00264BD2 /* Ahtna.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5A11D0A0BCC00264BD2 /* Ahtna.plist */; };
+		0002D5A41D0A0C5700264BD2 /* Eyak.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5A31D0A0C5700264BD2 /* Eyak.plist */; };
+		0002D5A61D0A0D4900264BD2 /* Gwichin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5A51D0A0D4900264BD2 /* Gwichin.plist */; };
+		0002D5A81D0A0E2C00264BD2 /* Han.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5A71D0A0E2C00264BD2 /* Han.plist */; };
+		0002D5AA1D0A0F7300264BD2 /* Holikachunk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5A91D0A0F7300264BD2 /* Holikachunk.plist */; };
+		0002D5AC1D0A0F9A00264BD2 /* Koyukon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5AB1D0A0F9A00264BD2 /* Koyukon.plist */; };
+		0002D5AE1D0A0FDE00264BD2 /* Smalgyax_Tsimshian.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5AD1D0A0FDE00264BD2 /* Smalgyax_Tsimshian.plist */; };
+		0002D5B01D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5AF1D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist */; };
+		0002D5B21D0A112400264BD2 /* Tanana(Lower).plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B11D0A112400264BD2 /* Tanana(Lower).plist */; };
+		0002D5B41D0A117C00264BD2 /* Tanacross.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B31D0A117C00264BD2 /* Tanacross.plist */; };
+		0002D5B61D0A124900264BD2 /* Kusko(Upper).plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B51D0A124900264BD2 /* Kusko(Upper).plist */; };
+		0002D5B81D0A128A00264BD2 /* Tanana(Upper).plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */; };
 		0022CE5A1C3638A800CD7541 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0022CE591C3638A800CD7541 /* background.png */; };
 		00B860AF1C71043900C8A47A /* Haida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860AE1C71043900C8A47A /* Haida.plist */; };
 		00B860B11C71424600C8A47A /* Tlingit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B01C71424600C8A47A /* Tlingit.plist */; };
@@ -32,7 +44,7 @@
 		4E60A13A1979FA5C00854CC8 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60A1391979FA5C00854CC8 /* KeyboardKeyBackground.swift */; };
 		4E60A13C1979FA8E00854CC8 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60A13B1979FA8E00854CC8 /* KeyboardConnector.swift */; };
 		4E60A13E1979FB2E00854CC8 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */; };
-		4E72C96819E04A7A00DFDDB0 /* InupiaqKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AEE4B19D246D700931E8F /* InupiaqKeyboard.swift */; };
+		4E72C96819E04A7A00DFDDB0 /* AN-Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AEE4B19D246D700931E8F /* AN-Languages.swift */; };
 		4E807DC119461DC700D875D1 /* Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4E807DB919461DC700D875D1 /* Keyboard.appex */; };
 		4E8EF38619F95D75009CBF5D /* KeyboardFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E8EF38519F95D75009CBF5D /* KeyboardFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E8EF39819F95D75009CBF5D /* KeyboardFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8EF38119F95D74009CBF5D /* KeyboardFramework.framework */; };
@@ -109,6 +121,18 @@
 /* Begin PBXFileReference section */
 		0000C48E1BC9D0740097A1F9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0000C4921BC9D9AC0097A1F9 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		0002D5A11D0A0BCC00264BD2 /* Ahtna.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Ahtna.plist; sourceTree = "<group>"; };
+		0002D5A31D0A0C5700264BD2 /* Eyak.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Eyak.plist; sourceTree = "<group>"; };
+		0002D5A51D0A0D4900264BD2 /* Gwichin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Gwichin.plist; sourceTree = "<group>"; };
+		0002D5A71D0A0E2C00264BD2 /* Han.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Han.plist; sourceTree = "<group>"; };
+		0002D5A91D0A0F7300264BD2 /* Holikachunk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Holikachunk.plist; sourceTree = "<group>"; };
+		0002D5AB1D0A0F9A00264BD2 /* Koyukon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Koyukon.plist; sourceTree = "<group>"; };
+		0002D5AD1D0A0FDE00264BD2 /* Smalgyax_Tsimshian.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Smalgyax_Tsimshian.plist; sourceTree = "<group>"; };
+		0002D5AF1D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sugtstun_Sugpiaq_Alutiiq.plist; sourceTree = "<group>"; };
+		0002D5B11D0A112400264BD2 /* Tanana(Lower).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tanana(Lower).plist"; sourceTree = "<group>"; };
+		0002D5B31D0A117C00264BD2 /* Tanacross.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tanacross.plist; sourceTree = "<group>"; };
+		0002D5B51D0A124900264BD2 /* Kusko(Upper).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Kusko(Upper).plist"; sourceTree = "<group>"; };
+		0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tanana(Upper).plist"; sourceTree = "<group>"; };
 		0022CE591C3638A800CD7541 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		00B860AE1C71043900C8A47A /* Haida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Haida.plist; sourceTree = "<group>"; };
 		00B860B01C71424600C8A47A /* Tlingit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tlingit.plist; sourceTree = "<group>"; };
@@ -135,7 +159,7 @@
 		4E60A1391979FA5C00854CC8 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
 		4E60A13B1979FA8E00854CC8 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
 		4E60A13D1979FB2E00854CC8 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
-		4E6AEE4B19D246D700931E8F /* InupiaqKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InupiaqKeyboard.swift; sourceTree = "<group>"; };
+		4E6AEE4B19D246D700931E8F /* AN-Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AN-Languages.swift"; sourceTree = "<group>"; };
 		4E7CDF921A079E3E0015BB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Keyboard/Info.plist; sourceTree = "<group>"; };
 		4E807D9319461D9000D875D1 /* AN-Languages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AN-Languages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E807DB919461DC700D875D1 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,13 +257,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		4E6AEE5319D2489C00931E8F /* InupiaqKeyboard */ = {
+		4E6AEE5319D2489C00931E8F /* AN-Languages */ = {
 			isa = PBXGroup;
 			children = (
-				4E6AEE4B19D246D700931E8F /* InupiaqKeyboard.swift */,
+				4E6AEE4B19D246D700931E8F /* AN-Languages.swift */,
 				4EEFD78819E0DC6B004D4974 /* Banner.swift */,
 			);
-			name = InupiaqKeyboard;
+			name = "AN-Languages";
 			sourceTree = "<group>";
 		};
 		4E7CDF901A079E3E0015BB90 /* KeyboardSound */ = {
@@ -311,7 +335,7 @@
 				4E6AEE5019D2486900931E8F /* Model */,
 				4E6AEE4F19D2484B00931E8F /* Views */,
 				4EE7599519F759F300B4E6ED /* Utility */,
-				4E6AEE5319D2489C00931E8F /* InupiaqKeyboard */,
+				4E6AEE5319D2489C00931E8F /* AN-Languages */,
 				4E807DBB19461DC700D875D1 /* Supporting Files */,
 				4E52A6D51A06BADA006A08CE /* Media.xcassets */,
 			);
@@ -323,12 +347,24 @@
 			children = (
 				00EFFCC51C29EC73000BC823 /* Localizable.strings */,
 				4E807DBC19461DC700D875D1 /* Info.plist */,
-				00FC83D01C70712900FB2883 /* Inupiaq.plist */,
-				00B860AE1C71043900C8A47A /* Haida.plist */,
-				00B860B01C71424600C8A47A /* Tlingit.plist */,
-				00B860B21C71437200C8A47A /* Dena'ina.plist */,
-				00B860B41C71572600C8A47A /* Unangan.plist */,
+				0002D5A11D0A0BCC00264BD2 /* Ahtna.plist */,
 				00B860B61C71576B00C8A47A /* DegXinag.plist */,
+				00B860B21C71437200C8A47A /* Dena'ina.plist */,
+				0002D5A31D0A0C5700264BD2 /* Eyak.plist */,
+				0002D5A51D0A0D4900264BD2 /* Gwichin.plist */,
+				00B860AE1C71043900C8A47A /* Haida.plist */,
+				0002D5A71D0A0E2C00264BD2 /* Han.plist */,
+				0002D5A91D0A0F7300264BD2 /* Holikachunk.plist */,
+				00FC83D01C70712900FB2883 /* Inupiaq.plist */,
+				0002D5B51D0A124900264BD2 /* Kusko(Upper).plist */,
+				0002D5AB1D0A0F9A00264BD2 /* Koyukon.plist */,
+				0002D5AD1D0A0FDE00264BD2 /* Smalgyax_Tsimshian.plist */,
+				0002D5AF1D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist */,
+				0002D5B31D0A117C00264BD2 /* Tanacross.plist */,
+				0002D5B11D0A112400264BD2 /* Tanana(Lower).plist */,
+				0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */,
+				00B860B01C71424600C8A47A /* Tlingit.plist */,
+				00B860B41C71572600C8A47A /* Unangan.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -488,15 +524,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0002D5A61D0A0D4900264BD2 /* Gwichin.plist in Resources */,
 				4E52A6DA1A06C198006A08CE /* DefaultSettings.xib in Resources */,
 				00B860B71C71576B00C8A47A /* DegXinag.plist in Resources */,
 				00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */,
+				0002D5AA1D0A0F7300264BD2 /* Holikachunk.plist in Resources */,
+				0002D5B81D0A128A00264BD2 /* Tanana(Upper).plist in Resources */,
 				00FC83D11C70712900FB2883 /* Inupiaq.plist in Resources */,
 				00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */,
+				0002D5AE1D0A0FDE00264BD2 /* Smalgyax_Tsimshian.plist in Resources */,
+				0002D5B41D0A117C00264BD2 /* Tanacross.plist in Resources */,
+				0002D5B21D0A112400264BD2 /* Tanana(Lower).plist in Resources */,
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
 				00B860B11C71424600C8A47A /* Tlingit.plist in Resources */,
 				00B860AF1C71043900C8A47A /* Haida.plist in Resources */,
+				0002D5A21D0A0BCC00264BD2 /* Ahtna.plist in Resources */,
+				0002D5B01D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist in Resources */,
+				0002D5A41D0A0C5700264BD2 /* Eyak.plist in Resources */,
 				00B860B51C71572600C8A47A /* Unangan.plist in Resources */,
+				0002D5A81D0A0E2C00264BD2 /* Han.plist in Resources */,
+				0002D5B61D0A124900264BD2 /* Kusko(Upper).plist in Resources */,
+				0002D5AC1D0A0F9A00264BD2 /* Koyukon.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +587,7 @@
 				4ECBD90219F16DC7004FA2A3 /* KeyboardBuilder.swift in Sources */,
 				4E3B5A941A0654A8003366F6 /* KeyboardInputTraits.swift in Sources */,
 				4E52A6D81A06C16C006A08CE /* DefaultSettings.swift in Sources */,
-				4E72C96819E04A7A00DFDDB0 /* InupiaqKeyboard.swift in Sources */,
+				4E72C96819E04A7A00DFDDB0 /* AN-Languages.swift in Sources */,
 				00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */,
 				4E60A13E1979FB2E00854CC8 /* DirectionEnum.swift in Sources */,
 				4EC2A46D19DF811E00F789E1 /* KeyboardViewController.swift in Sources */,

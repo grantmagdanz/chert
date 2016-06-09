@@ -18,14 +18,26 @@ let kSmallLowercase = "kSmallLowercase"
 
 // IMPORTANT: This is where the file names for each language get pulled from!
 // supported languages
-let kInupiaq = "Inupiaq"
-let kTlingit = "Tlingit"
-let kHaida = "Haida"
-let kDenaina = "Dena'ina"
-let kUnangan = "Unangan"
+let kAhtna = "Ahtna"
 let kDegXinag = "DegXinag"
+let kDenaina = "Dena'ina"
+let kEyak = "Eyak"
+let kGwichin = "Gwichin"
+let kHaida = "Haida"
+let kHan = "Han"
+let kHolikachunk = "Holikachunk"
+let kInupiaq = "Inupiaq"
+let kKoyukon = "Koyukon"
+let kKuskoUpper = "Kusko(Upper)"
+let kSmalgyaxTsimshian = "Smalgyax_Tsimashian"
+let kSugtstunSugpiaqAlutiiq = "Sugstun_Sugpiaq_Alutiiq"
+let kTanacross = "Tanacross"
+let kTananaLower = "Tanana(Lower)"
+let kTananaUpper = "Tanana(Upper)"
+let kTlingit = "Tlingit"
+let kUnangan = "Unangan"
 
-let LANGUAGES = [kInupiaq, kTlingit, kHaida, kDenaina, kUnangan, kDegXinag]
+let LANGUAGES = [kAhtna, kDegXinag, kDenaina, kEyak, kGwichin, kHaida, kHan, kHolikachunk, kInupiaq, kKoyukon, kKuskoUpper, kSmalgyaxTsimshian, kSugtstunSugpiaqAlutiiq, kTanacross, kTananaLower, kTananaUpper, kTlingit,kUnangan]
 
 class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
@@ -59,12 +71,24 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
                 kPeriodShortcut:  "“.” Shortcut",
                 kKeyboardClicks: "Keyboard Clicks",
                 kSmallLowercase: "Allow Lowercase Key Caps",
+                kAhtna: "Ahtna",
+                kDegXinag: "Dena'ina",
+                kDenaina: "Deg Xinag",
+                kEyak: "Eyak",
+                kGwichin: "Haida",
+                kHaida: "Gwich'in",
+                kHan: "Hän",
+                kHolikachunk: "Holikachunk",
                 kInupiaq: "Iñupiaq",
+                kKoyukon: "Koyukon",
+                kKuskoUpper: "Kuskokwim (Upper)",
+                kSmalgyaxTsimshian: "Sm'algyax/Tsimshian",
+                kSugtstunSugpiaqAlutiiq: "Sugt’stun/Sugpiaq/Alutiiq",
+                kTanacross: "Tanacross",
+                kTananaLower: "Tanana (Lower)",
+                kTananaUpper: "Tanana (Upper)",
                 kTlingit: "Tlingit",
-                kHaida: "Haida",
-                kDenaina: "Dena'ina",
-                kUnangan: "Unangan",
-                kDegXinag: "Deg Xinag"
+                kUnangan: "Unangan"
             ]
         }
     }

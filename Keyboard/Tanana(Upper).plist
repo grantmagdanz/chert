@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>A</key>
+	<array>
+		<string>ä</string>
+		<string>ą</string>
+		<string>ą̈</string>
+		<string>à</string>
+		<string>ǎ</string>
+	</array>
+	<key>E</key>
+	<array>
+		<string>ę</string>
+		<string>è</string>
+		<string>ě</string>
+	</array>
+	<key>H</key>
+	<array>
+		<string>ẖ</string>
+	</array>
+	<key>I</key>
+	<array>
+		<string>į</string>
+		<string>ì</string>
+		<string>ǐ</string>
+	</array>
+	<key>L</key>
+	<array>
+		<string>ł</string>
+		<string>ł̱</string>
+	</array>
+	<key>O</key>
+	<array>
+		<string>ǫ</string>
+		<string>ò</string>
+		<string>ǒ</string>
+	</array>
+	<key>S</key>
+	<array>
+		<string>s̱</string>
+	</array>
+	<key>T</key>
+	<array>
+		<string>ṯ</string>
+	</array>
+	<key>U</key>
+	<array>
+		<string>ü</string>
+		<string>ų</string>
+		<string>ų̈</string>
+		<string>ù</string>
+		<string>ǔ</string>
+	</array>
+	<key>X</key>
+	<array>
+		<string>x̱</string>
+	</array>
+</dict>
+</plist>
