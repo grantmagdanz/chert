@@ -109,8 +109,7 @@ class KeyboardViewController: UIInputViewController {
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
-            kSmallLowercase: true,
-            kInupiaq: true
+            kSmallLowercase: true
         ])
         
         self.keyboard = buildKeyboard()

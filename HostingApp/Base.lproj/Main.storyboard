@@ -37,24 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-IC-UJF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-Ww-diQ" userLabel="Top Helper View">
-                                <rect key="frame" x="16" y="28" width="288" height="98"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for using Achagat!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWn-SV-MH0">
-                                        <rect key="frame" x="37" y="39" width="214" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="AWn-SV-MH0" firstAttribute="centerX" secondItem="qvW-Ww-diQ" secondAttribute="centerX" id="0ZM-pE-hEz"/>
-                                    <constraint firstItem="AWn-SV-MH0" firstAttribute="centerY" secondItem="qvW-Ww-diQ" secondAttribute="centerY" id="SfM-pK-ySA"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLj-uO-c5q" userLabel="Bottom Helper View">
                                 <rect key="frame" x="16" y="383" width="292" height="127.5"/>
                                 <subviews>
@@ -73,13 +55,13 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iñupiaq – Achagat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-fA-U1C">
-                                                <rect key="frame" x="77" y="17" width="138" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AN Lanuages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-fA-U1C">
+                                                <rect key="frame" x="77" y="17" width="138" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to allow keyboard sounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edV-pt-Xjj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In order to allow keyboard sounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edV-pt-Xjj">
                                                 <rect key="frame" x="16" y="-3" width="261.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,8 +127,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install the Iñupiaq Keyboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-tr-Upj">
-                                        <rect key="frame" x="37" y="0.0" width="214" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Install the Keyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-tr-Upj">
+                                        <rect key="frame" x="37" y="0.0" width="214" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -163,8 +145,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achagat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-fX-iJB">
-                                        <rect key="frame" x="112" y="226" width="64.5" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AN Languages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-fX-iJB">
+                                        <rect key="frame" x="88" y="226" width="113" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -213,20 +195,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l7B-BA-IOt" firstAttribute="top" secondItem="qvW-Ww-diQ" secondAttribute="bottom" constant="8" id="CzW-et-SAV"/>
                             <constraint firstItem="l7B-BA-IOt" firstAttribute="centerY" secondItem="aBi-zl-Xx9" secondAttribute="centerY" constant="-30" id="DS7-Xx-WfA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l7B-BA-IOt" secondAttribute="trailing" id="H8z-0K-ve5"/>
                             <constraint firstItem="rLj-uO-c5q" firstAttribute="top" secondItem="l7B-BA-IOt" secondAttribute="bottom" constant="8" id="Nee-Wm-NQF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="l7B-BA-IOt" secondAttribute="leading" id="Ozg-mG-FrS"/>
                             <constraint firstItem="P06-La-EKF" firstAttribute="top" secondItem="rLj-uO-c5q" secondAttribute="bottom" constant="8" id="P94-Rh-nTH"/>
-                            <constraint firstItem="qvW-Ww-diQ" firstAttribute="trailing" secondItem="aBi-zl-Xx9" secondAttribute="trailingMargin" id="Xm3-G0-LaF"/>
-                            <constraint firstItem="qvW-Ww-diQ" firstAttribute="leading" secondItem="aBi-zl-Xx9" secondAttribute="leadingMargin" id="ZF7-VW-7o4"/>
-                            <constraint firstItem="qvW-Ww-diQ" firstAttribute="top" secondItem="Bpu-v8-xYb" secondAttribute="bottom" constant="8" id="eZf-pv-PHo"/>
-                            <constraint firstItem="b7h-IC-UJF" firstAttribute="width" secondItem="aBi-zl-Xx9" secondAttribute="width" id="fIV-Lo-WI8"/>
-                            <constraint firstItem="b7h-IC-UJF" firstAttribute="centerX" secondItem="aBi-zl-Xx9" secondAttribute="centerX" id="fxf-iI-dYQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="rLj-uO-c5q" secondAttribute="leading" id="gZS-te-hxn"/>
-                            <constraint firstItem="b7h-IC-UJF" firstAttribute="centerY" secondItem="aBi-zl-Xx9" secondAttribute="centerY" id="oGz-mP-OW7"/>
-                            <constraint firstItem="b7h-IC-UJF" firstAttribute="height" secondItem="aBi-zl-Xx9" secondAttribute="height" id="qIS-Nc-8Hz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rLj-uO-c5q" secondAttribute="trailing" constant="-4" id="t2T-U6-uF1"/>
                             <constraint firstItem="l7B-BA-IOt" firstAttribute="centerX" secondItem="aBi-zl-Xx9" secondAttribute="centerX" id="wcm-IB-EEs"/>
                         </constraints>
@@ -263,8 +237,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RyV-VO-xFF">
-                                <rect key="frame" x="8" y="70" width="304" height="425"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RyV-VO-xFF">
+                                <rect key="frame" x="8" y="70" width="304" height="666.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Background:">
                                         <attributes>
@@ -287,78 +261,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Iñupiaq is the language of the Inuit people of western and northern Alaska. In Alaska, Iñupiaq has four main dialects and numerous local sub-dialects. Iñupiaq is closely related to the Inuit languages of Greenland (Kalaalisut) and Canada (Inuvialuktun, Inuktitut, and Inuttut).</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Language Revitalization:">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">The number of Iñupiaq speakers has been declining for decades, driven in large part by missionaries and government policies in the 20</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="th">
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <integer key="NSSuperScript" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> century. Only about 3,000 speakers remain in Alaska, mostly 40 or older. Many remaining first-language speakers are in their 60s or 70s. 
-
-Today, a community of people young and old is driving a movement to bring Iñupiaq back into regular use. It’s an uphill battle in an English-dominated world, but language learners are making progress. We hope this app contributes in small part to that progress. If you want to be involved in the effort, get in touch. 
+                                        <string key="content">Add info.
 </string>
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
@@ -401,7 +304,7 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" headIndent="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="None of your keystrokes are ever collected or sent over the network. Period.">
+                                    <fragment content="None of your keystrokes are ever collected or sent over the network.">
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue-CondensedBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" headIndent="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -434,7 +337,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">All kinds of feedback are welcome and encouraged. If there is a feature you would like to see added, a bug you've come across, or something you really like please send an email to achagat.dev@gmail.com.
+                                        <string key="content">All kinds of feedback are welcome and encouraged. If there is a feature you would like to see added, a bug you've come across, or something you really like please send an email to ADD CONTACT EMAIL.
 
 </string>
                                         <attributes>
@@ -513,7 +416,7 @@ Cg
                                 <rect key="frame" x="4" y="74" width="312" height="437"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Switch to Iñupiaq Keyboard:
+                                        <string key="content">Switch to the Keyboard:
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -524,7 +427,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Once the Iñupiaq keyboard is installed (see the Install page) you can switch to the Iñupiaq keyboard by pressing the "Next Keyboard" button which is usually signified with a globe (</string>
+                                        <string key="content">Once the keyboard is installed (see the Install page) you can switch to it by pressing the "Next Keyboard" button which is usually signified with a globe (</string>
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
@@ -540,7 +443,7 @@ Cg
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=") icon. Keep pressing &quot;Next Keyboard&quot; until you get to the Iñupiaq keyboard which has an ulu at the top of it.">
+                                    <fragment content=") icon. Keep pressing &quot;Next Keyboard&quot; until you get to the AN languages keyboard which has an ulu at the top of it.">
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
@@ -590,44 +493,11 @@ Cg
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Once you have gotten to the Iñupiaq keyboard you can type the special characters by doing the following:">
+                                    <fragment>
+                                        <string key="content">To be able to type a non-English character, click on the gear button in the bottom left of the keyboard, scroll down, and select the languages you would like to type (this only needs to be done once). Then press and hold the base character key to type the character.</string>
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="20" headIndent="20" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">● Press and hold “C” for the special character Ch.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="34" headIndent="46" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">● Press and hold “G” for the special character  Ġ.
-● Press and hold “K” for the special character Ḳ (not used in modern Iñupiaq).
-● Press and hold “L” for the special characters Ł, Ḷ, and Ł̣.
-● Press and hold “N” for the special characters Ŋ and Ñ.
-● Press and hold “S” for the special characters Sr and Ṣ (Ṣ not used in modern Iñupiaq).</string>
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="34" headIndent="46" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -661,6 +531,5 @@ Cg
         <image name="AboutIcon" width="50" height="50"/>
         <image name="HowToIcon" width="50" height="50"/>
         <image name="InstallIcon" width="50" height="50"/>
-        <image name="background.png" width="388" height="485"/>
     </resources>
 </document>

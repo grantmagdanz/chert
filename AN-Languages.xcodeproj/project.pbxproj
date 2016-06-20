@@ -21,7 +21,6 @@
 		0002D5B41D0A117C00264BD2 /* Tanacross.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B31D0A117C00264BD2 /* Tanacross.plist */; };
 		0002D5B61D0A124900264BD2 /* Kusko(Upper).plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B51D0A124900264BD2 /* Kusko(Upper).plist */; };
 		0002D5B81D0A128A00264BD2 /* Tanana(Upper).plist in Resources */ = {isa = PBXBuildFile; fileRef = 0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */; };
-		0022CE5A1C3638A800CD7541 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0022CE591C3638A800CD7541 /* background.png */; };
 		00B860AF1C71043900C8A47A /* Haida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860AE1C71043900C8A47A /* Haida.plist */; };
 		00B860B11C71424600C8A47A /* Tlingit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B01C71424600C8A47A /* Tlingit.plist */; };
 		00B860B31C71437200C8A47A /* Dena'ina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B860B21C71437200C8A47A /* Dena'ina.plist */; };
@@ -133,7 +132,6 @@
 		0002D5B31D0A117C00264BD2 /* Tanacross.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tanacross.plist; sourceTree = "<group>"; };
 		0002D5B51D0A124900264BD2 /* Kusko(Upper).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Kusko(Upper).plist"; sourceTree = "<group>"; };
 		0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tanana(Upper).plist"; sourceTree = "<group>"; };
-		0022CE591C3638A800CD7541 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		00B860AE1C71043900C8A47A /* Haida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Haida.plist; sourceTree = "<group>"; };
 		00B860B01C71424600C8A47A /* Tlingit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tlingit.plist; sourceTree = "<group>"; };
 		00B860B21C71437200C8A47A /* Dena'ina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Dena'ina.plist"; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 		4E807D9619461D9000D875D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0022CE591C3638A800CD7541 /* background.png */,
 				4EF16F9219D254EA0076AFCB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -515,7 +512,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */,
-				0022CE5A1C3638A800CD7541 /* background.png in Resources */,
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ class Banner: ExtraView {
         iconView.layer.cornerRadius = 6
         iconView.clipsToBounds = true
         
-        textView.text = "  Iñupiaraaġutin"
+        textView.text = "  Add text."
         textView.alpha = 0.3
         textView.font = UIFont.italicSystemFontOfSize(16.0)
         
