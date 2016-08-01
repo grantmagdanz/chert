@@ -45,6 +45,16 @@ class Keyboard {
         self.pages[page].addKey(key, row: row)
     }
     
+    func placeKey(key: Key, row: Int, page: Int, col: Int) {
+        if self.pages.count <= page {
+            for _ in self.pages.count...page {
+                self.pages.append(Page())
+            }
+        }
+        
+        self.pages[page].placeKey(key, row: row, col: col)
+    }
+    
     // removes all instances PLACEHOLDER in the keyboard
     func removePlaceHolder() {
         for page in self.pages {
@@ -101,6 +111,17 @@ class Page {
         }
 
         self.rows[row].append(key)
+    }
+    
+    
+    func placeKey(key: Key, row: Int, col: Int) {
+        if self.rows.count <= row {
+            for _ in self.rows.count...row {
+                self.rows.append([])
+            }
+        }
+        
+        self.rows[row].insert(key, atIndex: col)
     }
 }
 
@@ -205,7 +226,8 @@ class Key: Hashable {
     
     // appends extra letters to key, doesn't include duplicates
     func appendExtraCharacters(letters: [String]) {
-        for letter in letters {
+        for var letter in letters {
+            letter = convertAccents(letter)
             if (!self.extraCharacters.contains(letter.lowercaseString)) {
                 self.extraCharacters.append((letter as NSString).lowercaseString)
                 self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
@@ -217,11 +239,30 @@ class Key: Hashable {
         return self.extraCharacters;
     }
     
-    func setLetter(letter: String) {
+    func hasExtraCharacters() -> Bool {
+        return getExtraCharacters().count > 0
+    }
+    
+    func setLetter(input: String) {
+        let letter = convertAccents(input)
         self.lowercaseOutput = (letter as NSString).lowercaseString
         self.uppercaseOutput = (letter as NSString).uppercaseString
         self.lowercaseKeyCap = self.lowercaseOutput
         self.uppercaseKeyCap = self.uppercaseOutput
+    }
+    
+    private func convertAccents(input: String) -> String {
+        var letter = input
+        if input.uppercaseString == "ACUTE" {
+            letter = "\u{0301}"
+        } else if input.uppercaseString == "CIRCUMFLEX" {
+            letter = "\u{0302}"
+        } else if input.uppercaseString == "GRAVE" {
+            letter = "\u{0300}"
+        } else if input.uppercaseString == "CARON" {
+            letter = "\u{030C}"
+        }
+        return letter
     }
     
     func isLongHold() -> Bool {

@@ -105,12 +105,18 @@ class KeyboardViewController: UIInputViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         // set setting defaults
-        NSUserDefaults.standardUserDefaults().registerDefaults([
+        var defaults = [
             kAutoCapitalization: true,
             kPeriodShortcut: true,
-            kKeyboardClicks: false,
             kSmallLowercase: true
-        ])
+        ]
+        
+        // all languages should be on by default
+        for language in LANGUAGES {
+            defaults[language] = true
+        }
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
         
         self.keyboard = buildKeyboard()
         
@@ -839,7 +845,7 @@ class KeyboardViewController: UIInputViewController {
                     let offset = min(3, beforeContext.characters.count)
                     var index = beforeContext.endIndex
                     
-                    for (var i = 0; i < offset; i += 1) {
+                    for i in 0 ..< offset {
                         index = index.predecessor()
                         let char = beforeContext[index]
                         
@@ -907,7 +913,7 @@ class KeyboardViewController: UIInputViewController {
             sender.hidePopup()
             if let key = self.layout?.keyForView(sender) {
                 var arrOptions: [String] = []
-                if (key.type == Key.KeyType.Character) {
+                if (key.isCharacter) {
                     if self.shiftState == .Locked {
                         // convert all letters to uppercase
                         arrOptions = key.extraCharacters.map(

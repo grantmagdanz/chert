@@ -12,7 +12,7 @@
 	</array>
 	<key>G</key>
 	<array>
-		<string>NEED</string>
+		<string>g̱</string>
 	</array>
 	<key>K</key>
 	<array>
@@ -29,10 +29,6 @@
 	<key>W</key>
 	<array>
 		<string>ẅ</string>
-	</array>
-	<key>___</key>
-	<array>
-		<string>&apos;</string>
 	</array>
 </dict>
 </plist>

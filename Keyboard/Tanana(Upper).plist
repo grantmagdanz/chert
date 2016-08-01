@@ -7,14 +7,10 @@
 		<string>ä</string>
 		<string>ą</string>
 		<string>ą̈</string>
-		<string>à</string>
-		<string>ǎ</string>
 	</array>
 	<key>E</key>
 	<array>
 		<string>ę</string>
-		<string>è</string>
-		<string>ě</string>
 	</array>
 	<key>H</key>
 	<array>
@@ -23,8 +19,6 @@
 	<key>I</key>
 	<array>
 		<string>į</string>
-		<string>ì</string>
-		<string>ǐ</string>
 	</array>
 	<key>L</key>
 	<array>
@@ -34,8 +28,6 @@
 	<key>O</key>
 	<array>
 		<string>ǫ</string>
-		<string>ò</string>
-		<string>ǒ</string>
 	</array>
 	<key>S</key>
 	<array>
@@ -50,12 +42,15 @@
 		<string>ü</string>
 		<string>ų</string>
 		<string>ų̈</string>
-		<string>ù</string>
-		<string>ǔ</string>
 	</array>
 	<key>X</key>
 	<array>
 		<string>x̱</string>
+	</array>
+	<key>___</key>
+	<array>
+		<string>GRAVE</string>
+		<string>CARON</string>
 	</array>
 </dict>
 </plist>

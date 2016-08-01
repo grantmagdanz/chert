@@ -5,17 +5,14 @@
 	<key>A</key>
 	<array>
 		<string>ą</string>
-		<string>à</string>
 	</array>
 	<key>E</key>
 	<array>
 		<string>ę</string>
-		<string>è</string>
 	</array>
 	<key>I</key>
 	<array>
 		<string>į</string>
-		<string>ì</string>
 	</array>
 	<key>L</key>
 	<array>
@@ -24,16 +21,14 @@
 	<key>O</key>
 	<array>
 		<string>ǫ</string>
-		<string>ò</string>
 	</array>
 	<key>U</key>
 	<array>
 		<string>ų</string>
-		<string>ù</string>
 	</array>
 	<key>___</key>
 	<array>
-		<string>&apos;</string>
+		<string>GRAVE</string>
 	</array>
 </dict>
 </plist>

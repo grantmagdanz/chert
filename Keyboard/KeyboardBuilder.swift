@@ -24,6 +24,17 @@ func buildKeyboard() -> Keyboard {
                 for (char, extras) in keyBindings {
                     if let key = keyboard.getKey(char as! String) {
                         key.appendExtraCharacters(extras as! [String])
+                    } else {
+                        // this key does not exist on a normal keyboard, so we will add a new key
+                        // Tlingit's square root symbol is an example of this.
+                        let keyModel = makeKey(char as! String, special: false)
+                        
+                        if char as! String == "√" {
+                            // place the key in between the ? key and ! key on the page with extra special characters
+                            keyboard.placeKey(keyModel, row: 2, page: 2, col: keyboard.pages[1].rows[2].count - 3)
+                        } else {
+                            print("Char \(char) isn't on a normal keyboard and needs a place.")
+                        }
                     }
                 }
             }
@@ -36,6 +47,21 @@ func buildKeyboard() -> Keyboard {
         if extraChars.count > 1 {
             // it has something! Let's get rid of the PLACEHOLDER though, then set the key up.
             extraChars = extraChars.filter({$0 != keyboard.PLACEHOLDER})
+            
+            // In this app, the placeholder is being used for accents and they should be in a specific order.
+            extraChars = extraChars.sort {
+                if $0 == "\u{0301}" { // accent acute should be first
+                    return true
+                } else if $0 == "\u{0300}" && $1 != "\u{0301}" { // followed by accent grave
+                    return true
+                } else if $0 == "\u{0302}" && $1 != "\u{0301}" && $1 != "\u{0300}" { // then circumflex
+                    return true
+                } else {
+                    return false // and finally caron
+                }
+            }
+            
+            
             placeholder.setLetter(extraChars[0])
             placeholder.setExtraCharacters(extraChars)
         } else {

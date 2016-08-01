@@ -446,16 +446,12 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 		
 		if longHoldKeys.contains(text.lowercaseString)
 		{
-			if self.currentMode == 0
-			{
-				if(keyboard_type == UIKeyboardType.DecimalPad || keyboard_type == UIKeyboardType.NumberPad)
-				{
-					return false
-				}
-				
-				return true
-			}
-			
+            if(keyboard_type == UIKeyboardType.DecimalPad || keyboard_type == UIKeyboardType.NumberPad)
+            {
+                return false
+            }
+            
+            return true
 		}
 		
 		return false

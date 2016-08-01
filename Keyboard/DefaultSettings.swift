@@ -29,15 +29,15 @@ let kHolikachunk = "Holikachunk"
 let kInupiaq = "Inupiaq"
 let kKoyukon = "Koyukon"
 let kKuskoUpper = "Kusko(Upper)"
-let kSmalgyaxTsimshian = "Smalgyax_Tsimashian"
-let kSugtstunSugpiaqAlutiiq = "Sugstun_Sugpiaq_Alutiiq"
+let kSmalgyaxTsimshian = "Smalgyax_Tsimshian"
+let kSugtstunSugpiaqAlutiiq = "Sugtstun_Sugpiaq_Alutiiq"
 let kTanacross = "Tanacross"
 let kTananaLower = "Tanana(Lower)"
 let kTananaUpper = "Tanana(Upper)"
 let kTlingit = "Tlingit"
 let kUnangan = "Unangan"
 
-let LANGUAGES = [kAhtna, kDegXinag, kDenaina, kEyak, kGwichin, kHaida, kHan, kHolikachunk, kInupiaq, kKoyukon, kKuskoUpper, kSmalgyaxTsimshian, kSugtstunSugpiaqAlutiiq, kTanacross, kTananaLower, kTananaUpper, kTlingit,kUnangan]
+let LANGUAGES = [kAhtna, kDegXinag, kDenaina, kEyak, kGwichin, kHaida, kHan, kHolikachunk, kInupiaq, kKoyukon, kKuskoUpper, kSmalgyaxTsimshian, kSugtstunSugpiaqAlutiiq, kTanacross, kTananaLower, kTananaUpper, kTlingit, kUnangan]
 
 class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
@@ -75,8 +75,8 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
                 kDegXinag: "Dena'ina",
                 kDenaina: "Deg Xinag",
                 kEyak: "Eyak",
-                kGwichin: "Haida",
-                kHaida: "Gwich'in",
+                kHaida: "Haida",
+                kGwichin: "Gwich'in",
                 kHan: "Hän",
                 kHolikachunk: "Holikachunk",
                 kInupiaq: "Iñupiaq",

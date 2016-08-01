@@ -2,34 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>A</key>
-	<array>
-		<string>á</string>
-		<string>â</string>
-	</array>
-	<key>E</key>
-	<array>
-		<string>é</string>
-		<string>ê</string>
-	</array>
 	<key>H</key>
 	<array>
 		<string>ẖ</string>
-	</array>
-	<key>I</key>
-	<array>
-		<string>í</string>
-		<string>î</string>
 	</array>
 	<key>L</key>
 	<array>
 		<string>ł</string>
 		<string>ł̱</string>
-	</array>
-	<key>O</key>
-	<array>
-		<string>ó</string>
-		<string>ô</string>
 	</array>
 	<key>S</key>
 	<array>
@@ -45,7 +25,8 @@
 	</array>
 	<key>___</key>
 	<array>
-		<string>&apos;</string>
+		<string>ACUTE</string>
+		<string>CIRCUMFLEX</string>
 	</array>
 </dict>
 </plist>

@@ -4,21 +4,15 @@
 <dict>
 	<key>A</key>
 	<array>
-		<string>á</string>
 		<string>ä</string>
 	</array>
 	<key>E</key>
 	<array>
-		<string>é</string>
 		<string>ë</string>
-	</array>
-	<key>G</key>
-	<array>
-		<string>ĝ</string>
 	</array>
 	<key>I</key>
 	<array>
-		<string>í</string>
+		<string>ï</string>
 	</array>
 	<key>N</key>
 	<array>
@@ -26,7 +20,6 @@
 	</array>
 	<key>U</key>
 	<array>
-		<string>ú</string>
 		<string>ü</string>
 	</array>
 	<key>X</key>
@@ -35,7 +28,11 @@
 	</array>
 	<key>___</key>
 	<array>
-		<string>&apos;</string>
+		<string>ACUTE</string>
+		<string>CIRCUMFLEX</string>
+	</array>
+	<key>&apos;</key>
+	<array>
 		<string>ʻ</string>
 	</array>
 </dict>

@@ -20,7 +20,8 @@ class Banner: ExtraView {
         iconView.layer.cornerRadius = 6
         iconView.clipsToBounds = true
         
-        textView.text = "  Add text."
+        // uncomment to add text on the banner of the keyboard
+        // textView.text = "  Add text."
         textView.alpha = 0.3
         textView.font = UIFont.italicSystemFontOfSize(16.0)
         

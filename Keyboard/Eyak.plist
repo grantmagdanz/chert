@@ -4,7 +4,7 @@
 <dict>
 	<key>G</key>
 	<array>
-		<string>NEED</string>
+		<string>g̣</string>
 	</array>
 	<key>L</key>
 	<array>
@@ -13,10 +13,6 @@
 	<key>X</key>
 	<array>
 		<string>x̣</string>
-	</array>
-	<key>___</key>
-	<array>
-		<string>&apos;</string>
 	</array>
 </dict>
 </plist>
