@@ -10,9 +10,18 @@
 	<array>
 		<string>ë</string>
 	</array>
+	<key>G</key>
+	<array>
+		<string>ĝ</string>
+		<string>g̱</string>
+	</array>
 	<key>I</key>
 	<array>
 		<string>ï</string>
+	</array>
+	<key>K</key>
+	<array>
+		<string>ḵ</string>
 	</array>
 	<key>N</key>
 	<array>
@@ -25,11 +34,11 @@
 	<key>X</key>
 	<array>
 		<string>x̂</string>
+		<string>x̱</string>
 	</array>
 	<key>___</key>
 	<array>
 		<string>ACUTE</string>
-		<string>CIRCUMFLEX</string>
 	</array>
 	<key>&apos;</key>
 	<array>
