@@ -126,6 +126,8 @@ class Page {
 }
 
 class Key: Hashable {
+    static let LINGIT_SLASHED_O = "∅"
+    
     enum KeyType: String {
         case Character = "Character"
         case SpecialCharacter = "SpecialCharacter"

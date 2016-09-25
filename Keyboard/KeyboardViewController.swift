@@ -108,11 +108,12 @@ class KeyboardViewController: UIInputViewController {
         var defaults = [
             kAutoCapitalization: true,
             kPeriodShortcut: true,
+            kKeyboardClicks: true,
             kSmallLowercase: true
         ]
         
         // all languages should be on by default
-        for language in LANGUAGES {
+        for language in Languages.getLanguages() {
             defaults[language] = true
         }
         
@@ -921,14 +922,26 @@ class KeyboardViewController: UIInputViewController {
                                 return (letter as NSString).uppercaseString})
                     } else if self.shiftState == .Enabled || !NSUserDefaults.standardUserDefaults().boolForKey(kSmallLowercase) {
                         // capitalize the String
-                        arrOptions = key.extraCharacters.map(
-                            { (letter: String) -> String in
-                                return (letter as NSString).capitalizedString})
+                        arrOptions = key.extraCharacters.map {(letter: String) -> String in
+                            // ∅ is used in Tlingit, but not as a letter. It should always
+                            // be capitalized.
+                            if letter == "∅" {
+                                return "∅".uppercaseString
+                            } else {
+                                return (letter as NSString).capitalizedString
+                            }
+                        }
                     } else {
                         // convert to lowercase
-                        arrOptions = key.extraCharacters.map(
-                            { (letter: String) -> String in
-                                return (letter as NSString).lowercaseString})
+                        arrOptions = key.extraCharacters.map { (letter: String) -> String in
+                            // ∅ is used in Tlingit, but not as a letter. It should always
+                            // be capitalized.
+                            if letter == "∅" {
+                                return "∅".uppercaseString
+                            } else {
+                                return (letter as NSString).lowercaseString
+                            }
+                        }
                     }
                 }
                 

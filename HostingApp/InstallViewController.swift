@@ -10,9 +10,12 @@
 import UIKit
 
 class InstallViewController: UIViewController {
+    @IBOutlet var instructionView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        instructionView.scrollEnabled = false
+        
         
         /* NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidHide"), name: UIKeyboardDidHideNotification, object: nil)
@@ -32,7 +35,6 @@ class InstallViewController: UIViewController {
             }
         }
     }
-    
     
     /* func keyboardWillShow() {
         // intentionally empty

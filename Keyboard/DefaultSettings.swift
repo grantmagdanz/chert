@@ -14,31 +14,6 @@ let kPeriodShortcut = "kPeriodShortcut"
 let kKeyboardClicks = "kKeyboardClicks"
 let kSmallLowercase = "kSmallLowercase"
 
-// TODO: move these somewhere better?
-
-// IMPORTANT: This is where the file names for each language get pulled from!
-// supported languages
-let kAhtna = "Ahtna"
-let kDegXinag = "DegXinag"
-let kDenaina = "Dena'ina"
-let kEyak = "Eyak"
-let kGwichin = "Gwichin"
-let kHaida = "Haida"
-let kHan = "Han"
-let kHolikachunk = "Holikachunk"
-let kInupiaq = "Inupiaq"
-let kKoyukon = "Koyukon"
-let kKuskoUpper = "Kusko(Upper)"
-let kSmalgyaxTsimshian = "Smalgyax_Tsimshian"
-let kSugtstunSugpiaqAlutiiq = "Sugtstun_Sugpiaq_Alutiiq"
-let kTanacross = "Tanacross"
-let kTananaLower = "Tanana(Lower)"
-let kTananaUpper = "Tanana(Upper)"
-let kTlingit = "Tlingit"
-let kUnangan = "Unangan"
-
-let LANGUAGES = [kAhtna, kDegXinag, kDenaina, kEyak, kGwichin, kHaida, kHan, kHolikachunk, kInupiaq, kKoyukon, kKuskoUpper, kSmalgyaxTsimshian, kSugtstunSugpiaqAlutiiq, kTanacross, kTananaLower, kTananaUpper, kTlingit, kUnangan]
-
 class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView?
@@ -58,40 +33,33 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     var settingsList: [(String, [String])] {
         get {
             return [
-                ("General Settings", [kAutoCapitalization, kPeriodShortcut, kKeyboardClicks]),
-                ("Extra Settings", [kSmallLowercase]),
-                ("Language Selection", LANGUAGES)
+                // Uncomment to allow the user to disable any of these settings.
+                // ("General Settings", [kAutoCapitalization, kPeriodShortcut, kKeyboardClicks]),
+                
+                // Uncomment to allow the user to disable lowercase key caps.
+                // ("Extra Settings", [kSmallLowercase]),
+                ("Language Selection", Languages.getLanguages())
             ]
         }
     }
     var settingsNames: [String:String] {
         get {
-            return [
+            var settings = [
                 kAutoCapitalization: "Auto-Capitalization",
                 kPeriodShortcut:  "“.” Shortcut",
                 kKeyboardClicks: "Keyboard Clicks",
                 kSmallLowercase: "Allow Lowercase Key Caps",
-                kAhtna: "Ahtna",
-                kDegXinag: "Deg Xinag",
-                kDenaina: "Dena'ina",
-                kEyak: "Eyak",
-                kHaida: "Haida",
-                kGwichin: "Gwich'in",
-                kHan: "Hän",
-                kHolikachunk: "Holikachunk",
-                kInupiaq: "Iñupiaq",
-                kKoyukon: "Koyukon",
-                kKuskoUpper: "Kuskokwim (Upper)",
-                kSmalgyaxTsimshian: "Sm'algyax/Tsimshian",
-                kSugtstunSugpiaqAlutiiq: "Sugt’stun/Sugpiaq/Alutiiq",
-                kTanacross: "Tanacross",
-                kTananaLower: "Tanana (Lower)",
-                kTananaUpper: "Tanana (Upper)",
-                kTlingit: "Tlingit",
-                kUnangan: "Unangan"
+
             ]
+            
+            for (language, name) in Languages.getNames() {
+                settings[language] = name
+            }
+            
+            return settings
         }
     }
+    
     var settingsNotes: [String: String] {
         get {
             return [
@@ -137,6 +105,8 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
         // XXX: this is here b/c a totally transparent background does not support scrolling in blank areas
         self.tableView?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.01)
         
+
+        
         self.updateAppearance()
     }
     
@@ -180,7 +150,14 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
             cell.backgroundColor = (self.darkMode ? cellBackgroundColorDark : cellBackgroundColorLight)
             cell.label.textColor = (self.darkMode ? cellLabelColorDark : cellLabelColorLight)
             cell.longLabel.textColor = (self.darkMode ? cellLongLabelColorDark : cellLongLabelColorLight)
-
+            
+            // set the language names' font in the Settings pane as well as the color
+            // the toggle turns when on
+            cell.label.font = UIFont(name: "HelveticaNeue-Light", size: 18)
+            // r: 0.0, g: 0.48, b: 1.0 is the regular blue color used thourough the app's UI
+            // equivalent to r: 0, g: 122, b: 255
+            cell.sw.onTintColor = UIColor(red: 0.0, green: 0.48, blue: 1.0, alpha: 1.0)
+            
             cell.changeConstraints()
             
             return cell
@@ -198,8 +175,9 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
             self.effectsView?.effect
             let blueColor = UIColor(red: 135/CGFloat(255), green: 206/CGFloat(255), blue: 250/CGFloat(255), alpha: 1)
             self.pixelLine?.backgroundColor = blueColor.colorWithAlphaComponent(CGFloat(0.5))
-            self.backButton?.setTitleColor(blueColor, forState: UIControlState.Normal)
+            self.backButton?.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             self.settingsLabel?.textColor = UIColor.whiteColor()
+            self.settingsLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 21)
             
             if let visibleCells = self.tableView?.visibleCells {
                 for cell in visibleCells {
@@ -215,7 +193,8 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
             let blueColor = UIColor(red: 0/CGFloat(255), green: 122/CGFloat(255), blue: 255/CGFloat(255), alpha: 1)
             self.pixelLine?.backgroundColor = blueColor.colorWithAlphaComponent(CGFloat(0.5))
             self.backButton?.setTitleColor(blueColor, forState: UIControlState.Normal)
-            self.settingsLabel?.textColor = UIColor.grayColor()
+            self.settingsLabel?.textColor = blueColor
+            self.settingsLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 21)
             
             if let visibleCells = self.tableView?.visibleCells {
                 for cell in visibleCells {

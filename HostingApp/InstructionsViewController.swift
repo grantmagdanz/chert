@@ -13,6 +13,8 @@ class InstructionsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // start the text at the top
         textView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
     

@@ -13,7 +13,7 @@ func buildKeyboard() -> Keyboard {
     let keyboard = defaultKeyboard()
 
     let defaults = NSUserDefaults.standardUserDefaults()
-    for language in LANGUAGES {
+    for language in Languages.getLanguages() {
         if defaults.boolForKey(language) {
             // the user has selected this language, let's add it in!
             var keys: NSDictionary?
