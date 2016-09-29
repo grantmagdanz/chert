@@ -11,8 +11,8 @@ class InupiaqKeyboard: KeyboardViewController {
     
     let takeDebugScreenshot: Bool = false
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        NSUserDefaults.standardUserDefaults()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        UserDefaults.standard
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -20,7 +20,7 @@ class InupiaqKeyboard: KeyboardViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func keyPressed(key: Key) {
+    override func keyPressed(_ key: Key) {
         let textDocumentProxy = self.textDocumentProxy
         let keyOutput = key.outputForCase(self.shiftState.uppercase())
         
@@ -34,13 +34,13 @@ class InupiaqKeyboard: KeyboardViewController {
                 
                 var index = context!.endIndex
                 
-                index = index.predecessor()
+                index = context!.index(before: index)
                 if context![index] != " " {
                     textDocumentProxy.insertText(keyOutput)
                     return
                 }
                 
-                index = index.predecessor()
+                index = context!.index(before: index)
                 if context![index] == " " {
                     textDocumentProxy.insertText(keyOutput)
                     return
@@ -72,7 +72,7 @@ class InupiaqKeyboard: KeyboardViewController {
                 for rowKeys in page.rows {
                     for key in rowKeys {
                         if let keyView = self.layout!.viewForKey(key) {
-                            keyView.addTarget(self, action: "takeScreenshotDelay", forControlEvents: .TouchDown)
+                            keyView.addTarget(self, action: "takeScreenshotDelay", for: .touchDown)
                         }
                     }
                 }
@@ -81,6 +81,6 @@ class InupiaqKeyboard: KeyboardViewController {
     }
     
     override func createBanner() -> ExtraView? {
-        return Banner(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
+        return Banner(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
     }
 }

@@ -51,6 +51,8 @@
 		00D05C6B1C2C8246005D5444 /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C661C2C8246005D5444 /* CYRKeyboardButton.m */; };
 		00D05C6C1C2C8246005D5444 /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C681C2C8246005D5444 /* CYRKeyboardButtonView.m */; };
 		00D05C6D1C2C8246005D5444 /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */; };
+		00EE99421D9B703A00AE3563 /* Yugtun.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00EE99411D9B703A00AE3563 /* Yugtun.plist */; };
+		00EE99431D9B789D00AE3563 /* Yugtun.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00EE99411D9B703A00AE3563 /* Yugtun.plist */; };
 		00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCBD1C29E651000BC823 /* Main.storyboard */; };
 		00EFFCC31C29EC73000BC823 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EFFCC51C29EC73000BC823 /* Localizable.strings */; };
 		00FC83D11C70712900FB2883 /* Inupiaq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00FC83D01C70712900FB2883 /* Inupiaq.plist */; };
@@ -170,6 +172,7 @@
 		00D05C691C2C8246005D5444 /* TurtleBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleBezierPath.h; path = CYRKeyboardButton/TurtleBezierPath.h; sourceTree = "<group>"; };
 		00D05C6A1C2C8246005D5444 /* TurtleBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = CYRKeyboardButton/TurtleBezierPath.m; sourceTree = "<group>"; };
 		00D05C6F1C2CDFD9005D5444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00EE99411D9B703A00AE3563 /* Yugtun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yugtun.plist; sourceTree = "<group>"; };
 		00EFFCBE1C29E651000BC823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HostingApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00FC83D01C70712900FB2883 /* Inupiaq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Inupiaq.plist; sourceTree = "<group>"; };
 		4E3B5A931A0654A8003366F6 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
@@ -389,6 +392,7 @@
 				0002D5B71D0A128A00264BD2 /* Tanana(Upper).plist */,
 				00B860B01C71424600C8A47A /* Tlingit.plist */,
 				00B860B41C71572600C8A47A /* Unangan.plist */,
+				00EE99411D9B703A00AE3563 /* Yugtun.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -498,16 +502,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					4E807D9219461D9000D875D1 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = BJCRSVSMSG;
+						LastSwiftMigration = 0800;
 					};
 					4E807DB819461DC700D875D1 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = BJCRSVSMSG;
+						LastSwiftMigration = 0800;
 					};
 					4E8EF38019F95D74009CBF5D = {
 						CreatedOnToolsVersion = 6.1;
@@ -540,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EE99431D9B789D00AE3563 /* Yugtun.plist in Resources */,
 				00B09B831D63A6BF00E0E29F /* Eyak.plist in Resources */,
 				00EFFCBF1C29E651000BC823 /* Main.storyboard in Resources */,
 				00B09B801D63A6BF00E0E29F /* Ahtna.plist in Resources */,
@@ -585,6 +592,7 @@
 				0002D5B01D0A10E100264BD2 /* Sugtstun_Sugpiaq_Alutiiq.plist in Resources */,
 				0002D5A41D0A0C5700264BD2 /* Eyak.plist in Resources */,
 				00B860B51C71572600C8A47A /* Unangan.plist in Resources */,
+				00EE99421D9B703A00AE3563 /* Yugtun.plist in Resources */,
 				0002D5A81D0A0E2C00264BD2 /* Han.plist in Resources */,
 				0002D5B61D0A124900264BD2 /* Kusko(Upper).plist in Resources */,
 				0002D5AC1D0A0F9A00264BD2 /* Koyukon.plist in Resources */,
@@ -709,8 +717,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -719,6 +729,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -753,8 +764,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -762,6 +775,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -772,7 +786,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = GrantMagdanz.InupiaqKeyboard;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -781,28 +795,30 @@
 		4E807DB019461D9000D875D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GrantMagdanz.anlanguages;
 				PRODUCT_NAME = "AN-Languages";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4E807DB119461D9000D875D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HostingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GrantMagdanz.anlanguages;
 				PRODUCT_NAME = "AN-Languages";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -819,6 +835,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Keyboard/Keyboard-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -835,6 +852,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Keyboard/Keyboard-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -843,7 +861,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -874,7 +892,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

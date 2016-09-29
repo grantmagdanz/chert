@@ -14,7 +14,7 @@ class InstallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        instructionView.scrollEnabled = false
+        instructionView.isScrollEnabled = false
         
         
         /* NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow"), name: UIKeyboardWillShowNotification, object: nil)

@@ -10,6 +10,7 @@
 	<array>
 		<string>Ñ</string>
 		<string>Ŋ</string>
+		<string>ŋ̇</string>
 	</array>
 	<key>K</key>
 	<array>
@@ -24,6 +25,14 @@
 	<key>S</key>
 	<array>
 		<string>Ṣ</string>
+	</array>
+	<key>T</key>
+	<array>
+		<string>ṭ</string>
+	</array>
+	<key>X</key>
+	<array>
+		<string>ẋ</string>
 	</array>
 </dict>
 </plist>

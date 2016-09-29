@@ -12,7 +12,7 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // start the text at the top

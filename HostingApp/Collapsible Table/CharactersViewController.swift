@@ -9,17 +9,17 @@
 import UIKit
 
 extension UIView {
-    func rotate(toValue: CGFloat, duration: CFTimeInterval = 0.2, completionDelegate: AnyObject? = nil) {
+    func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2, completionDelegate: AnyObject? = nil) {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.toValue = toValue
         rotateAnimation.duration = duration
-        rotateAnimation.removedOnCompletion = false
+        rotateAnimation.isRemovedOnCompletion = false
         rotateAnimation.fillMode = kCAFillModeForwards
         
-        if let delegate: AnyObject = completionDelegate {
+        if let delegate = completionDelegate as? CAAnimationDelegate {
             rotateAnimation.delegate = delegate
         }
-        self.layer.addAnimation(rotateAnimation, forKey: nil)
+        self.layer.add(rotateAnimation, forKey: nil)
     }
 }
 
@@ -37,7 +37,7 @@ class CharactersViewController: UITableViewController {
                 }
             }
         }
-        var language: String!
+        var language: String
         var items: [String]!
         var collapsed: Bool!
         
@@ -63,28 +63,29 @@ class CharactersViewController: UITableViewController {
             items = []
             
             // build up the extra characters
-            for (var base, extra) in keyBindings {
-                if base as! String == "___" {
+            for (baseChar, extra) in keyBindings {
+                var base = baseChar as! String
+                if base == "___" {
                     // This is for accents
                     base = "Tone Marks"
-                } else if base as! String == "√" {
+                } else if base == "√" {
                     base = "\(base)  (press '123' then '#+=')"
                 } else {
-                    base = base.lowercaseString
+                    base = base.lowercased()
                 }
                 
                 var item = "\(base): "
                 
                 for char in extra as! NSArray {
-                    item = item + "\(convertAccents(char as! String).lowercaseString), "
+                    item = item + "\(convertAccents(char as! String).lowercased()), "
                 }
                 
                 // Fixing fencepost problem by dropping the last space and comma.
-                items.append(item.substringToIndex(item.endIndex.predecessor().predecessor()))
+                items.append(item.substring(to: item.index(before: item.characters.index(before: item.endIndex))))
             }
 
             // Letters should be displayed in alphabetical order
-            items = items.sort {
+            items = items.sorted {
                 /* The apostrophe should come second to last followed by tone marks.
                  * With Lingit, since the ∅ is not a letter, it should come at the end but
                  * before the tone marks
@@ -109,24 +110,26 @@ class CharactersViewController: UITableViewController {
             sections.append(Section(language: names[language]!, items: items))
         }
         
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.backgroundColor = UIColor.clear
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
     
-    private func convertAccents(input: String) -> String {
+    fileprivate func convertAccents(_ input: String) -> String {
         var letter = input
-        if input.uppercaseString == "ACUTE" {
+        if input.uppercased() == "ACUTE" {
             letter = "\u{25cc}\u{0301}"
-        } else if input.uppercaseString == "CIRCUMFLEX" {
+        } else if input.uppercased() == "CIRCUMFLEX" {
             letter = "\u{25cc}\u{0302}"
-        } else if input.uppercaseString == "GRAVE" {
+        } else if input.uppercased() == "GRAVE" {
             letter = "\u{25cc}\u{0300}"
-        } else if input.uppercaseString == "CARON" {
+        } else if input.uppercased() == "CARON" {
             letter = "\u{25cc}\u{030C}"
+        } else if input.uppercased() == "DOUBLE_ACUTE" {
+            letter = "\u{25cc}\u{030B}"
         }
         return letter
     }
@@ -134,34 +137,34 @@ class CharactersViewController: UITableViewController {
     //
     // MARK: - UITableViewDelegate
     //
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (sections[section].collapsed!) ? 0 : sections[section].items.count
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCellWithIdentifier("header") as! CollapsibleTableViewHeader
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "header") as! CollapsibleTableViewHeader
         
         header.toggleButton.tag = section
         header.titleLabel.text = sections[section].name
         header.toggleButton.rotate(sections[section].collapsed! ? 0.0 : CGFloat(M_PI_2))
-        header.toggleButton.addTarget(self, action: #selector(CharactersViewController.toggleCollapse), forControlEvents: .TouchUpInside)
+        header.toggleButton.addTarget(self, action: #selector(CharactersViewController.toggleCollapse), for: .touchUpInside)
         
         return header.contentView
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
         
-        cell.textLabel?.text = sections[indexPath.section].items[indexPath.row]
+        cell?.textLabel?.text = sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         
-        return cell
+        return cell!
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: NSInteger) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: NSInteger) -> CGFloat {
         // height of the header rows in the table
         return 40.0
     }
@@ -169,15 +172,15 @@ class CharactersViewController: UITableViewController {
     //
     // MARK: - Event Handlers
     //
-    func toggleCollapse(sender: UIButton) {
+    func toggleCollapse(_ sender: UIButton) {
         let section = sender.tag
         let collapsed = sections[section].collapsed
         
         // Toggle collapse
-        sections[section].collapsed = !collapsed
+        sections[section].collapsed = !collapsed!
         
         // Reload section
-        tableView.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
+        tableView.reloadSections(IndexSet(integer: section), with: .automatic)
     }
     
 }

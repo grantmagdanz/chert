@@ -11,17 +11,17 @@ import Foundation
 var counter = 0
 
 enum ShiftState {
-    case Disabled
-    case Enabled
-    case Locked
+    case disabled
+    case enabled
+    case locked
     
     func uppercase() -> Bool {
         switch self {
-        case Disabled:
+        case .disabled:
             return false
-        case Enabled:
+        case .enabled:
             return true
-        case Locked:
+        case .locked:
             return true
         }
     }
@@ -35,7 +35,7 @@ class Keyboard {
         self.pages = []
     }
     
-    func addKey(key: Key, row: Int, page: Int) {
+    func addKey(_ key: Key, row: Int, page: Int) {
         if self.pages.count <= page {
             for _ in self.pages.count...page {
                 self.pages.append(Page())
@@ -45,7 +45,7 @@ class Keyboard {
         self.pages[page].addKey(key, row: row)
     }
     
-    func placeKey(key: Key, row: Int, page: Int, col: Int) {
+    func placeKey(_ key: Key, row: Int, page: Int, col: Int) {
         if self.pages.count <= page {
             for _ in self.pages.count...page {
                 self.pages.append(Page())
@@ -58,7 +58,7 @@ class Keyboard {
     // removes all instances PLACEHOLDER in the keyboard
     func removePlaceHolder() {
         for page in self.pages {
-            for (i, row) in page.rows.enumerate() {
+            for (i, row) in page.rows.enumerated() {
                 for key in row {
                     if key.outputForCase(false) == PLACEHOLDER {
                         page.rows[i] = row.filter({$0.outputForCase(false) != PLACEHOLDER})
@@ -68,11 +68,11 @@ class Keyboard {
         }
     }
     
-    func getKey(outputForKey: String) -> Key? {
+    func getKey(_ outputForKey: String) -> Key? {
         for page in self.pages {
             for row in page.rows {
                 for key in row {
-                    if key.outputForCase(false) == outputForKey.lowercaseString {
+                    if key.outputForCase(false) == outputForKey.lowercased() {
                         return key
                     }
                 }
@@ -103,7 +103,7 @@ class Page {
         self.rows = []
     }
     
-    func addKey(key: Key, row: Int) {
+    func addKey(_ key: Key, row: Int) {
         if self.rows.count <= row {
             for _ in self.rows.count...row {
                 self.rows.append([])
@@ -114,14 +114,14 @@ class Page {
     }
     
     
-    func placeKey(key: Key, row: Int, col: Int) {
+    func placeKey(_ key: Key, row: Int, col: Int) {
         if self.rows.count <= row {
             for _ in self.rows.count...row {
                 self.rows.append([])
             }
         }
         
-        self.rows[row].insert(key, atIndex: col)
+        self.rows[row].insert(key, at: col)
     }
 }
 
@@ -217,22 +217,22 @@ class Key: Hashable {
         self.toMode = key.toMode
     }
     
-    func setExtraCharacters(letters: [String]) {
+    func setExtraCharacters(_ letters: [String]) {
         self.extraCharacters = []
         self.uppercaseExtraCharacters = []
         for letter in letters {
-            self.extraCharacters.append((letter as NSString).lowercaseString)
-            self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+            self.extraCharacters.append((letter as NSString).lowercased)
+            self.uppercaseExtraCharacters.append((letter as NSString).uppercased)
         }
     }
     
     // appends extra letters to key, doesn't include duplicates
-    func appendExtraCharacters(letters: [String]) {
+    func appendExtraCharacters(_ letters: [String]) {
         for var letter in letters {
             letter = convertAccents(letter)
-            if (!self.extraCharacters.contains(letter.lowercaseString)) {
-                self.extraCharacters.append((letter as NSString).lowercaseString)
-                self.uppercaseExtraCharacters.append((letter as NSString).uppercaseString)
+            if (!self.extraCharacters.contains(letter.lowercased())) {
+                self.extraCharacters.append((letter as NSString).lowercased)
+                self.uppercaseExtraCharacters.append((letter as NSString).uppercased)
             }
         }
     }
@@ -245,24 +245,26 @@ class Key: Hashable {
         return getExtraCharacters().count > 0
     }
     
-    func setLetter(input: String) {
+    func setLetter(_ input: String) {
         let letter = convertAccents(input)
-        self.lowercaseOutput = (letter as NSString).lowercaseString
-        self.uppercaseOutput = (letter as NSString).uppercaseString
+        self.lowercaseOutput = (letter as NSString).lowercased
+        self.uppercaseOutput = (letter as NSString).uppercased
         self.lowercaseKeyCap = self.lowercaseOutput
         self.uppercaseKeyCap = self.uppercaseOutput
     }
     
-    private func convertAccents(input: String) -> String {
+    fileprivate func convertAccents(_ input: String) -> String {
         var letter = input
-        if input.uppercaseString == "ACUTE" {
+        if input.uppercased() == "ACUTE" {
             letter = "\u{0301}"
-        } else if input.uppercaseString == "CIRCUMFLEX" {
+        } else if input.uppercased() == "CIRCUMFLEX" {
             letter = "\u{0302}"
-        } else if input.uppercaseString == "GRAVE" {
+        } else if input.uppercased() == "GRAVE" {
             letter = "\u{0300}"
-        } else if input.uppercaseString == "CARON" {
+        } else if input.uppercased() == "CARON" {
             letter = "\u{030C}"
+        } else if input.uppercased() == "DOUBLE_ACUTE" {
+            letter = "\u{030B}"
         }
         return letter
     }
@@ -271,7 +273,7 @@ class Key: Hashable {
         return self.extraCharacters.count > 1
     }
     
-    func outputForCase(uppercase: Bool) -> String {
+    func outputForCase(_ uppercase: Bool) -> String {
         if uppercase {
             if self.uppercaseOutput != nil {
                 return self.uppercaseOutput!
@@ -296,7 +298,7 @@ class Key: Hashable {
         }
     }
     
-    func keyCapForCase(uppercase: Bool) -> String {
+    func keyCapForCase(_ uppercase: Bool) -> String {
         if uppercase {
             if self.uppercaseKeyCap != nil {
                 return self.uppercaseKeyCap!

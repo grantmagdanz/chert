@@ -12,12 +12,12 @@ import Foundation
 func buildKeyboard() -> Keyboard {
     let keyboard = defaultKeyboard()
 
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     for language in Languages.getLanguages() {
-        if defaults.boolForKey(language) {
+        if defaults.bool(forKey: language) {
             // the user has selected this language, let's add it in!
             var keys: NSDictionary?
-            if let path = NSBundle.mainBundle().pathForResource(language, ofType: "plist") {
+            if let path = Bundle.main.path(forResource: language, ofType: "plist") {
                 keys = NSDictionary(contentsOfFile: path)
             }
             if let keyBindings = keys {
@@ -49,15 +49,17 @@ func buildKeyboard() -> Keyboard {
             extraChars = extraChars.filter({$0 != keyboard.PLACEHOLDER})
             
             // In this app, the placeholder is being used for accents and they should be in a specific order.
-            extraChars = extraChars.sort {
+            extraChars = extraChars.sorted {
                 if $0 == "\u{0301}" { // accent acute should be first
                     return true
                 } else if $0 == "\u{0300}" && $1 != "\u{0301}" { // followed by accent grave
                     return true
                 } else if $0 == "\u{0302}" && $1 != "\u{0301}" && $1 != "\u{0300}" { // then circumflex
                     return true
+                } else if $0 == "\u{030C}" && $1 != "\u{0302}" && $1 != "\u{0301}" && $1 != "\u{0300}" { // then caron
+                    return true
                 } else {
-                    return false // and finally caron
+                    return false // and finally double acute
                 }
             }
             
@@ -104,7 +106,7 @@ func defaultKeyboard() -> Keyboard {
 
 /* Given a value of a key, returns a Key object of the correct type.
  */
-private func makeKey(let value: String, let special: Bool) -> Key {
+private func makeKey(_ value: String, special: Bool) -> Key {
     let keyType = Key.KeyType(rawValue: value)
     if keyType == nil {
         // This is not a special key (i.e. it types a character)

@@ -11,7 +11,7 @@ import UIKit
 class Banner: ExtraView {
     var icon: UIImage = UIImage(named: "banner")!
     var iconView: UIImageView
-    var textView = UILabel(frame: CGRectMake(0, 0, 120, 40))
+    var textView = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 40))
     
     required init(globalColors: GlobalColors.Type?, darkMode: Bool, solidColorMode: Bool) {
         iconView = UIImageView(image: icon)
@@ -23,7 +23,7 @@ class Banner: ExtraView {
         // uncomment to add text on the banner of the keyboard
         // textView.text = "  Add text."
         textView.alpha = 0.3
-        textView.font = UIFont.italicSystemFontOfSize(16.0)
+        textView.font = UIFont.italicSystemFont(ofSize: 16.0)
         
         super.init(globalColors: globalColors, darkMode: darkMode, solidColorMode: solidColorMode)
         self.addSubview(iconView)
@@ -42,6 +42,6 @@ class Banner: ExtraView {
         super.layoutSubviews()
         self.iconView.center = self.center
         // TODO: hardcoded
-        self.iconView.frame.origin = CGPointMake(self.iconView.frame.origin.x, 5)
+        self.iconView.frame.origin = CGPoint(x: self.iconView.frame.origin.x, y: 5)
     }
 }

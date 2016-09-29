@@ -8,58 +8,80 @@
 
 import Foundation
 
-public class Languages {
+open class Languages {
     // file names
     static let Ahtna = "Ahtna"
+    static let BehntiKenaga = "Tanana(Lower)"
     static let DegXinag = "DegXinag"
     static let Denaakke = "Koyukon"
+    static let Denaki = "Kusko(Upper)"
     static let Denaina = "Dena'ina"
+    static let DihthaadXteeniinaandeg = "Tanacross"
+    static let DinjiiZhuhKyaa = "Gwichin"
     static let Eyak = "Eyak"
-    static let Gwichin = "Gwichin"
     static let Han = "Han"
     static let Holikachuk = "Holikachuk"
-    static let Inupiaq = "Inupiaq"
+    static let Inupiatun = "Inupiaq"
     static let Lingit = "Tlingit"
-    static let LowerTanana = "Tanana(Lower)"
     static let Neeaaneegn = "Tanana(Upper)"
-    static let Neeandeg = "Tanacross"
     static let Smalgyax = "Smalgyax_Tsimshian"
     static let Sugtstun = "Sugtstun_Sugpiaq_Alutiiq"
     static let UnangamTunuu = "Unangan"
-    static let UpperKusko = "Kusko(Upper)"
+    static let Yugtun = "Yugtun"
     static let XaadKil = "Haida"
     
-    public static func getLanguages() -> [String] {
-        return [Ahtna, DegXinag, Denaakke, Denaina, Eyak, Gwichin, Han, Holikachuk, Inupiaq, Lingit, LowerTanana, Neeaaneegn, Neeandeg, Smalgyax, Sugtstun, UnangamTunuu, UpperKusko, XaadKil
+    open static func getLanguages() -> [String] {
+        return [
+            Ahtna,
+            BehntiKenaga,
+            DegXinag,
+            Denaakke,
+            Denaki,
+            Denaina,
+            DihthaadXteeniinaandeg,
+            DinjiiZhuhKyaa,
+            Eyak,
+            Han,
+            Holikachuk,
+            Inupiatun,
+            Lingit,
+            Neeaaneegn,
+            Smalgyax,
+            Sugtstun,
+            UnangamTunuu,
+            Yugtun,
+            XaadKil
         ]
     }
     
-    public static func getNames() -> [String: String] {
+    // display names
+    open static func getNames() -> [String: String] {
         return [
             Ahtna: "Ahtna",
+            BehntiKenaga: "Behnti Kenaga'",
             DegXinag: "Deg Xinag",
             Denaakke: "Denaakk'e",
+            Denaki: "Denak'i",
             Denaina: "Dena'ina",
+            DihthaadXteeniinaandeg: "Dihthâad Xt'een iin aanděg'",
+            DinjiiZhuhKyaa: "Dinjii Zhuh K'yaa",
             Eyak: "Eyak",
-            Gwichin: "Gwich'in",
             Han: "Hän",
             Holikachuk: "Holikachuk",
-            Inupiaq: "Iñupiaq",
+            Inupiatun: "Iñupiatun",
             Lingit: "Lingít",
-            LowerTanana: "Lower Tanana",
-            Neeaaneegn: "Nee'aaneegn'",
-            Neeandeg: "Nee'anděg'",
+            Neeaaneegn: "Née'aaneegn'",
             Smalgyax: "Sm'algya̱x",
             Sugtstun: "Sugt'stun",
             UnangamTunuu: "Unangam Tunuu",
-            UpperKusko: "Upper Kuskokwim",
+            Yugtun: "Yugtun",
             XaadKil: "X̱aad Kíl"
         ]
     }
     
-    public static func getCharSet(language: String) -> NSDictionary {
+    open static func getCharSet(_ language: String) -> NSDictionary {
         var keys: NSDictionary?
-        if let path = NSBundle.mainBundle().pathForResource(language, ofType: "plist") {
+        if let path = Bundle.main.path(forResource: language, ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
         }
         
