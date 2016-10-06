@@ -269,6 +269,14 @@ class Key: Hashable {
         return letter
     }
     
+    func isAccent() -> Bool {
+        return self.uppercaseOutput == "\u{0301}" ||
+            self.uppercaseOutput == "\u{0302}" ||
+            self.uppercaseOutput == "\u{0300}" ||
+            self.uppercaseOutput == "\u{030C}" ||
+            self.uppercaseOutput == "\u{030B}"
+    }
+    
     func isLongHold() -> Bool {
         return self.extraCharacters.count > 1
     }

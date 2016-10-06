@@ -9,6 +9,8 @@ import UIKit
 
 class InupiaqKeyboard: KeyboardViewController {
     
+    private let VOWELS = "aąäą̈a̱eęëę̈iįïoǫųüǫuųüų̈ʉu̱∅"
+    
     let takeDebugScreenshot: Bool = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -25,39 +27,45 @@ class InupiaqKeyboard: KeyboardViewController {
         let keyOutput = key.outputForCase(self.shiftState.uppercase())
         
         if key.type == .Character || key.type == .SpecialCharacter {
-            let context = textDocumentProxy.documentContextBeforeInput
-            if context != nil {
-                if context!.characters.count < 2 {
-                    textDocumentProxy.insertText(keyOutput)
+            // Type the character, unless the character is an accent and the letter before is not a vowel.
+            if let context = textDocumentProxy.documentContextBeforeInput {
+                let lastLetter = String(context[context.index(before: context.endIndex)]).lowercased()
+                if key.isAccent() && VOWELS.range(of: lastLetter) == nil {
                     return
                 }
-                
-                var index = context!.endIndex
-                
-                index = context!.index(before: index)
-                if context![index] != " " {
-                    textDocumentProxy.insertText(keyOutput)
-                    return
-                }
-                
-                index = context!.index(before: index)
-                if context![index] == " " {
-                    textDocumentProxy.insertText(keyOutput)
-                    return
-                }
-
-                textDocumentProxy.insertText(keyOutput)
-                return
-            }
-            else {
-                textDocumentProxy.insertText(keyOutput)
-                return
             }
         }
-        else {
-            textDocumentProxy.insertText(keyOutput)
-            return
+        textDocumentProxy.insertText(keyOutput)
+    }
+    
+    // This gets called when a long-hold key pop-up gets pressed
+    override func hideExpandView(_ notification: Notification) {
+        if (notification as NSNotification).userInfo != nil {
+            let title = (notification as NSNotification).userInfo!["text"] as! String
+            let proxy = self.textDocumentProxy
+            
+            // If the popup is an accent, we only want to type it if the previous character was a vowel.
+            if let context = proxy.documentContextBeforeInput {
+                let key = Key(.Character)
+                key.setLetter(title)
+                
+                let lastLetter = String(context[context.index(before: context.endIndex)]).lowercased()
+                if key.isAccent() && VOWELS.range(of: lastLetter) == nil {
+                    return
+                }
+            }
+            
+            if self.shiftState == .enabled {
+                proxy.insertText(title.capitalized)
+            } else if self.shiftState == .locked {
+                proxy.insertText(title.uppercased())
+            } else {
+                proxy.insertText(title.lowercased())
+            }
+            
+            self.setCapsIfNeeded()
         }
+        viewLongPopUp.isHidden = true
     }
     
     override func setupKeys() {
