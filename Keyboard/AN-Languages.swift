@@ -42,26 +42,11 @@ class InupiaqKeyboard: KeyboardViewController {
     override func hideExpandView(_ notification: Notification) {
         if (notification as NSNotification).userInfo != nil {
             let title = (notification as NSNotification).userInfo!["text"] as! String
-            let proxy = self.textDocumentProxy
             
-            // If the popup is an accent, we only want to type it if the previous character was a vowel.
-            if let context = proxy.documentContextBeforeInput {
-                let key = Key(.Character)
-                key.setLetter(title)
-                
-                let lastLetter = String(context[context.index(before: context.endIndex)]).lowercased()
-                if key.isAccent() && VOWELS.range(of: lastLetter) == nil {
-                    return
-                }
-            }
+            let key = Key(.Character)
+            key.setLetter(title)
             
-            if self.shiftState == .enabled {
-                proxy.insertText(title.capitalized)
-            } else if self.shiftState == .locked {
-                proxy.insertText(title.uppercased())
-            } else {
-                proxy.insertText(title.lowercased())
-            }
+            self.keyPressed(key)
             
             self.setCapsIfNeeded()
         }
