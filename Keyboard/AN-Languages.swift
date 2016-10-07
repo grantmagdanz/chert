@@ -9,7 +9,7 @@ import UIKit
 
 class InupiaqKeyboard: KeyboardViewController {
     
-    private let VOWELS = "aąäą̈a̱eęëę̈iįïoǫųüǫuųüų̈ʉu̱∅"
+    private let VOWELS = "aąäą̈a̱eęëę̈iįïoǫųüǫuųüų̈ʉu̱"
     
     let takeDebugScreenshot: Bool = false
     
