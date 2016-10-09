@@ -67,7 +67,13 @@ class CharactersViewController: UITableViewController {
                 var base = baseChar as! String
                 if base == "___" {
                     // This is for accents
-                    base = "Tone Marks"
+                    if language == Languages.Yugtun {
+                        // NOTE: This is a hack. But the breve shouldn't be listed as an accent.
+                        // but in order to get the app out, things needed to be done quickly.
+                        base = "Other"
+                    } else {
+                        base = "Tone Marks"
+                    }
                 } else if base == "√" {
                     base = "\(base)  (press '123' then '#+=')"
                 } else {
@@ -102,6 +108,9 @@ class CharactersViewController: UITableViewController {
                     } else if $1.hasPrefix("o") && !$0.hasPrefix("√") {
                         return true
                     }
+                } else if $0.hasPrefix("Other") {
+                    // HACK: This is to get Yugtun working on short notice and should be deleted.
+                    return false
                 }
                 
                 return $0 < $1
@@ -130,6 +139,8 @@ class CharactersViewController: UITableViewController {
             letter = "\u{25cc}\u{030C}"
         } else if input.uppercased() == "DOUBLE_ACUTE" {
             letter = "\u{25cc}\u{030B}"
+        } else if input.uppercased() == "COMBINING_DOUBLE_INVERTED_BREVE" {
+            letter = "\u{25cc}\u{0361}\u{25cc}"
         }
         return letter
     }

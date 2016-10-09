@@ -265,11 +265,14 @@ class Key: Hashable {
             letter = "\u{030C}"
         } else if input.uppercased() == "DOUBLE_ACUTE" {
             letter = "\u{030B}"
+        } else if input.uppercased() == "COMBINING_DOUBLE_INVERTED_BREVE" {
+            letter = "\u{0361}"
         }
         return letter
     }
     
     func isAccent() -> Bool {
+        // NOTE: The combined double inverted breve is not technically an accent
         return self.uppercaseOutput == "\u{0301}" ||
             self.uppercaseOutput == "\u{0302}" ||
             self.uppercaseOutput == "\u{0300}" ||
