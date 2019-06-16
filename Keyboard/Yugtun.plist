@@ -10,9 +10,11 @@
 	<array>
 		<string>ń</string>
 	</array>
-	<key>___</key>
+	<key>U</key>
 	<array>
-		<string>COMBINING_DOUBLE_INVERTED_BREVE</string>
+		<string>u͡r</string>
+		<string>u͡u</string>
+		<string>ur͡r</string>
 	</array>
 </dict>
 </plist>
