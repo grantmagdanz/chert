@@ -4,27 +4,27 @@
 <dict>
 	<key>G</key>
 	<array>
-		<string>Ġ</string>
+		<string>ġ</string>
 	</array>
 	<key>N</key>
 	<array>
-		<string>Ñ</string>
-		<string>Ŋ</string>
+		<string>ñ</string>
+		<string>ŋ</string>
 		<string>ŋ̇</string>
 	</array>
 	<key>K</key>
 	<array>
-		<string>Ḳ</string>
+		<string>ḳ</string>
 	</array>
 	<key>L</key>
 	<array>
-		<string>Ł</string>
-		<string>Ḷ</string>
-		<string>Ł̣</string>
+		<string>ł</string>
+		<string>ḷ</string>
+		<string>ł̣</string>
 	</array>
 	<key>S</key>
 	<array>
-		<string>Ṣ</string>
+		<string>ṣ</string>
 	</array>
 	<key>T</key>
 	<array>
