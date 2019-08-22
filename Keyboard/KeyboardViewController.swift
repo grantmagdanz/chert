@@ -161,10 +161,10 @@ class KeyboardViewController: UIInputViewController {
             kludge.translatesAutoresizingMaskIntoConstraints = false
             kludge.isHidden = true
             
-            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
             self.view.addConstraints([a, b, c, d])
             
             self.kludge = kludge
@@ -220,7 +220,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func solidColorMode() -> Bool {
-        return UIAccessibilityIsReduceTransparencyEnabled()
+        return UIAccessibility.isReduceTransparencyEnabled
     }
     
     var lastLayoutBounds: CGRect?
@@ -353,13 +353,13 @@ class KeyboardViewController: UIInputViewController {
             for rowKeys in page.rows { // TODO: quick hack
                 for key in rowKeys {
                     if let keyView = self.layout?.viewForKey(key) {
-                        keyView.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
+                        keyView.removeTarget(nil, action: nil, for: UIControl.Event.allEvents)
                         
                         switch key.type {
                         case Key.KeyType.KeyboardChange:
                             keyView.addTarget(self, action: "advanceTapped:", for: .touchUpInside)
                         case Key.KeyType.Backspace:
-                            let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
+                            let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
                             
                             keyView.addTarget(self, action: "backspaceDown:", for: .touchDown)
                             keyView.addTarget(self, action: "backspaceUp:", for: cancelEvents)
@@ -461,10 +461,10 @@ class KeyboardViewController: UIInputViewController {
         if self.heightConstraint == nil {
             self.heightConstraint = NSLayoutConstraint(
                 item:self.view,
-                attribute:NSLayoutAttribute.height,
-                relatedBy:NSLayoutRelation.equal,
+                attribute:NSLayoutConstraint.Attribute.height,
+                relatedBy:NSLayoutConstraint.Relation.equal,
                 toItem:nil,
-                attribute:NSLayoutAttribute.notAnAttribute,
+                attribute:NSLayoutConstraint.Attribute.notAnAttribute,
                 multiplier:0,
                 constant:height)
             self.heightConstraint!.priority = UILayoutPriority(rawValue: 999)
@@ -532,7 +532,7 @@ class KeyboardViewController: UIInputViewController {
             let charactersAreInCorrectState = { () -> Bool in
                 let previousContext = self.textDocumentProxy.documentContextBeforeInput
                 
-                if previousContext == nil || (previousContext!).characters.count < 3 {
+                if previousContext == nil || (previousContext!).count < 3 {
                     return false
                 }
                 
@@ -750,10 +750,10 @@ class KeyboardViewController: UIInputViewController {
                 
                 aSettings.translatesAutoresizingMaskIntoConstraints = false
                 
-                let widthConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
-                let heightConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
-                let centerXConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
-                let centerYConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+                let widthConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0)
+                let heightConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0)
+                let centerXConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+                let centerYConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
                 
                 self.view.addConstraint(widthConstraint)
                 self.view.addConstraint(heightConstraint)
@@ -813,7 +813,7 @@ class KeyboardViewController: UIInputViewController {
     
     func stringIsWhitespace(_ string: String?) -> Bool {
         if string != nil {
-            for char in (string!).characters {
+            for char in string! {
                 if !characterIsWhitespace(char) {
                     return false
                 }
@@ -834,7 +834,7 @@ class KeyboardViewController: UIInputViewController {
                 return false
             case .words:
                 if let beforeContext = textDocumentProxy.documentContextBeforeInput {
-                    let previousCharacter = beforeContext[beforeContext.characters.index(before: beforeContext.endIndex)]
+                    let previousCharacter = beforeContext[beforeContext.index(before: beforeContext.endIndex)]
                     return self.characterIsWhitespace(previousCharacter)
                 }
                 else {
@@ -843,7 +843,7 @@ class KeyboardViewController: UIInputViewController {
                 
             case .sentences:
                 if let beforeContext = textDocumentProxy.documentContextBeforeInput {
-                    let offset = min(3, beforeContext.characters.count)
+                    let offset = min(3, beforeContext.count)
                     var index = beforeContext.endIndex
                     
                     for i in 0 ..< offset {
@@ -946,7 +946,7 @@ class KeyboardViewController: UIInputViewController {
                 }
                 
                 if arrOptions.count > 1 { // this test isn't really necessary as the fowarding view is filtering letters
-                    if arrOptions[0].characters.count > 0 {
+                    if arrOptions[0].count > 0 {
                         var offsetY : CGFloat = 9
                         
                         if KeyboardViewController.getDeviceType() == TTDeviceType.ttDeviceTypeIPhone4 {
@@ -998,7 +998,7 @@ class KeyboardViewController: UIInputViewController {
                         button.setupInputOptionsConfiguration(with: forwardingView)
                         self.view.insertSubview(self.viewLongPopUp, aboveSubview: self.forwardingView)
                         self.forwardingView.isLongPressEnable = true
-                        self.view.bringSubview(toFront: self.viewLongPopUp)
+                        self.view.bringSubviewToFront(self.viewLongPopUp)
                         //self.forwardingView.resetTrackedViews()
                         //sender.hidePopup()
                         //self.view.addSubview(self.viewLongPopUp)
@@ -1064,7 +1064,7 @@ class KeyboardViewController: UIInputViewController {
     func createSettings() -> ExtraView? {
         // note that dark mode is not yet valid here, so we just put false for clarity
         let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-        settingsView.backButton?.addTarget(self, action: #selector(KeyboardViewController.toggleSettings), for: UIControlEvents.touchUpInside)
+        settingsView.backButton?.addTarget(self, action: #selector(KeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
         return settingsView
     }
 }

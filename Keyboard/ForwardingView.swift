@@ -26,7 +26,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
         
         super.init(frame: frame)
         
-        self.contentMode = UIViewContentMode.redraw
+        self.contentMode = UIView.ContentMode.redraw
         self.isMultipleTouchEnabled = true
         self.isUserInteractionEnabled = true
         self.isOpaque = false
@@ -59,7 +59,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
         }
     }
     
-    func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
+    func handleControl(_ view: UIView?, controlEvent: UIControl.Event) {
         if let control = view as? UIControl {
             let targets = control.allTargets
             for target in targets {
@@ -77,7 +77,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 	
 	@IBAction func handleLongGesture(_ longPress: UIGestureRecognizer)
 	{
-		if (longPress.state == UIGestureRecognizerState.ended)
+		if (longPress.state == UIGestureRecognizer.State.ended)
 		{
 			//println("Ended")
 			
@@ -101,9 +101,9 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 			
 			
 		}
-		else if (longPress.state == UIGestureRecognizerState.began)
+		else if (longPress.state == UIGestureRecognizer.State.began)
 		{
-			if (longPress.state == UIGestureRecognizerState.began)
+			if (longPress.state == UIGestureRecognizer.State.began)
 			{
 				//println("Began")
 				
@@ -137,7 +137,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 	{
 		if gestureRecognizer is UILongPressGestureRecognizer
 		{
-			if (gestureRecognizer.state == UIGestureRecognizerState.possible)
+			if (gestureRecognizer.state == UIGestureRecognizer.State.possible)
 			{
 				let position = touch.location(in: self)
 				let view = findNearestView(position)
@@ -157,7 +157,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 				}
 				return false
 			}
-			else if (gestureRecognizer.state == UIGestureRecognizerState.ended)
+			else if (gestureRecognizer.state == UIGestureRecognizer.State.ended)
 			{
 				let position = gestureRecognizer.location(in: self)
 				let view = findNearestView(position)

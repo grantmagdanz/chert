@@ -14,7 +14,7 @@ extension UIView {
         rotateAnimation.toValue = toValue
         rotateAnimation.duration = duration
         rotateAnimation.isRemovedOnCompletion = false
-        rotateAnimation.fillMode = kCAFillModeForwards
+        rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         if let delegate = completionDelegate as? CAAnimationDelegate {
             rotateAnimation.delegate = delegate
@@ -87,7 +87,7 @@ class CharactersViewController: UITableViewController {
                 }
                 
                 // Fixing fencepost problem by dropping the last space and comma.
-                items.append(item.substring(to: item.index(before: item.characters.index(before: item.endIndex))))
+                items.append(item.substring(to: item.index(before: item.index(before: item.endIndex))))
             }
 
             // Letters should be displayed in alphabetical order
@@ -168,7 +168,7 @@ class CharactersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?
         
         cell?.textLabel?.text = sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         

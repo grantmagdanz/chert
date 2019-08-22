@@ -30,7 +30,7 @@ open class Languages {
     static let Yugtun = "Yugtun"
     static let XaadKil = "Haida"
     
-    open static func getLanguages() -> [String] {
+    public static func getLanguages() -> [String] {
         return [
             Ahtna,
             BehntiKenaga,
@@ -55,7 +55,7 @@ open class Languages {
     }
     
     // display names
-    open static func getNames() -> [String: String] {
+    public static func getNames() -> [String: String] {
         return [
             Ahtna: "Ahtna",
             BehntiKenaga: "Behnti Kenaga'",
@@ -79,7 +79,7 @@ open class Languages {
         ]
     }
     
-    open static func getCharSet(_ language: String) -> NSDictionary {
+    public static func getCharSet(_ language: String) -> NSDictionary {
         var keys: NSDictionary?
         if let path = Bundle.main.path(forResource: language, ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
