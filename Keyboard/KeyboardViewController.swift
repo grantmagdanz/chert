@@ -147,7 +147,7 @@ class KeyboardViewController: UIInputViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func defaultsChanged(_ notification: Notification) {
+    @objc func defaultsChanged(_ notification: Notification) {
         self.updateKeyboard()
         self.updateKeyCaps(self.shiftState.uppercase())
     }
@@ -303,7 +303,7 @@ class KeyboardViewController: UIInputViewController {
         return CGFloat(orientation.isPortrait ? canonicalPortraitHeight + topBannerHeight : canonicalLandscapeHeight + topBannerHeight)
     }
     
-    func hideExpandView(_ notification: Notification)
+    @objc func hideExpandView(_ notification: Notification)
     {
         
         if (notification as NSNotification).userInfo != nil
@@ -432,7 +432,7 @@ class KeyboardViewController: UIInputViewController {
         }
     }
     
-    func hidePopupCallback() {
+    @objc func hidePopupCallback() {
         self.keyWithDelayedPopup?.hidePopup()
         self.keyWithDelayedPopup = nil
         self.popupDelayTimer = nil
@@ -467,7 +467,7 @@ class KeyboardViewController: UIInputViewController {
                 attribute:NSLayoutAttribute.notAnAttribute,
                 multiplier:0,
                 constant:height)
-            self.heightConstraint!.priority = 999
+            self.heightConstraint!.priority = UILayoutPriority(rawValue: 999)
             
             self.view.addConstraint(self.heightConstraint!) // TODO: what if view already has constraint added?
         }
@@ -585,10 +585,10 @@ class KeyboardViewController: UIInputViewController {
 
         let textDocumentProxy = self.textDocumentProxy
         let context = textDocumentProxy.documentContextBeforeInput
-        if context != nil && context!.characters.count > 1 {
+        if context != nil && context!.count > 1 {
             // if the character to delete is a new line character, we need
             // to delete the empty space character as well.
-            let index = context!.characters.index(before: context!.endIndex)
+            let index = context!.index(before: context!.endIndex)
             if context![index] == "\n" {
                 textDocumentProxy.deleteBackward()
             }
@@ -606,20 +606,20 @@ class KeyboardViewController: UIInputViewController {
         self.cancelBackspaceTimers()
     }
     
-    func backspaceDelayCallback() {
+    @objc func backspaceDelayCallback() {
         self.backspaceDelayTimer = nil
         self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
     }
     
-    func backspaceRepeatCallback() {
+    @objc func backspaceRepeatCallback() {
         playKeySound()
         
         let textDocumentProxy = self.textDocumentProxy
         let context = textDocumentProxy.documentContextBeforeInput
-        if context != nil && context!.characters.count > 1 {
+        if context != nil && context!.count > 1 {
             // if the character to delete is a new line character, we need
             // to delete the empty space character as well.
-            let index = context!.characters.index(before: context!.endIndex)
+            let index = context!.index(before: context!.endIndex)
             if context![index] == "\n" {
                 textDocumentProxy.deleteBackward()
             }

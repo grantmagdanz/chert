@@ -183,7 +183,7 @@ class CharactersViewController: UITableViewController {
     //
     // MARK: - Event Handlers
     //
-    func toggleCollapse(_ sender: UIButton) {
+    @objc func toggleCollapse(_ sender: UIButton) {
         let section = sender.tag
         let collapsed = sections[section].collapsed
         

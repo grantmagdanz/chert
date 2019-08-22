@@ -28,7 +28,7 @@ extension KeyboardViewController {
         traitPollingTimer?.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
-    func pollTraits() {
+    @objc func pollTraits() {
         if let layout = self.layout {
             let appearanceIsDark = (textDocumentProxy.keyboardAppearance == UIKeyboardAppearance.dark)
             if appearanceIsDark != layout.darkMode {

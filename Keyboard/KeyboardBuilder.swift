@@ -79,12 +79,12 @@ func defaultKeyboard() -> Keyboard {
     
     for pageNum in 0...2 {
         for rowNum in 0...3 {
-            let row = NSLocalizedString("page\(pageNum)_row\(rowNum)", comment: "Row number\(rowNum) in page \(pageNum)").characters.split{$0 == " "}.map(String.init)
+            let row = NSLocalizedString("page\(pageNum)_row\(rowNum)", comment: "Row number\(rowNum) in page \(pageNum)").split{$0 == " "}.map(String.init)
             for key in row {
                 // split on commas to get extra characters for that key
                 var charactersForKey = [key];
-                if key.characters.count > 1 {
-                    charactersForKey = key.characters.split{$0 == ","}.map(String.init)
+                if key.count > 1 {
+                    charactersForKey = key.split{$0 == ","}.map(String.init)
                 }
                 let keyModel: Key
                 if pageNum == 0 {

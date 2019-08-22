@@ -172,7 +172,6 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
         super.updateAppearance()
         
         if darkMode {
-            self.effectsView?.effect
             let blueColor = UIColor(red: 135/CGFloat(255), green: 206/CGFloat(255), blue: 250/CGFloat(255), alpha: 1)
             self.pixelLine?.backgroundColor = blueColor.withAlphaComponent(CGFloat(0.5))
             self.backButton?.setTitleColor(UIColor.white, for: UIControlState())
@@ -208,7 +207,7 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func toggleSetting(_ sender: UISwitch) {
+    @objc func toggleSetting(_ sender: UISwitch) {
         if let cell = sender.superview as? UITableViewCell {
             if let indexPath = self.tableView?.indexPath(for: cell) {
                 let key = self.settingsList[(indexPath as NSIndexPath).section].1[(indexPath as NSIndexPath).row]

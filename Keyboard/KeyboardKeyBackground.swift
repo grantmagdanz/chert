@@ -93,9 +93,9 @@ class KeyboardKeyBackground: UIView, Connectable {
         self.dirty = false
     }
     
-    let floatPi = CGFloat(M_PI)
-    let floatPiDiv2 = CGFloat(M_PI/2.0)
-    let floatPiDivNeg2 = -CGFloat(M_PI/2.0)
+    let floatPi = CGFloat(Double.pi)
+    let floatPiDiv2 = CGFloat(Double.pi/2.0)
+    let floatPiDivNeg2 = -CGFloat(Double.pi/2.0)
     
     func generatePointsForDrawing(_ bounds: CGRect) {
         let segmentWidth = bounds.width
