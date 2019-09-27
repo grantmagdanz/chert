@@ -241,6 +241,7 @@ class Key: Hashable {
     }
 
     func setLetter(_ letter: String) {
+        let letter = self.convertAccents(letter)
         self.lowercaseOutput = letter.lowercased()
         self.uppercaseOutput = letter.uppercased()
         self.lowercaseKeyCap = self.lowercaseOutput

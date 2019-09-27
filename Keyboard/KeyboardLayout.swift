@@ -1007,8 +1007,13 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
                 }
             }
             else {
-                frames.append(CGRect(x: rounded(currentOrigin), y: frame.origin.y, width: rightButtonWidth, height: frame.height))
-                currentOrigin += (rightButtonWidth + gapWidth)
+                if hasKeyAfterSpace && k == keyAfterSpacePosition {
+                    frames.append(CGRect(x: rounded(currentOrigin), y: frame.origin.y, width: keyWidth, height: frame.height))
+                    currentOrigin += (keyWidth + gapWidth)
+                } else {
+                    frames.append(CGRect(x: rounded(currentOrigin), y: frame.origin.y, width: rightButtonWidth, height: frame.height))
+                    currentOrigin += (rightButtonWidth + gapWidth)
+                }
             }
         }
 

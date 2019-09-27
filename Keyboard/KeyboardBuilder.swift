@@ -63,7 +63,6 @@ func buildKeyboard() -> Keyboard {
                 }
             }
             
-            
             placeholder.setLetter(extraChars[0])
             placeholder.setExtraCharacters(extraChars)
         } else {
