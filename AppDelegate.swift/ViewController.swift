@@ -3,7 +3,7 @@
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 6/9/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import UIKit
@@ -15,10 +15,10 @@ class HostingAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidHide"), name: UIKeyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillChangeFrame:"), name: UIKeyboardWillChangeFrameNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidChangeFrame:"), name: UIKeyboardDidChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidChangeFrame(_:)), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,24 +27,24 @@ class HostingAppViewController: UIViewController {
     
     @IBAction func dismiss() {
         for view in self.view.subviews {
-            if var inputView = view as? UITextField {
+            if let inputView = view as? UITextField {
                 inputView.resignFirstResponder()
             }
         }
     }
     
-    var startTime: NSTimeInterval?
-    var firstHeightTime: NSTimeInterval?
-    var secondHeightTime: NSTimeInterval?
+    var startTime: TimeInterval?
+    var firstHeightTime: TimeInterval?
+    var secondHeightTime: TimeInterval?
     var referenceHeight: CGFloat = 216
     
-    func keyboardWillShow() {
+    @objc func keyboardWillShow() {
         if startTime == nil {
             startTime = CACurrentMediaTime()
         }
     }
     
-    func keyboardDidHide() {
+    @objc func keyboardDidHide() {
         startTime = nil
         firstHeightTime = nil
         secondHeightTime = nil
@@ -52,9 +52,9 @@ class HostingAppViewController: UIViewController {
         self.stats?.text = "(Waiting for keyboard...)"
     }
     
-    func keyboardDidChangeFrame(notification: NSNotification) {
-        let frameBegin: CGRect! = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue()
-        let frameEnd: CGRect! = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue()
+    @objc func keyboardDidChangeFrame(_ notification: Notification) {
+        //let frameBegin: CGRect! = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue
+        let frameEnd: CGRect! = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         
         if frameEnd.height == referenceHeight {
             if firstHeightTime == nil {
