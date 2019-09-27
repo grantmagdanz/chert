@@ -104,17 +104,20 @@ class KeyboardViewController: UIInputViewController {
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        UserDefaults.standard.register(defaults: [
+        // set setting defaults
+        var defaults = [
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: true,
             kSmallLowercase: true
         ]
-
+        
         // all languages should be on by default
         for language in Languages.getLanguages() {
             defaults[language] = true
         }
+        
+        UserDefaults.standard.register(defaults: defaults)
 
         self.keyboard = buildKeyboard()
 
@@ -349,7 +352,7 @@ class KeyboardViewController: UIInputViewController {
 
             }
 
-            self.setCapsIfNeeded()
+            self.updateCapsIfNeeded()
 
         }
 

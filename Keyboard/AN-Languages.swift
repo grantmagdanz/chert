@@ -14,7 +14,6 @@ class InupiaqKeyboard: KeyboardViewController {
     let takeDebugScreenshot: Bool = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        UserDefaults.standard
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -26,7 +25,7 @@ class InupiaqKeyboard: KeyboardViewController {
         let textDocumentProxy = self.textDocumentProxy
         let keyOutput = key.outputForCase(self.shiftState.uppercase())
         
-        if key.type == .Character || key.type == .SpecialCharacter {
+        if key.type == .character || key.type == .specialCharacter {
             // Type the character, unless the character is an accent and the letter before is not a vowel.
             if let context = textDocumentProxy.documentContextBeforeInput {
                 let lastLetter = String(context[context.index(before: context.endIndex)]).lowercased()
@@ -43,12 +42,12 @@ class InupiaqKeyboard: KeyboardViewController {
         if (notification as NSNotification).userInfo != nil {
             let title = (notification as NSNotification).userInfo!["text"] as! String
             
-            let key = Key(.Character)
+            let key = Key(.character)
             key.setLetter(title)
             
             self.keyPressed(key)
             
-            self.setCapsIfNeeded()
+            self.updateCapsIfNeeded()
         }
         viewLongPopUp.isHidden = true
     }
@@ -65,7 +64,7 @@ class InupiaqKeyboard: KeyboardViewController {
                 for rowKeys in page.rows {
                     for key in rowKeys {
                         if let keyView = self.layout!.viewForKey(key) {
-                            keyView.addTarget(self, action: "takeScreenshotDelay", for: .touchDown)
+                            keyView.addTarget(self, action: Selector("takeScreenshotDelay"), for: .touchDown)
                         }
                     }
                 }

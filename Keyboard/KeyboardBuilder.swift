@@ -96,7 +96,7 @@ func defaultKeyboard() -> Keyboard {
                 }
                 
                 keyModel.extraCharacters = charactersForKey
-                defaultKeyboard.addKey(keyModel, row: rowNum, page: pageNum)
+                defaultKeyboard.add(key: keyModel, row: rowNum, page: pageNum)
             }
         }
     }
@@ -107,42 +107,47 @@ func defaultKeyboard() -> Keyboard {
 /* Given a value of a key, returns a Key object of the correct type.
  */
 private func makeKey(_ value: String, special: Bool) -> Key {
-    let keyType = Key.KeyType(rawValue: value)
+    let keyType: Key.KeyType?
+    if value == Key.LETTER_CHANGE_STRING || value == Key.NUMBER_CHANGE_STRING || value == Key.SPEC_CHARS_CHANGE_STRING {
+        keyType = Key.KeyType.modeChange
+    } else {
+        keyType = Key.KeyType(rawValue: value)
+    }
     if keyType == nil {
         // This is not a special key (i.e. it types a character)
         let key: Key
         if !special {
-            key = Key(.Character)
+            key = Key(.character)
         } else {
-            key = Key(.SpecialCharacter)
+            key = Key(.specialCharacter)
         }
         key.setLetter(value)
         return key
     }
     switch keyType! {
-    case .LetterChange:
-        let key = Key(.LetterChange)
-        key.uppercaseKeyCap = NSLocalizedString("alphabet_change", comment: "The label of the button to switch to letters.")
-        key.toMode = 0
+    case .modeChange:
+        let key = Key(.modeChange)
+        if value == Key.LETTER_CHANGE_STRING {
+            key.uppercaseKeyCap = NSLocalizedString("alphabet_change", comment: "The label of the button to switch to letters.")
+            key.toMode = 0
+        } else if value == Key.NUMBER_CHANGE_STRING {
+           key.uppercaseKeyCap = NSLocalizedString("number_change", comment: "The label of the button to switch to numbers and symbols.")
+           key.toMode = 1
+        } else if value == Key.SPEC_CHARS_CHANGE_STRING {
+            key.uppercaseKeyCap = NSLocalizedString("symbol_change", comment: "The label of the button to switch to extra symbols.")
+            key.toMode = 2
+        } else {
+            assertionFailure()
+        }
         return key
-    case .NumberChange:
-       let key = Key(.NumberChange)
-       key.uppercaseKeyCap = NSLocalizedString("number_change", comment: "The label of the button to switch to numbers and symbols.")
-       key.toMode = 1
-       return key;
-    case .SpecialCharacterChange:
-        let key = Key(.SpecialCharacterChange)
-        key.uppercaseKeyCap = NSLocalizedString("symbol_change", comment: "The label of the button to switch to extra symbols.")
-        key.toMode = 2
-        return key
-    case .Space:
-        let key = Key(.Space)
+    case .space:
+        let key = Key(.space)
         key.uppercaseKeyCap = NSLocalizedString("space", comment: "The label of the space button.")
         key.uppercaseOutput = " "
         key.lowercaseOutput = " "
         return key
-    case .Return:
-        let key = Key(.Return)
+    case .return:
+        let key = Key(.return)
         key.uppercaseKeyCap = NSLocalizedString("return", comment: "The label of the return button")
         key.uppercaseOutput = "\n"
         key.lowercaseOutput = "\n"

@@ -16,18 +16,18 @@
 */
 page0_row0 = "Q W E R T Y U I O P";
 page0_row1 = "A S D F G H J K L";
-page0_row2 = "Shift Z X C V B N M Backspace";
-page0_row3 = "123 KeyboardChange Settings Space ___ Return";
+page0_row2 = "shift Z X C V B N M backspace";
+page0_row3 = "123 keyboardChange settings space ___ return";
 
 page1_row0 = "1 2 3 4 5 6 7 8 9 0";
 page1_row1 = "-,–,—  / : ; ( ) $ & @ \"";
-page1_row2 = "#+= . , ? ! ',ʼ,ʻ Backspace";
-page1_row3 = "ABC KeyboardChange Settings Space Return";
+page1_row2 = "#+= . , ? ! ',ʼ,ʻ backspace";
+page1_row3 = "ABC keyboardChange settings space return";
 
 page2_row0 = "[ ] { } # % ^ * + =";
 page2_row1 = "_ \\ | ~ < > € £ ¥ •";
-page2_row2 = "123 . , ? ! ' Backspace";
-page2_row3 = "ABC KeyboardChange Settings Space Return";
+page2_row2 = "123 . , ? ! ' backspace";
+page2_row3 = "ABC keyboardChange settings space return";
 
 space = "space";
 return = "return";

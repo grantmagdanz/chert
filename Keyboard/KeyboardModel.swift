@@ -120,8 +120,11 @@ class Page {
 
 class Key: Hashable {
     static let LINGIT_SLASHED_O = "∅"
+    static let NUMBER_CHANGE_STRING = "123"
+    static let LETTER_CHANGE_STRING = "ABC"
+    static let SPEC_CHARS_CHANGE_STRING = "#+="
 
-    enum KeyType {
+    enum KeyType: String {
         case character
         case specialCharacter
         case shift
